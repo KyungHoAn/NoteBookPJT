@@ -35,9 +35,3 @@ out/
 
 ### VS Code ###
 .vscode/
-
-/.metadata/
-/test-classes/
-.classpath
-.project
-.settings/
