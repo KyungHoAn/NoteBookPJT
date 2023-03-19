@@ -21,7 +21,7 @@ repositories {
 
 dependencies {
 //    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-//    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
     implementation 'javax.servlet:jstl'
@@ -29,16 +29,11 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 //    runtimeOnly 'com.mysql:mysql-connector-j'
-//    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
     annotationProcessor 'org.projectlombok:lombok'
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//    testImplementation 'org.springframework.security:spring-security-test'
-
-//    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.31'
-//	compile group: 'org.apache.taglibs', name: 'taglibs-standard-impl', version: '1.2.5'
-//	providedRuntime group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
-//	compile group: 'javax.servlet', name: 'jstl'
+    testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {
