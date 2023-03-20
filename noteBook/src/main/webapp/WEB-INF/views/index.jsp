@@ -12,5 +12,9 @@
   </head>
   <body>
   $END$
+    <ul>
+      <li>Login Page</li>
+      <input type="button" value="login page" onclick="location.href='login.jsp'"/>
+    </ul>
   </body>
 </html>

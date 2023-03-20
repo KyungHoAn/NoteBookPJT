@@ -10,4 +10,10 @@ public class testController {
         System.out.println("test");
         return "index";
     }
+
+    @RequestMapping("/login")
+    public String login() {
+        System.out.println("login");
+        return "login";
+    }
 }
