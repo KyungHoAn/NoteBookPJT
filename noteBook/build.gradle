@@ -34,6 +34,10 @@ dependencies {
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
+
+    //Tiles Setting
+    implementation group: 'org.apache.tiles', name: 'tiles-jsp', version: '3.0.5'
+    implementation group: 'org.apache.tiles', name: 'tiles-core', version: '3.0.8'
 }
 
 tasks.named('test') {
