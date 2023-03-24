@@ -3175,3 +3175,7 @@ section {
   background: var(--color-primary);
   text-decoration: none;
 }
+
+a.btn-getstarted:hover {
+  text-decoration: underline;
+}
