@@ -25,7 +25,6 @@ public class UnivCertController {
     private String API_KEY;
 
     // 사용자 메일 인증
-    @RequestMapping("/")
     public Map<String, Object> mailCertify(@RequestParam Map<String, Object> params, HttpServletRequest req, HttpSession session) throws Exception {
         Map<String, Object> result = new HashMap<>();
 //        result.put("email","akh981216@wku.ac.kr");
