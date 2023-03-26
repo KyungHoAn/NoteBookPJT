@@ -25,14 +25,14 @@ public class UnivCertController {
     private String API_KEY;
 
     // 사용자 메일 인증
-//    @RequestMapping("/")
+    @RequestMapping("/")
     public Map<String, Object> mailCertify(@RequestParam Map<String, Object> params, HttpServletRequest req, HttpSession session) throws Exception {
         Map<String, Object> result = new HashMap<>();
 //        result.put("email","akh981216@wku.ac.kr");
 //        result.put("universityName","원광대학교");
 //        result.put("univ_check",true);
 
-        result = univCert.mailCertify(API_KEY,"akh981216@wonkwang.ac.kr","원광대학교",true);
+        result = univCert.mailCertify(API_KEY,"thekakt1@wonkwang.ac.kr","원광대학교",true);
 //        System.out.println(">>>>>>>>result<<<<<<<<");
 //        System.out.println(result);
         return result;

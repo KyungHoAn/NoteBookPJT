@@ -52,7 +52,6 @@
           <li><a href="index.html"><span>Home</span></a></li>
           <li><a href="blog.html">커뮤니티</a></li>
           <!-- <li><a href="inner-page.html">inner-page</a></li> -->
-          <li><a href="portfolio-details.html">portfolio</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle d-none"></i>
       </nav><!-- .navbar -->
@@ -103,14 +102,22 @@
             <!-- email 인증 -->
             <div class="field">
               <p class="control has-icons-left has-icons-right">
-                <input class="input" type="id" placeholder="School Email" style="width: 10cm">
+                <input class="input" type="id" placeholder="School Email" style="width: 10cm; margin-left: 3cm">
                 <span class="icon is-small is-left">
                   <i class="fas fa-envelope"></i>
                 </span>
                 <span class="icon is-small is-right">
                   <i class="fas fa-check"></i>
                 </span>
+                <button class="button is-primary is-light">이메일 인증</button>
               </p>
+            </div>
+
+            <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                    <input class="input" type="code" placeholder="Code" style="width: 10cm; margin-left: 2.6cm;">
+                    <Button class="button is-primary is-light">코드 인증</Button>
+                </p>
             </div>
 
             <!-- Password -->
@@ -122,9 +129,11 @@
                 </span>
               </p>
             </div>
-            <div>
-              <h6 class="title is-6">
-                <a>로그인</a>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input class="input" type="password" placeholder="Password Check" style="width: 10cm; margin-left: 3.4cm">
+                    <Button class="button is-primary is-light">패스워드 인증</Button>
+                </p>
             </div>
           </div>
         </div>
