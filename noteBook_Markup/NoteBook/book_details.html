@@ -30,6 +30,9 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
 </head>
 
 <body>
@@ -65,10 +68,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Book Details</h2>
+          <h2>책 세부정보</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Book Details</li>
+            <li>책 세부정보</li>
           </ol>
         </div>
 
@@ -117,22 +120,88 @@
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
+              <h2>책의 상세 내용</h2>
               <p>
                 Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
               </p>
             </div>
           </div>
-
         </div>
 
+        <div>
+          <!-- 게시글 작성-->
+          <article class="media">
+            <figure class="media-left">
+              <p class="image is-64x64">
+                <img src="https://bulma.io/images/placeholders/128x128.png">
+              </p>
+            </figure>
+            <div class="media-content">
+              <div class="field">
+                <p class="control">
+                  <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                </p>
+              </div>
+              <nav class="level">
+                <div class="level-left">
+                  <div class="level-item">
+                    <a class="button is-info">Submit</a>
+                  </div>
+                </div>
+                <div class="level-right">
+                  <div class="level-item">
+                    <label class="checkbox">
+                      <input type="checkbox"> Press enter to submit
+                    </label>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </article>
+
+          <!-- 게시글 -->
+          <article class="media">
+            <figure class="media-left">
+              <p class="image is-64x64">
+                <img src="https://bulma.io/images/placeholders/128x128.png">
+              </p>
+            </figure>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>홍길동</strong> <small>@wonkang</small> <small>31m</small>
+                  <br>
+                  책을 사고 싶습니다!
+                </p>
+              </div>
+              <nav class="level is-mobile">
+                <div class="level-left">
+                  <a class="level-item">
+                    <span class="icon is-small"><i class="fas fa-reply"></i></span>
+                  </a>
+                  <a class="level-item">
+                    <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+                  </a>
+                  <a class="level-item">
+                    <span class="icon is-small"><i class="fas fa-heart"></i></span>
+                  </a>
+                </div>
+              </nav>
+            </div>
+            <div class="media-right">
+              <button class="delete"></button>
+            </div>
+          </article>
+          
+
+        </div>
       </div>
     </section><!-- End Portfolio Details Section -->
 
   </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer" style="padding: 3rem 0rem 0rem; position: absolute; bottom: 0; left:0; right: 0;">
+    <footer id="footer" class="footer">
 
       <div class="footer-legal text-center">
         <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
