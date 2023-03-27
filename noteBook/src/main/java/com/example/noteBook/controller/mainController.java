@@ -1,5 +1,6 @@
 package com.example.NoteBook.controller;
 
+import com.example.NoteBook.common.Url;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -10,12 +11,12 @@ public class MainController {
     public String test() {
         System.out.println("test");
 
-        return "index";
+        return Url.AUTH.LOGIN;
     }
 
     @RequestMapping("/login")
     public String login() {
         System.out.println("login");
-        return "auth/login";
+        return Url.AUTH.JOIN;
     }
 }

@@ -1,11 +1,13 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: angyeongho
-  Date: 2023/03/23
-  Time: 11:43 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<script>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="utf-8" %>
+<%@ include file="/WEB-INF/template/constants.jsp"%>
+<script type="text/javascript">
+    console.log('hhihihihi')
 
+    $(document).ready(function (){
+        console.log('hhihihihi')
+
+        $("#insertLogin").click(function () {
+            alert('TESTTEST')
+        })
+    })
 </script>
