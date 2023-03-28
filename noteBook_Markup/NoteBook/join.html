@@ -33,6 +33,9 @@
   <!-- bulma CSS Framework-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.1.0.min.js"></script>
 </head>
 
 <body>
@@ -80,7 +83,7 @@
 
     <!-- ======= Login Section ======= -->
     <form>
-      <section class="inner-page" style="margin-top: 2.5cm;" id="join">
+      <section class="inner-page" id="join">
         <div class="container" data-aos="fade-up">
           <div class="section-header">
             
@@ -91,16 +94,16 @@
             <!-- 학교 인증 -->
             <div class="field">
               <p class="control has-icons-left">
-                <input class="input" type="university" placeholder="University" style="width: 10cm; margin-left: 2.6cm">
+                <input class="input" id="univ" name="univ" type="university" placeholder="University" style="width: 10cm; margin-left: 2.6cm">
                 <span class="icon is-small is-left">
                   <i class="fas fa-lock"></i>
                 </span>
-                <button class="button is-primary is-light">학교 인증</button>
+                <button type="button" class="button is-primary is-light" id="schoolCheck">학교 인증</button>
               </p>
             </div>
 
             <!-- email 인증 -->
-            <div class="field">
+            <div class="field" id="emailBox" style="display:none">
               <p class="control has-icons-left has-icons-right">
                 <input class="input" type="id" placeholder="School Email" style="width: 10cm; margin-left: 3cm">
                 <span class="icon is-small is-left">
@@ -109,32 +112,39 @@
                 <span class="icon is-small is-right">
                   <i class="fas fa-check"></i>
                 </span>
-                <button class="button is-primary is-light">이메일 인증</button>
+                <button type="button" class="button is-primary is-light" id="emailCheck">이메일 인증</button>
               </p>
             </div>
 
-            <div class="field">
+            <div class="field" id="codeBox" style="display:none">
                 <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="code" placeholder="Code" style="width: 10cm; margin-left: 2.6cm;">
-                    <Button class="button is-primary is-light">코드 인증</Button>
+                    <input class="input" id="code" name="code" type="code" placeholder="Code" style="width: 10cm; margin-left: 2.6cm;">
+                    <button type="button" class="button is-primary is-light" id="codeCheck">코드 인증</Button>
                 </p>
             </div>
 
             <!-- Password -->
-            <div class="field">
-              <p class="control has-icons-left">
-                <input class="input" type="password" placeholder="Password" style="width: 10cm">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-lock"></i>
-                </span>
-              </p>
-            </div>
-            <div class="field">
+            <div id="pwdBox" style="display:none">
+              <div class="field">
                 <p class="control has-icons-left">
-                    <input class="input" type="password" placeholder="Password Check" style="width: 10cm; margin-left: 3.4cm">
-                    <Button class="button is-primary is-light">패스워드 인증</Button>
+                  <input class="input" id="fPassword" name="fPassword" type="password" placeholder="Password" style="width: 10cm">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
                 </p>
+              </div>
+              <div class="field">
+                  <p class="control has-icons-left">
+                      <input class="input" id="sPassword" name="sPassword" type="password" placeholder="Password Check" style="width: 10cm; margin-left: 3.4cm">
+                      <button type="button" class="button is-primary is-light" id="pwdCheck">패스워드 인증</Button>
+                  </p>
+              </div>
             </div>
+
+            <div id="joinBox" class="gap-2 col-1 mx-auto" style="display:none; margin-top: 10px;">
+              <button class="btn btn-outline-dark" type="button">회원가입</button>
+            </div>
+
           </div>
         </div>
       </section><!-- End Inner Page -->
@@ -146,7 +156,7 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer" style="padding: 3rem 0rem 0rem; position: absolute; bottom: 0; left:0; right: 0;">
+  <footer id="footer" class="footer" style="padding: 0rem 0rem 0rem; position: absolute; bottom: 0; left:0; right: 0;">
 
     <div class="footer-legal text-center">
       <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
@@ -201,6 +211,27 @@
     
     login.css('display','none')
   }
+
+  $('#schoolCheck').click(function(){
+    let email = document.getElementById('emailBox');
+    email.style.display = 'block';
+  })
+
+  $('#emailCheck').click(function() {
+    let code = document.getElementById('codeBox');
+    code.style.display = 'block';
+  })
+  
+  $('#codeCheck').click(function() {
+    let pwd = document.getElementById('pwdBox');
+    pwd.style.display = 'block';
+  })
+
+  $('#pwdCheck').click(function() {
+    let join = document.getElementById('joinBox');
+    join.style.display = 'block';
+  })
+
 </script>
 
 </html>
