@@ -1,13 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="utf-8" %>
 <%@ include file="/WEB-INF/template/constants.jsp"%>
 <script type="text/javascript">
-    console.log('hhihihihi')
+    var receiverArr = new Array();
 
-    $(document).ready(function (){
-        console.log('hhihihihi')
-
-        $("#insertLogin").click(function () {
-            alert('TESTTEST')
-        })
+    $("#insertLogin").click(function () {
+        let form = $('#infoForm')[0];
+        let data = new FormData(form);
     })
 </script>
