@@ -6,6 +6,8 @@
 </ul>
 
 <div>
-  <input name="uploadFiles" type="file" multiple>
-  <button class="uploadBtn" id="uploadBtn">Upload</button>
+  <form method="post" enctype="multipart/form-data">
+    <input name="uploadFiles" type="file" multiple>
+    <button type="button" class="uploadBtn" id="uploadBtn">Upload</button>
+  </form>
 </div>
