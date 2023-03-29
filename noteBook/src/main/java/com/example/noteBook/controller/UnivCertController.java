@@ -31,7 +31,7 @@ public class UnivCertController {
 //        result.put("universityName","원광대학교");
 //        result.put("univ_check",true);
 
-        result = univCert.mailCertify(API_KEY,"thekakt1@wonkwang.ac.kr","원광대학교",true);
+        result = univCert.mailCertify(API_KEY,"akh981216@wonkwang.ac.kr","원광대학교",true);
 //        System.out.println(">>>>>>>>result<<<<<<<<");
 //        System.out.println(result);
         return result;

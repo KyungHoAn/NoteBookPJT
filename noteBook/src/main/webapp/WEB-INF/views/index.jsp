@@ -4,3 +4,8 @@
   <li>Login Page</li>
   <input type="button" value="login page" onclick="location.href='login.jsp'"/>
 </ul>
+
+<div>
+  <input name="uploadFiles" type="file" multiple>
+  <button class="uploadBtn" id="uploadBtn">Upload</button>
+</div>
