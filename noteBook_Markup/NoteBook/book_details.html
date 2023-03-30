@@ -51,12 +51,13 @@
         <ul>
           <li><a href="index.html"><span>Home</span></a></li>
           <li><a href="blog.html">커뮤니티</a></li>
-          
+          <li><a href="#">캠퍼스 맵</a></li>
+          <li><a href="myPage.html">myPage</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle d-none"></i>
       </nav><!-- .navbar -->
 
-      <a class="btn-getstarted scrollto" href="index.html#about">Get Started</a>
+      <a class="btn-getstarted scrollto" href="index.html#about">로그아웃</a>
 
     </div>
   </header><!-- End Header -->
@@ -84,12 +85,12 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-8">
+          <div class="col-lg-6" style="margin:0 auto">
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/app-1.jpg" alt="">
+                  <img src="https://gimg.gilbut.co.kr/book/BN003654/rn_view_BN003654.jpg" alt="" style="width: 400px;">
                 </div>
 
                 <div class="swiper-slide">
@@ -111,18 +112,20 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info">
-              <h3>시나공 정보처리기사</h3>
+              <h3>시나공 정보처리기사<button type="button" id="deleteBook" class="btn btn-outline-secondary" style="float: right;">책 삭제</button></h3>
               <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                <li><strong>Category</strong>: BOOK</li>
+                <li><strong>책</strong>: 시나공 정보처리기사 실기</li>
+                <li><strong>저자</strong>: 김철수</li>
+                <li><strong>출판사</strong>: 00출판사</li>
+                <li><strong>가격</strong>: 2000원</li>
+                <li><strong>판매자</strong>: 홍길동</li>
               </ul>
             </div>
             <div class="portfolio-description">
               <h2>책의 상세 내용</h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                12pg 노트필기한거 말고는 깨끗한 책입니다.!! 
               </p>
             </div>
           </div>
@@ -130,7 +133,7 @@
 
         <div>
           <!-- 게시글 작성-->
-          <article class="media">
+          <article class="media" style="margin-bottom:30px">
             <figure class="media-left">
               <p class="image is-64x64">
                 <img src="https://bulma.io/images/placeholders/128x128.png">
@@ -148,50 +151,83 @@
                     <a class="button is-info">Submit</a>
                   </div>
                 </div>
-                <div class="level-right">
-                  <div class="level-item">
-                    <label class="checkbox">
-                      <input type="checkbox"> Press enter to submit
-                    </label>
-                  </div>
-                </div>
               </nav>
             </div>
           </article>
 
           <!-- 게시글 -->
-          <article class="media">
-            <figure class="media-left">
-              <p class="image is-64x64">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
-              </p>
-            </figure>
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <strong>홍길동</strong> <small>@wonkang</small> <small>31m</small>
-                  <br>
-                  책을 사고 싶습니다!
+          <div class="comments">
+            <div class="media">
+              <figure class="media-left">
+                <p class="image is-64x64">
+                  <img src="https://bulma.io/images/placeholders/128x128.png">
                 </p>
-              </div>
-              <nav class="level is-mobile">
-                <div class="level-left">
-                  <a class="level-item">
-                    <span class="icon is-small"><i class="fas fa-reply"></i></span>
-                  </a>
-                  <a class="level-item">
-                    <span class="icon is-small"><i class="fas fa-retweet"></i></span>
-                  </a>
-                  <a class="level-item">
-                    <span class="icon is-small"><i class="fas fa-heart"></i></span>
-                  </a>
+              </figure>
+              
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>홍길동</strong> <small>@wonkang</small> <small>31m</small>
+                    <br>
+                    책을 사고 싶습니다!
+                  </p>
                 </div>
-              </nav>
+
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <a class="level-item">
+                      <span class="icon is-small"><i class="fas fa-reply"></i></span>
+                    </a>
+                    <a class="level-item">
+                      <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+                    </a>
+                    <a class="level-item">
+                      <span class="icon is-small"><i class="fas fa-heart"></i></span>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+              
+              <div class="media-right">
+                <button class="delete"></button>
+              </div>
             </div>
-            <div class="media-right">
-              <button class="delete"></button>
+            <div class="media">
+              <figure class="media-left">
+                <p class="image is-64x64">
+                  <img src="https://bulma.io/images/placeholders/128x128.png">
+                </p>
+              </figure>
+              
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>홍길순</strong> <small>@wonkang</small> <small>31m</small>
+                    <br>
+                    책을 사고 싶습니다!
+                  </p>
+                </div>
+
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                    <a class="level-item">
+                      <span class="icon is-small"><i class="fas fa-reply"></i></span>
+                    </a>
+                    <a class="level-item">
+                      <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+                    </a>
+                    <a class="level-item">
+                      <span class="icon is-small"><i class="fas fa-heart"></i></span>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+              
+              <div class="media-right">
+                <button class="delete"></button>
+              </div>
             </div>
-          </article>
+          </div><!--End 커뮤니티 comments-->
           
 
         </div>
@@ -211,10 +247,6 @@
               &copy; Copyright <strong><span>HeroBiz</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
-              <!-- All the links in the footer should remain intact. -->
-              <!-- You can delete the links only if you purchased the pro version. -->
-              <!-- Licensing information: https://bootstrapmade.com/license/ -->
-              <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
               Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
             </div>
           </div>

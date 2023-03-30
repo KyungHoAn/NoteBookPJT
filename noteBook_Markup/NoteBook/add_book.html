@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Join Page</title>
+  <title>책 등록 페이지</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -25,17 +25,19 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <!-- Variables CSS Files. Uncomment your preferred color scheme -->
   <link href="assets/css/variables.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- bulma CSS Framework-->
+  <!--Bulma css framework-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.1.0.min.js"></script>
+
 </head>
 
 <body>
@@ -55,109 +57,89 @@
           <li><a href="index.html"><span>Home</span></a></li>
           <li><a href="blog.html">커뮤니티</a></li>
           <li><a href="#">캠퍼스 맵</a></li>
-          <!-- <li><a href="inner-page.html">inner-page</a></li> -->
+          <li><a href="myPage.html">myPage</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle d-none"></i>
       </nav><!-- .navbar -->
 
-      <a class="btn-getstarted scrollto" href="login.html">Login Page</a>
+      <a class="btn-getstarted scrollto" href="index.html#about">로그아웃</a>
 
     </div>
   </header><!-- End Header -->
 
   <main id="main">
-
+    
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Join Page</h2>
+          <h2>책 등록</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Join Page</li>
+            <li>책 등록</li>
           </ol>
         </div>
 
       </div>
     </div><!-- End Breadcrumbs -->
 
-    <!-- ======= Login Section ======= -->
-    <form>
-      <section class="inner-page" id="join">
-        <div class="container" data-aos="fade-up">
-          <div class="section-header">
-            
-            <div class="content is-medium">
-              <h1>회원가입</h1>
-            </div>
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
 
-            <!-- 학교 인증 -->
-            <div class="field">
-              <p class="control has-icons-left">
-                <input class="input" id="univ" name="univ" type="university" placeholder="University" style="width: 10cm; margin-left: 2.6cm">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-lock"></i>
-                </span>
-                <button type="button" class="button is-primary is-light" id="schoolCheck">학교 인증</button>
-              </p>
-            </div>
-
-            <!-- email 인증 -->
-            <div class="field" id="emailBox" style="display:none">
-              <p class="control has-icons-left has-icons-right">
-                <input class="input" type="id" placeholder="School Email" style="width: 10cm; margin-left: 3cm">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-envelope"></i>
-                </span>
-                <span class="icon is-small is-right">
-                  <i class="fas fa-check"></i>
-                </span>
-                <button type="button" class="button is-primary is-light" id="emailCheck">이메일 인증</button>
-              </p>
-            </div>
-
-            <div class="field" id="codeBox" style="display:none">
-                <p class="control has-icons-left has-icons-right">
-                    <input class="input" id="code" name="code" type="code" placeholder="Code" style="width: 10cm; margin-left: 2.6cm;">
-                    <button type="button" class="button is-primary is-light" id="codeCheck">코드 인증</Button>
-                </p>
-            </div>
-
-            <!-- Password -->
-            <div id="pwdBox" style="display:none">
-              <div class="field">
-                <p class="control has-icons-left">
-                  <input class="input" id="fPassword" name="fPassword" type="password" placeholder="Password" style="width: 10cm">
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-lock"></i>
-                  </span>
-                </p>
-              </div>
-              <div class="field">
-                  <p class="control has-icons-left">
-                      <input class="input" id="sPassword" name="sPassword" type="password" placeholder="Password Check" style="width: 10cm; margin-left: 3.4cm">
-                      <button type="button" class="button is-primary is-light" id="pwdCheck">패스워드 인증</Button>
-                  </p>
-              </div>
-            </div>
-
-            <div id="joinBox" class="gap-2 col-1 mx-auto" style="display:none; margin-top: 10px;">
-              <button class="btn btn-outline-dark" type="button" id="joinBtn">회원가입</button>
-            </div>
-
-          </div>
+        <div class="section-header">
+          <h2>등록할 책 정보</h2>
+          <div>
+            <input class="input is-normal" type="text" style="width: 15cm" placeholder="ISBN 입력">
+            <button type="button" id="searchBtn" class="btn btn-outline-secondary">책 검색하기</button></div>
         </div>
-      </section><!-- End Inner Page -->
-    </form>
 
-    <!-- 회원가입 Section -->
-    
+        <!-- ======= Book Section ======= -->
+        <div style="margin-left: 150px; display:none" id="detail_book">
+            <section id="about" class="about">
+                <div class="container" data-aos="fade-up">
+                
+                <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
+        
+                    <div class="col-lg-4">
+                        <div class="about-img">
+                            <img src="https://gimg.gilbut.co.kr/book/BN003654/rn_view_BN003654.jpg" class="img-fluid" alt="" style="width:200p; height:250px;">
+                        </div>
+                    </div>
+        
+                    <div class="col-lg-7">
+                        <h3 class="pt-0 pt-lg-5">책 정보</h3>
+            
+                        <!-- Tab Content -->
+                        <div class="tab-content">
+            
+                            <div class="tab-pane fade show active" id="tab1">
+                                <div>
+                                    <li><strong>책 제목</strong>: 시나공 정보처리기사 실기</li>
+                                    <li><strong>저자</strong>: 김정준, 강윤석, 김용값, 김우경</li>
+                                    <li><strong>출판사</strong>: 길벗안앤디</li>
+                                    <li><strong>책 가격</strong>: 35,000</li>
+                                    <li><strong>판매 가격</strong>: <input type="text" style="height: 20px;"> </li>
+                                    <li><strong>판매 책 정보</strong>:</li>
+                                    <textarea rows="4" cols="70"></textarea>
+                                </div>
+                            </div><!-- End Tab 1 Content -->
+                        </div>
+                        <div style="margin-top: 50px;">
+                            <button type="button" class="btn btn-outline-secondary btn-lg" onClick="location.href='myPage.html'">책정보 저장하기</button>
+                        </div>
+                    </div>
+                </div>
+            </section><!-- End About Section -->
+        </div>
+      </div>
+    </section><!-- End Services Section -->
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer" style="padding: 0rem 0rem 0rem; position: absolute; bottom: 0; left:0; right: 0;">
+  <!-- <footer id="footer" class="footer" style="padding: 0rem 0rem 0rem; position: auto; bottom: 0px; left:0; right: 0;">
 
     <div class="footer-legal text-center">
       <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
@@ -167,10 +149,6 @@
             &copy; Copyright <strong><span>HeroBiz</span></strong>. All Rights Reserved
           </div>
           <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
             Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
           </div>
         </div>
@@ -186,8 +164,8 @@
       </div>
     </div>
 
-  </footer><!-- End Footer -->
-
+  </footer> -->
+  <!-- End Footer -->
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <div id="preloader"></div>
@@ -206,37 +184,10 @@
 </body>
 
 <script type="text/javascript">
-  function test() {
-    let login = document.getElementById("login");
-    let join = document.getElementById("join");
-    
-    login.css('display','none')
-  }
-
-  $('#schoolCheck').click(function(){
-    let email = document.getElementById('emailBox');
-    email.style.display = 'block';
-  })
-
-  $('#emailCheck').click(function() {
-    let code = document.getElementById('codeBox');
-    code.style.display = 'block';
-  })
-  
-  $('#codeCheck').click(function() {
-    let pwd = document.getElementById('pwdBox');
-    pwd.style.display = 'block';
-  })
-
-  $('#pwdCheck').click(function() {
-    let join = document.getElementById('joinBox');
-    join.style.display = 'block';
-    
-  })
-  $('#joinBtn').click(function() {
-    document.location.href='index.html';
-  })
-
+    $('#searchBtn').click(function() {
+        let book = document.getElementById('detail_book');
+        book.style.display = 'block';
+    })
 </script>
 
 </html>
