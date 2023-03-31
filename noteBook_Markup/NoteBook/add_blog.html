@@ -84,31 +84,42 @@
     <section id="blog" class="blog">
       <div class="container" data-aos="fade-up">
         <div class="row g-5">
-          <div class="col-lg-8">
+          <div>
             <article class="blog-details" style="margin-bottom: 50px;">
-              <h2 class="title">공대 네트워크책 공구할 사람 구합니다.</h2>
+              <h2 class="title">제목</h2>
+              <div style="margin-top: 10px;">
+                <input class="input is-rounded" type="text" placeholder="제목 입력">
+              </div>
 
-              <div class="meta-top">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2020-01-01">Jan 1, 2022</time></a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                </ul>
-              </div><!-- End meta top -->
+              <h3 class="title">내용</h3>
 
               <div class="content">
-                <p>
-                  ㅈㄱㄴ 네트워크 책 공구할 사람 찾습니다. 정가 30000원인데 여러명이서 같이하면 인당 20000원에 가지고 가실 수 있어요!
-                </p>
+                <textarea rows="5" cols="145"></textarea>
               </div><!-- End post content -->
+              
+              <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck1">책</label>
 
-              <div class="meta-bottom">
-                <i class="bi bi-tags"></i>
-                <ul class="tags">
-                  <li><a href="#">책</a></li>
-                  <li><a href="#">공구</a></li>
-                </ul>
-              </div><!-- End meta bottom -->
+                <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck2">스터디</label>
+
+                <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck3">칭찬방</label>
+
+                <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck4">비난방</label>
+
+                <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck5">지도</label>
+
+                <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck6">공구</label>
+              </div>
+
+              <div style="margin-top: 40px;">
+                <button type="button" class="btn btn-outline-secondary btn-lg" onClick="location.href='blog.html'">커뮤니티 올리기</button>
+              </div>
 
             </article><!-- End blog post -->
           </div>
