@@ -8,4 +8,5 @@ public interface BookService {
     Map<String, Object> getBook(Map<String, Object> params) throws Exception;
     Map<String, Object> deleteBook(Map<String, Object> params) throws Exception;
     Map<String, Object> updateBook(Map<String, Object> params) throws Exception;
+    String searchBook(String url) throws Exception;
 }
