@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/template/constants.jsp"%>
 <ul>
   <li>Login Page</li>
-  <input type="button" value="login page" onclick="location.href='login.jsp'"/>
+  <input type="button" value="login page" onclick="location.href='loginTest.jsp'"/>
 </ul>
 
 <div>
