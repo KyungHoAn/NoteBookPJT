@@ -545,7 +545,7 @@ section {
 .hero-animated {
     width: 100%;
     min-height: 50vh;
-    background: url("../img/hero-bg.png") center center;
+    /*background: url("../img/hero-bg.png") center center;*/
     background-size: cover;
     position: relative;
     padding: 120px 0 60px;
@@ -667,7 +667,7 @@ section {
     width: 100%;
     padding: 0;
     background: var(--color-black);
-    background: url("../img/hero-bg.png") center center;
+    /*background: url("../img/hero-bg.png") center center;*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -961,7 +961,7 @@ section {
 .hero-static {
     width: 100%;
     min-height: 50vh;
-    background: url("../img/hero-bg.png") center center;
+    /*background: url("../img/hero-bg.png") center center;*/
     background-size: cover;
     position: relative;
     padding: 120px 0 60px;
