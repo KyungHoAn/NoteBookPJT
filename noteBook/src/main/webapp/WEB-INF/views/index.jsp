@@ -1,5 +1,28 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/WEB-INF/template/constants.jsp"%>
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top" data-scrollto-offset="0">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+
+    <a onclick="location.href='/'" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+      <h1>공책<span>.</span></h1>
+    </a>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a onclick="location.href='/'"><span>Home</span></a></li>
+        <li><a onclick="location.href='/community'">커뮤니티</a></li>
+        <li><a onclick="location.href='/map'">캠퍼스 맵</a></li>
+        <li><a onclick="location.href='/myPage'">myPage</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle d-none"></i>
+    </nav>
+
+    <a class="btn-getstarted scrollto" onclick="location.href='/login'">로그인</a>
+
+  </div>
+</header><!-- End Header -->
+
 <section id="hero-static" class="hero-static d-flex align-items-center">
   <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
     <h2><span>공책</span>에 오신것을 환영합니다.</h2>
@@ -35,7 +58,7 @@
               <div class="icon">
                 <i class="bi bi-activity"></i>
               </div>
-              <a href="book_details.html" class="stretched-link">
+              <a onclick="location.href='/getBook'" class="stretched-link">
                 <h3>정보처리 기사</h3>
               </a>
               <p>원광대학교</p>

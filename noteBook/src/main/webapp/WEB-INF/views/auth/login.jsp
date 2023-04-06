@@ -1,19 +1,120 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" %>
 <%@ include file="/WEB-INF/template/constants.jsp"%>
-<h1>LOGIN PAGE TEST</h1>
-<form id="infoForm" enctype="multipart/form-data" method="post">
-    <div>
-        <input type="text" id="id" name="id" placeholder="아이디를 입력해주세요">
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top" data-scrollto-offset="0">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+        <a onclick="location.href='/'" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+            <h1>공책<span>.</span></h1>
+        </a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a onclick="location.href='/'"><span>Home</span></a></li>
+                <li><a onclick="location.href='/community'">커뮤니티</a></li>
+                <li><a onclick="location.href='/map'">캠퍼스 맵</a></li>
+                <!-- <li><a href="inner-page.html">inner-page</a></li> -->
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle d-none"></i>
+        </nav><!-- .navbar -->
+
+        <a class="btn-getstarted scrollto" onclick="">Get Started</a>
+
     </div>
-    <br>
-    <div>
-        <input type="text" id="pwd" name="pwd" placeholder="비밀번호를 입력해주세요">
+</header><!-- End Header -->
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Login Page</h2>
+                <ol>
+                    <li><a onclick="location.href='/'">Home</a></li>
+                    <li>Login Page</li>
+                </ol>
+            </div>
+
+        </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Login Section ======= -->
+    <form>
+        <section class="inner-page" style="margin-top: 2cm" id="login">
+            <div class="container" data-aos="fade-up">
+                <div class="section-header">
+
+                    <div class="content is-medium">
+                        <h1>로그인</h1>
+                    </div>
+
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input class="input" type="id" placeholder="Id" style="width: 10cm">
+                            <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+                            <span class="icon is-small is-right">
+                  <i class="fas fa-check"></i>
+                </span>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control has-icons-left">
+                            <input class="input" type="password" placeholder="Password" style="width: 10cm">
+                            <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+                        </p>
+                    </div>
+
+                    <div>
+                        <h6 class="title is-6">
+                            <a onclick="location.href='/join'">회원가입</a>
+                            &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
+                            <a>비밀번호 찾기</a>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Inner Page -->
+    </form>
+
+    <!-- 회원가입 Section -->
+
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer" style="padding: 3rem 0rem 0rem; position: absolute; bottom: 0; left:0; right: 0;">
+
+    <div class="footer-legal text-center">
+        <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+
+            <div class="d-flex flex-column align-items-center align-items-lg-start">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>HeroBiz</span></strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                </div>
+            </div>
+
+            <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+        </div>
     </div>
-    <br>
-    <div>
-        <input type="text" id="nick" name="nick" placeholder="닉네임을 입력해주세요">
-    </div>
-</form>
-<button id="insertLogin">
-    등록
-</button>
+
+</footer><!-- End Footer -->
+
+<a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<div id="preloader"></div>
