@@ -10,6 +10,10 @@ public final class Url {
         public static final String LOGIN_JSP        = TILES_ROOT+"/auth/login";
 
         public static final String JOIN_JSP         = TILES_ROOT+"/auth/join";
+
+        public static final String JOIN             = "/auth/join";
+
+        public static final String AUTH_JOIN        = "/auth/userJoin";
     }
 
     public static final class LIST {

@@ -4,9 +4,7 @@ import com.example.NoteBook.common.Url;
 import com.example.NoteBook.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -36,4 +34,13 @@ public class MainController {
     public String join(@RequestParam Map<String, Object> params) throws Exception {
         return Url.AUTH.JOIN_JSP;
     }
+
+    @ResponseBody
+    @PostMapping(value = Url.AUTH.AUTH_JOIN)
+    public Map<String, Object> authSchool(@RequestParam Map<String, Object> params) throws Exception {
+        Map<String, Object> result = new HashMap<>();
+        System.out.println(params);
+        return result;
+    }
+
 }

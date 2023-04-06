@@ -34,7 +34,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <h2>Join Page</h2>
                 <ol>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a onclick="location.href='/'">Home</a></li>
                     <li>Join Page</li>
                 </ol>
             </div>
@@ -43,7 +43,7 @@
     </div><!-- End Breadcrumbs -->
 
     <!-- ======= Login Section ======= -->
-    <form>
+    <form id="adminInfo" method="post">
         <section class="inner-page" id="join">
             <div class="container" data-aos="fade-up">
                 <div class="section-header">
@@ -57,8 +57,8 @@
                         <p class="control has-icons-left">
                             <input class="input" id="univ" name="univ" type="university" placeholder="University" style="width: 10cm; margin-left: 2.6cm">
                             <span class="icon is-small is-left">
-                  <i class="fas fa-lock"></i>
-                </span>
+                              <i class="fas fa-lock"></i>
+                            </span>
                             <button type="button" class="button is-primary is-light" id="schoolCheck">학교 인증</button>
                         </p>
                     </div>
@@ -66,13 +66,13 @@
                     <!-- email 인증 -->
                     <div class="field" id="emailBox" style="display:none">
                         <p class="control has-icons-left has-icons-right">
-                            <input class="input" type="id" placeholder="School Email" style="width: 10cm; margin-left: 3cm">
+                            <input class="input" type="id" id="id" name="id" placeholder="School Email" style="width: 10cm; margin-left: 3cm">
                             <span class="icon is-small is-left">
-                  <i class="fas fa-envelope"></i>
-                </span>
+                              <i class="fas fa-envelope"></i>
+                            </span>
                             <span class="icon is-small is-right">
-                  <i class="fas fa-check"></i>
-                </span>
+                              <i class="fas fa-check"></i>
+                            </span>
                             <button type="button" class="button is-primary is-light" id="emailCheck">이메일 인증</button>
                         </p>
                     </div>
@@ -96,14 +96,14 @@
                             <p class="control has-icons-left">
                                 <input class="input" id="fPassword" name="fPassword" type="password" placeholder="Password" style="width: 10cm">
                                 <span class="icon is-small is-left">
-                    <i class="fas fa-lock"></i>
-                  </span>
+                                    <i class="fas fa-lock"></i>
+                                  </span>
                             </p>
                         </div>
                         <div class="field">
                             <p class="control has-icons-left">
-                                <input class="input" id="sPassword" name="sPassword" type="password" placeholder="Password Check" style="width: 10cm; margin-left: 3.4cm">
-                                <button type="button" class="button is-primary is-light" id="pwdCheck">패스워드 인증</Button>
+                                <input class="input" id="sPassword" name="sPassword" type="text" placeholder="Password Check" style="width: 10cm; margin-left: 3.4cm">
+                                <button type="button" class="button is-primary is-light" id="pwdCheckBtn">패스워드 인증</Button>
                             </p>
                         </div>
                     </div>
