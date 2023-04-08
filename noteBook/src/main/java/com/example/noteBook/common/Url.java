@@ -25,7 +25,7 @@ public final class Url {
 
         public static final String GETBOOK_JSP      = TILES_ROOT+"/myPage/getBook";
 
-
+        public static final String ADDBOOK          = "/addbook";
     }
 
     public static final class BLOG {

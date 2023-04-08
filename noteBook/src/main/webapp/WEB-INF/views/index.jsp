@@ -11,14 +11,14 @@
     <nav id="navbar" class="navbar">
       <ul>
         <li><a onclick="location.href='/'"><span>Home</span></a></li>
-        <li><a onclick="location.href='/community'">커뮤니티</a></li>
-        <li><a onclick="location.href='/map'">캠퍼스 맵</a></li>
-        <li><a onclick="location.href='/myPage'">myPage</a></li>
+        <li><a onclick="location.href='/communityView'">커뮤니티</a></li>
+        <li><a onclick="location.href='/mapView'">캠퍼스 맵</a></li>
+        <li><a onclick="location.href='/myPageView'">myPage</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle d-none"></i>
     </nav>
 
-    <a class="btn-getstarted scrollto" onclick="location.href='/login'">로그인</a>
+    <a class="btn-getstarted scrollto" onclick="location.href='/loginView'">로그인</a>
 
   </div>
 </header><!-- End Header -->
@@ -58,7 +58,7 @@
               <div class="icon">
                 <i class="bi bi-activity"></i>
               </div>
-              <a onclick="location.href='/getBook'" class="stretched-link">
+              <a onclick="location.href='/getBookView'" class="stretched-link">
                 <h3>정보처리 기사</h3>
               </a>
               <p>원광대학교</p>

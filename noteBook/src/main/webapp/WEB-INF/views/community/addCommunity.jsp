@@ -12,9 +12,9 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a onclick="location.href='/'"><span>Home</span></a></li>
-                <li><a onclick="location.href='/community'">커뮤니티</a></li>
-                <li><a onclick="location.href='/map'">캠퍼스 맵</a></li>
-                <li><a onclick="location.href='/myPage'">myPage</a></li>
+                <li><a onclick="location.href='/communityView'">커뮤니티</a></li>
+                <li><a onclick="location.href='/mapView'">캠퍼스 맵</a></li>
+                <li><a onclick="location.href='/myPageView'">myPage</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle d-none"></i>
         </nav><!-- .navbar -->
@@ -34,7 +34,7 @@
                 <h2>커뮤니티 상세</h2>
                 <ol>
                     <li><a onclick="location.href='/'">Home</a></li>
-                    <li><a onclick="location.href='/community'">커뮤니티</a></li>
+                    <li><a onclick="location.href='/communityView'">커뮤니티</a></li>
                     <li>커뮤니티 상세</li>
                 </ol>
             </div>

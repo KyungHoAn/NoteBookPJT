@@ -11,8 +11,8 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a onclick="location.href='/'"><span>Home</span></a></li>
-                <li><a onclick="location.href='/community'">커뮤니티</a></li>
-                <li><a onclick="location.href='/map'">캠퍼스 맵</a></li>
+                <li><a onclick="location.href='/communityView'">커뮤니티</a></li>
+                <li><a onclick="location.href='/mapView'">캠퍼스 맵</a></li>
                 <!-- <li><a href="inner-page.html">inner-page</a></li> -->
             </ul>
             <i class="bi bi-list mobile-nav-toggle d-none"></i>
@@ -72,7 +72,7 @@
 
                     <div>
                         <h6 class="title is-6">
-                            <a onclick="location.href='/join'">회원가입</a>
+                            <a onclick="location.href='/joinView'">회원가입</a>
                             &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
                             <a>비밀번호 찾기</a>
                         </h6>
