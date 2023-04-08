@@ -7,73 +7,26 @@
     $("#schoolCheck").click(function() {
         let univName = $("#univ").val();
         let data = {"univName":univName};
-
-        $.ajax({
-            type: "POST",
-            enctype: 'multipart/form-data',
-            url: "/auth/userJoin",
-            data: data,
-            success: function (result) {
-                console.log("등록완료");
-            },
-            error: function(e) {
-                console.log('ERROR : ', e);
-            }
-        });
+        userJoin(data);
     });
 
     $("#emailCheck").click(function () {
         let id = $("#id").val();
         let data = {"email":id};
 
-        $.ajax({
-            type: "POST",
-            enctype: 'multipart/form-data',
-            url: "/auth/userJoin",
-            data: data,
-            success: function (result) {
-                console.log("등록완료");
-            },
-            error: function (e) {
-                console.log('ERROR : ', e);
-            }
-        });
+        userJoin(data);
     });
 
     $("#codeCheck").click(function () {
         let code = $("#code").val();
         let data = {"code":code};
-
-        $.ajax({
-            type: "POST",
-            enctype: 'multipart/form-data',
-            url: "/auth/userJoin",
-            data: data,
-            success: function (result) {
-                console.log("코드 인증 완료")
-            },
-            error: function (e) {
-                console.log('ERROR : ', e);
-            }
-        })
+        userJoin(data);
     })
 
     $("#nickBtn").click(function () {
         let nick = $("#nick").val();
         let data = {"nick": nick};
-
-        $.ajax({
-            type: "POST",
-            enctype: 'multipart/form-data',
-            url: "/auth/userJoin",
-            data: data,
-            success: function (result) {
-                console.log("닉네임 사용 가능")
-            },
-            error: function (e) {
-                console.log("ERROR : ", e);
-            }
-        })
+        userJoin(data);
     })
 
     $("#pwdCheckBtn").click(function () {
@@ -82,18 +35,7 @@
 
         if(firstPw === secondPw) {
             let data = {"firstPw": firstPw};
-            $.ajax({
-                type: "POST",
-                enctype: 'multipart/form-data',
-                url: "/auth/userJoin",
-                data: data,
-                success: function (result) {
-                    console.log("닉네임 사용 가능")
-                },
-                error: function (e) {
-                    console.log("ERROR : ", e);
-                }
-            })
+            userJoin(data);
             $('#pwdCheckBtn').click(function() {
                 let join = document.getElementById('joinBox');
                 join.style.display = 'block';
@@ -102,6 +44,23 @@
             console.log('ERROR')
         }
     })
+
+    function userJoin(data) {
+        console.log(data)
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "/auth/userJoin",
+            data: data,
+            success: function (result) {
+                console.log("SUCCESS");
+            },
+            error: function (e) {
+                console.log("ERROR : ", e);
+            }
+        })
+
+    }
 
     function test() {
         let login = document.getElementById("login");

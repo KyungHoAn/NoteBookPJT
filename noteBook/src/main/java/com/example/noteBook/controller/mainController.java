@@ -22,7 +22,7 @@ public class MainController {
     }
 
     @GetMapping("/login")
-    public String login(@RequestParam Map<String, Object> param) throws Exception {
+    public String loginView(@RequestParam Map<String, Object> param) throws Exception {
         Map<String, Object> result = new HashMap<>();
         System.out.println("login");
         authService.userInsert(result);
@@ -31,7 +31,7 @@ public class MainController {
     }
 
     @GetMapping("/join")
-    public String join(@RequestParam Map<String, Object> params) throws Exception {
+    public String joinView(@RequestParam Map<String, Object> params) throws Exception {
         return Url.AUTH.JOIN_JSP;
     }
 

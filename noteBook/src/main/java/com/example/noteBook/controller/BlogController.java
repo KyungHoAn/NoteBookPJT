@@ -11,13 +11,13 @@ import java.util.Map;
 public class BlogController {
 
     @GetMapping("/community")
-    public String communityList(@RequestParam Map<String, Object> params) throws Exception {
+    public String communityView(@RequestParam Map<String, Object> params) throws Exception {
 
         return Url.BLOG.COMMUNITY_JSP;
     }
 
     @GetMapping("/getCommunity")
-    public String getCommunity(@RequestParam Map<String, Object> params) throws Exception {
+    public String getCommunityView(@RequestParam Map<String, Object> params) throws Exception {
         return Url.BLOG.GETCOMMUNITY_JSP;
     }
 

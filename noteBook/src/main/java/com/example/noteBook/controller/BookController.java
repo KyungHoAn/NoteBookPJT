@@ -10,12 +10,12 @@ import java.util.Map;
 @Controller
 public class BookController {
     @GetMapping("/addBook")
-    public String addBook(@RequestParam Map<String, Object> params) throws Exception {
+    public String addBookView(@RequestParam Map<String, Object> params) throws Exception {
         return Url.BOOK.ADDBOOK_JSP;
     }
 
     @GetMapping("/getBook")
-    public String getBook(@RequestParam Map<String, Object> params) throws Exception {
+    public String getBookView(@RequestParam Map<String, Object> params) throws Exception {
         return Url.BOOK.GETBOOK_JSP;
     }
 }

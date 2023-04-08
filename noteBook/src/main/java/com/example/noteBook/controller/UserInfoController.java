@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class UserInfoController {
 
     @GetMapping("/myPage")
-    public String userInfo(Model model) throws Exception {
+    public String userInfoView(Model model) throws Exception {
         return Url.LIST.USERINFO_JSP;
     }
 }
