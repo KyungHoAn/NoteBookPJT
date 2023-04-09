@@ -40,6 +40,15 @@ public class MainController {
     public Map<String, Object> authSchool(@RequestParam Map<String, Object> params) throws Exception {
         Map<String, Object> result = new HashMap<>();
         System.out.println(params);
+
+        return result;
+    }
+
+    @ResponseBody
+    @PostMapping(value = Url.AUTH.USER_JOIN)
+    public Map<String, Object> userJoin(@RequestParam Map<String, Object> params) throws Exception {
+        Map<String, Object> result = new HashMap<>();
+
         return result;
     }
 

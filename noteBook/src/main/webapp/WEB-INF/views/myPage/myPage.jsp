@@ -79,7 +79,7 @@
 
             <div class="section-header">
                 <h2>등록한 정보</h2>
-                <button type="button" class="btn btn-outline-secondary" onclick="location.href='/addBook'">책 등록하기</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="location.href='/addBookView'">책 등록하기</button>
             </div>
 
             <div class="row gy-5">

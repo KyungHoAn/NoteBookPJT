@@ -47,7 +47,7 @@
       <div class="section-header">
         <h2>등록할 책 정보</h2>
         <div>
-          <input class="input is-normal" type="text" style="width: 15cm" placeholder="ISBN 입력">
+          <input class="input is-normal" id="isbn" name="isbn" type="text" style="width: 15cm" placeholder="ISBN 입력">
           <button type="button" id="searchBtn" class="btn btn-outline-secondary">책 검색하기</button></div>
       </div>
 

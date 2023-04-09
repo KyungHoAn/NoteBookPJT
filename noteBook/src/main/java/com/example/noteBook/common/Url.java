@@ -14,6 +14,8 @@ public final class Url {
         public static final String JOIN             = "/auth/join";
 
         public static final String AUTH_JOIN        = "/auth/userJoin";
+
+        public static final String USER_JOIN             = "/userJoin";
     }
 
     public static final class LIST {
@@ -25,7 +27,7 @@ public final class Url {
 
         public static final String GETBOOK_JSP      = TILES_ROOT+"/myPage/getBook";
 
-        public static final String ADDBOOK          = "/addbook";
+        public static final String ADDBOOK          = "/book/addBook";
     }
 
     public static final class BLOG {

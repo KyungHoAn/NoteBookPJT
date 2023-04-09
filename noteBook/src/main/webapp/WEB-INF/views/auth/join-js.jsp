@@ -36,10 +36,9 @@
         if(firstPw === secondPw) {
             let data = {"firstPw": firstPw};
             userJoin(data);
-            $('#pwdCheckBtn').click(function() {
-                let join = document.getElementById('joinBox');
-                join.style.display = 'block';
-            })
+
+            let join = document.getElementById('joinBox');
+            join.style.display = 'block';
         } else {
             console.log('ERROR')
         }
@@ -47,19 +46,18 @@
 
     function userJoin(data) {
         console.log(data)
-        $.ajax({
-            type: "POST",
-            enctype: 'multipart/form-data',
-            url: "/auth/userJoin",
-            data: data,
-            success: function (result) {
-                console.log("SUCCESS");
-            },
-            error: function (e) {
-                console.log("ERROR : ", e);
-            }
-        })
-
+        // $.ajax({
+        //     type: "POST",
+        //     enctype: 'multipart/form-data',
+        //     url: "/auth/userJoin",
+        //     data: data,
+        //     success: function (result) {
+        //         console.log("SUCCESS");
+        //     },
+        //     error: function (e) {
+        //         console.log("ERROR : ", e);
+        //     }
+        // })
     }
 
     function test() {
@@ -85,7 +83,26 @@
     })
 
     $('#joinBtn').click(function() {
-        document.location.href='index.html';
+        let form = $('#adminInfo')[0];
+        let data = new FormData(form);
+
+        console.log(data);
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "/auth/userJoin",
+            data: data,
+            processData: false,
+            contentType: false,
+            cache: false,
+            success: function (result) {
+                console.log("SUCCESS");
+            },
+            error: function (e) {
+                console.log("ERROR : ", e);
+            }
+        })
+        // document.location.href='index.html';
     })
 
 </script>
