@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/WEB-INF/template/constants.jsp"%>
+
 <script type="text/javascript">
     $(document).ready(function () {
 
@@ -7,7 +8,24 @@
     $("#schoolCheck").click(function() {
         let univName = $("#univ").val();
         let data = {"univName":univName};
-        userJoin(data);
+        // userJoin(data);
+        console.log('dkdkdk')
+        console.log(data)
+
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "/auth/userJoin",
+            data: data,
+            // processData: false,
+            // contentType: false,
+            success: function (result) {
+                console.log("SUCCESS");
+            },
+            error: function (e) {
+                console.log("ERROR : ", e);
+            }
+        })
     });
 
     $("#emailCheck").click(function () {
@@ -86,7 +104,11 @@
         let form = $('#adminInfo')[0];
         let data = new FormData(form);
 
+        // let form = $("#adminInfo").serialize();
+        // console.log(form);
+
         console.log(data);
+
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',
@@ -94,15 +116,14 @@
             data: data,
             processData: false,
             contentType: false,
-            cache: false,
+            // cache: false,
             success: function (result) {
                 console.log("SUCCESS");
             },
             error: function (e) {
                 console.log("ERROR : ", e);
             }
-        })
+        });
         // document.location.href='index.html';
     })
-
 </script>

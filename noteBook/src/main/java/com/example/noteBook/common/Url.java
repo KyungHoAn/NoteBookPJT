@@ -15,7 +15,7 @@ public final class Url {
 
         public static final String AUTH_JOIN        = "/auth/userJoin";
 
-        public static final String USER_JOIN             = "/userJoin";
+        public static final String USER_JOIN        = "/userJoin";
     }
 
     public static final class LIST {

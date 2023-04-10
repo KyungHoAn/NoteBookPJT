@@ -12,3 +12,12 @@
 <script type="text/javascript" src="../js/bootstrap/glightbox.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap/isotope.pkgd.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap/aos.js"></script>
+<meta name="_csrf" content="${_csrf.token}"/>
+<script>
+    let csrfToken = $("meta[name='_csrf']").attr("content");
+    $.ajaxPrefilter(function(options, originalOptions, jqXHR){
+        if (options['type'].toLowerCase() === "post") {
+            jqXHR.setRequestHeader('X-CSRF-TOKEN', csrfToken);
+        }
+    });
+</script>
