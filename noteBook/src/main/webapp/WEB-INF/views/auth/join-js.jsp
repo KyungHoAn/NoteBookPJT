@@ -6,45 +6,87 @@
 
     })
     $("#schoolCheck").click(function() {
+        let email = document.getElementById('emailBox');
         let univName = $("#univ").val();
         let data = {"univName":univName};
-        // userJoin(data);
-        console.log('dkdkdk')
-        console.log(data)
 
-        $.ajax({
-            type: "POST",
-            enctype: 'multipart/form-data',
-            url: "/auth/userJoin",
-            data: data,
-            // processData: false,
-            // contentType: false,
-            success: function (result) {
-                console.log("SUCCESS");
-            },
-            error: function (e) {
-                console.log("ERROR : ", e);
-            }
-        })
+        // success
+        // $.ajax({
+        //     type: "POST",
+        //     enctype: 'multipart/form-data',
+        //     url: "/userUniv",
+        //     data: data,
+        //     success: function (result) {
+        //         alert("학교 인증 완료")
+                    email.style.display = 'block';
+        //     },
+        //     error: function (e) {
+        //         alert("학교 인증 실패")
+        //     }
+        // })
     });
 
     $("#emailCheck").click(function () {
+        let univName = $("#univ").val();
         let id = $("#id").val();
-        let data = {"email":id};
+        let code = document.getElementById('codeBox');
 
-        userJoin(data);
+        let data = {"email":id, "univName":univName};
+
+        // $.ajax({
+        //     type: "POST",
+        //     enctype: 'multipart/form-data',
+        //     url: "/userEmail",
+        //     data: data,
+        //     success: function (result) {
+        //         alert("이메일로 인증번호 전송되었습니다.")
+                code.style.display = 'block';
+        //     },
+        //     error: function (e) {
+        //         alert("이메일 인증 실패")
+        //     }
+        // })
     });
 
     $("#codeCheck").click(function () {
+        let univName = $("#univ").val();
+        let id = $("#id").val();
         let code = $("#code").val();
-        let data = {"code":code};
-        userJoin(data);
+        let pwd = document.getElementById('pwdBox');
+
+        let data = {"email":id, "univName":univName, "code":code};
+
+        // $.ajax({
+        //     type: "POST",
+        //     enctype: 'multipart/form-data',
+        //     url: "/userEmailCode",
+        //     data: data,
+        //     success: function (result) {
+        //         alert("코드 인증 완료.")
+                pwd.style.display = 'block';
+        //     },
+        //     error: function (e) {
+        //         alert("코드 인증 실패")
+        //     }
+        // })
     })
 
     $("#nickBtn").click(function () {
         let nick = $("#nick").val();
         let data = {"nick": nick};
-        userJoin(data);
+
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "/userNick",
+            data: data,
+            success: function (result) {
+                alert("코드 인증 완료.")
+            },
+            error: function (e) {
+                alert("코드 인증 실패")
+            }
+        })
     })
 
     $("#pwdCheckBtn").click(function () {
@@ -53,7 +95,7 @@
 
         if(firstPw === secondPw) {
             let data = {"firstPw": firstPw};
-            userJoin(data);
+            // userJoin(data);
 
             let join = document.getElementById('joinBox');
             join.style.display = 'block';
@@ -62,22 +104,6 @@
         }
     })
 
-    function userJoin(data) {
-        console.log(data)
-        // $.ajax({
-        //     type: "POST",
-        //     enctype: 'multipart/form-data',
-        //     url: "/auth/userJoin",
-        //     data: data,
-        //     success: function (result) {
-        //         console.log("SUCCESS");
-        //     },
-        //     error: function (e) {
-        //         console.log("ERROR : ", e);
-        //     }
-        // })
-    }
-
     function test() {
         let login = document.getElementById("login");
         let join = document.getElementById("join");
@@ -85,38 +111,18 @@
         login.css('display','none')
     }
 
-    $('#schoolCheck').click(function(){
-        let email = document.getElementById('emailBox');
-        email.style.display = 'block';
-    })
-
-    $('#emailCheck').click(function() {
-        let code = document.getElementById('codeBox');
-        code.style.display = 'block';
-    })
-
-    $('#codeCheck').click(function() {
-        let pwd = document.getElementById('pwdBox');
-        pwd.style.display = 'block';
-    })
-
     $('#joinBtn').click(function() {
         let form = $('#adminInfo')[0];
         let data = new FormData(form);
 
-        // let form = $("#adminInfo").serialize();
-        // console.log(form);
-
-        console.log(data);
-
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',
-            url: "/auth/userJoin",
+            url: "/userJoin",
             data: data,
             processData: false,
             contentType: false,
-            // cache: false,
+            cache: false,
             success: function (result) {
                 console.log("SUCCESS");
             },

@@ -36,8 +36,8 @@ public class MainController {
     }
 
     @ResponseBody
-    @PostMapping(value = Url.AUTH.AUTH_JOIN)
-    public Map<String, Object> authSchool(@RequestParam Map<String, Object> params) throws Exception {
+    @PostMapping(value = Url.AUTH.USER_NICK)
+    public Map<String, Object> userNick(@RequestParam Map<String, Object> params) throws Exception {
         Map<String, Object> result = new HashMap<>();
         System.out.println(params);
 
@@ -48,7 +48,8 @@ public class MainController {
     @PostMapping(value = Url.AUTH.USER_JOIN)
     public Map<String, Object> userJoin(@RequestParam Map<String, Object> params) throws Exception {
         Map<String, Object> result = new HashMap<>();
-
+        System.out.println("userJoin");
+        System.out.println(params);
         return result;
     }
 

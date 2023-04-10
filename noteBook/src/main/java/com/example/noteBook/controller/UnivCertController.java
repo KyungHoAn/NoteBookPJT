@@ -1,13 +1,16 @@
 package com.example.NoteBook.controller;
 
+import com.example.NoteBook.common.Url;
 import com.example.NoteBook.service.impl.UnivCert;
 import okhttp3.OkHttpClient;
 import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -25,30 +28,38 @@ public class UnivCertController {
     private String API_KEY;
 
     // 사용자 메일 인증
+    @ResponseBody
+    @PostMapping(value = Url.AUTH.USER_EMAIL)
     public Map<String, Object> mailCertify(@RequestParam Map<String, Object> params, HttpServletRequest req, HttpSession session) throws Exception {
         Map<String, Object> result = new HashMap<>();
-//        result.put("email","akh981216@wku.ac.kr");
-//        result.put("universityName","원광대학교");
-//        result.put("univ_check",true);
+        String univ = (String) params.get("univName");
+        String mail = (String) params.get("email");
 
-        result = univCert.mailCertify(API_KEY,"akh981216@wonkwang.ac.kr","원광대학교",true);
-//        System.out.println(">>>>>>>>result<<<<<<<<");
-//        System.out.println(result);
+        result = univCert.mailCertify(API_KEY,mail,univ,true);
         return result;
     }
 
     // 사용자 메일의 전달받은 메일 코드 확인
+    @ResponseBody
+    @PostMapping(value = Url.AUTH.USER_EMAIL_CODE)
     public Map<String, Object> checkMailCode(@RequestParam Map<String, Object> params, HttpServletRequest req, HttpSession session) throws Exception {
         Map<String, Object> result = new HashMap<>();
+        String email = (String) params.get("email");
+        String univ = (String) params.get("univ");
+        int code = Integer.parseInt((String) params.get("code"));
 
+        result = univCert.certifyCode(API_KEY, email, univ, code);
         return result;
     }
 
     // 인증 가능한 대학교 명인지 check
+    @ResponseBody
+    @PostMapping(value = Url.AUTH.USER_UNIV)
     public Map<String, Object> checkUniv(@RequestParam Map<String, Object> param, HttpServletRequest req, HttpSession session) throws Exception {
         Map<String, Object> result = new HashMap<>();
-        System.out.println("---------");
-        result = univCert.check("원광대학교");
+        String univ = (String) param.get("univName");
+
+        result = univCert.check(univ);
         return result;
     }
 }

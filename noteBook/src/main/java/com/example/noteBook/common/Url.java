@@ -13,9 +13,15 @@ public final class Url {
 
         public static final String JOIN             = "/auth/join";
 
-        public static final String AUTH_JOIN        = "/auth/userJoin";
-
         public static final String USER_JOIN        = "/userJoin";
+
+        public static final String USER_UNIV        = "/userUniv";
+
+        public static final String USER_EMAIL       = "/userEmail";
+
+        public static final String USER_EMAIL_CODE  = "/userEmailCode";
+
+        public static final String USER_NICK        = "/userNick";
     }
 
     public static final class LIST {

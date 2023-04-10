@@ -25,6 +25,12 @@ public class AuthServiceImpl implements AuthService {
     @Autowired
     PasswordEncoder passwordEncoder;
 
+    public Map<String, Object> userNickCheck(Map<String, Object> params) throws Exception {
+        Map<String, Object> result = new HashMap<>();
+
+        return result;
+    }
+
     public Map<String, Object> userInsert(Map<String, Object> params) throws Exception{
         Map<String, Object> result = new HashMap<>();
 
