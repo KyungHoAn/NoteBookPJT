@@ -13,6 +13,12 @@ public final class Url {
 
         public static final String JOIN             = "/auth/join";
 
+        public static final String LOGIN            = "/auth/login";
+
+        public static final String LOGIN_PROC       = "/auth/login-proc";
+
+        public static final String LOGOUT_PROC      = "/auth/logout-proc";
+
         public static final String USER_JOIN        = "/userJoin";
 
         public static final String USER_UNIV        = "/userUniv";

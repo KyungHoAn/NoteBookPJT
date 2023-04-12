@@ -11,27 +11,37 @@ import java.util.List;
 @Getter
 @Setter
 public class UserInfo implements UserDetails {
+
+    /**
+     *
+     */
     private static final long serialVersionUID = 1L;
 
-    // USER ID
+    //사용자 id
     private String userId;
 
-    // USER NICK
+    //사용자 이름
     private String userName;
 
-    // PW
+    //패스워드
     private String password;
 
-    // USER Univ
-    private String univ;
+    //이메일
+    private String email;
 
-    // 사용여부
+    //핸드폰 반호
+    private String handPhoneNo;
+
+    //사용여부
     private String useYn;
 
-    // 권한 list
+    //권한 list
     public List<UserAuthority> authorities;
 
-    // 권한
+    //권한
+    public String authority;
+
+    //권한 이름
     public String authorityNm;
 
     public String auth;
@@ -39,6 +49,11 @@ public class UserInfo implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return authorities;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
     }
 
     @Override
