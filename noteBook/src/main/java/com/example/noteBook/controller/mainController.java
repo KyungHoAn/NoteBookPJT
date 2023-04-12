@@ -40,7 +40,7 @@ public class MainController {
     public Map<String, Object> userNick(@RequestParam Map<String, Object> params) throws Exception {
         Map<String, Object> result = new HashMap<>();
         System.out.println(params);
-
+        result = authService.userNickCheck(params);
         return result;
     }
 

@@ -75,18 +75,18 @@
         let nick = $("#nick").val();
         let data = {"nick": nick};
 
-        $.ajax({
-            type: "POST",
-            enctype: 'multipart/form-data',
-            url: "/userNick",
-            data: data,
-            success: function (result) {
-                alert("코드 인증 완료.")
-            },
-            error: function (e) {
-                alert("코드 인증 실패")
-            }
-        })
+        // $.ajax({
+        //     type: "POST",
+        //     enctype: 'multipart/form-data',
+        //     url: "/userNick",
+        //     data: data,
+        //     success: function (result) {
+        //         alert("닉네임을 사용할 수 있습니다.")
+        //     },
+        //     error: function (e) {
+        //         alert("중복된 닉네임입니다.")
+        //     }
+        // });
     })
 
     $("#pwdCheckBtn").click(function () {
@@ -94,22 +94,12 @@
         let secondPw = $("#sPassword").val();
 
         if(firstPw === secondPw) {
-            let data = {"firstPw": firstPw};
-            // userJoin(data);
-
             let join = document.getElementById('joinBox');
             join.style.display = 'block';
         } else {
-            console.log('ERROR')
+            alert("비밀번호가 다릅니다.")
         }
     })
-
-    function test() {
-        let login = document.getElementById("login");
-        let join = document.getElementById("join");
-
-        login.css('display','none')
-    }
 
     $('#joinBtn').click(function() {
         let form = $('#adminInfo')[0];
