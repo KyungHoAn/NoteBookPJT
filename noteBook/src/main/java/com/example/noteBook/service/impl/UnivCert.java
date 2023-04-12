@@ -1,5 +1,6 @@
 package com.example.NoteBook.service.impl;
 
+import com.example.NoteBook.dao.UserMapper;
 import com.example.NoteBook.service.UnivCertService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -7,6 +8,7 @@ import okhttp3.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,9 @@ import java.util.Map;
 @Service
 @Slf4j
 public class UnivCert implements UnivCertService {
+
+    @Autowired
+    UserMapper userMapper;
 
     //반환값 Map<String, Object>
     private static final String baseURL = "https://univcert.com/api";
