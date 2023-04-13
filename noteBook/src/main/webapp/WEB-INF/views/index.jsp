@@ -18,7 +18,7 @@
       <i class="bi bi-list mobile-nav-toggle d-none"></i>
     </nav>
 
-    <a class="btn-getstarted scrollto" onclick="location.href='/loginView'">로그인</a>
+    <a class="btn-getstarted scrollto" onclick="location.href='/auth/login'">로그인</a>
 
   </div>
 </header><!-- End Header -->

@@ -40,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/auth/**").permitAll()					//로그인, 회원가입 접속허용
+                .antMatchers("/","/auth/**").permitAll()					//로그인, 회원가입 접속허용
                 .antMatchers("/resource/**/images/**").permitAll()		//이미지
                 .anyRequest().authenticated()
                 .and()
@@ -48,7 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //로그인 화면 설정
                 .formLogin()
                 .permitAll()
-                .loginPage(Url.AUTH.LOGIN)
+                .loginPage(Url.AUTH.LOGIN_JSP)
                 .loginProcessingUrl(Url.AUTH.LOGIN_PROC)
                 .successHandler(loginSuccessHandler)
                 .failureHandler(loginFailureHandler)
