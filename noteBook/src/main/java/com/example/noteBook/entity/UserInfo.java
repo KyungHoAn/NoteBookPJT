@@ -32,6 +32,9 @@ public class UserInfo implements UserDetails {
     //핸드폰 반호
     private String handPhoneNo;
 
+    //학교
+    private String Univ;
+
     //사용여부
     private String useYn;
 

@@ -30,26 +30,12 @@ public class MainController {
         return Url.AUTH.LOGIN_JSP;
     }
 
-    @GetMapping("/joinView")
-    public String joinView(@RequestParam Map<String, Object> params) throws Exception {
-        return Url.AUTH.JOIN_JSP;
-    }
-
     @ResponseBody
     @PostMapping(value = Url.AUTH.USER_NICK)
     public Map<String, Object> userNick(@RequestParam Map<String, Object> params) throws Exception {
         Map<String, Object> result = new HashMap<>();
         System.out.println(params);
         result = authService.userNickCheck(params);
-        return result;
-    }
-
-    @ResponseBody
-    @PostMapping(value = Url.AUTH.USER_JOIN)
-    public Map<String, Object> userJoin(@RequestParam Map<String, Object> params) throws Exception {
-        Map<String, Object> result = new HashMap<>();
-        System.out.println("userJoin");
-        System.out.println(params);
         return result;
     }
 

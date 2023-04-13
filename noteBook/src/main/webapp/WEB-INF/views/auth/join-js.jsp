@@ -102,17 +102,22 @@
     })
 
     $('#joinBtn').click(function() {
-        let form = $('#adminInfo')[0];
-        let data = new FormData(form);
+        // let form = $('#adminInfo')[0];
+        // let data = new FormData(form);
+
+        let params = {
+            'userId' : $("#id").val()
+            ,'password' : $("#fPassword").val()
+            ,'userName' : $("#nick").val()
+            ,'univ' : $("#univ").val()
+        }
+        console.log(params)
 
         $.ajax({
             type: "POST",
-            enctype: 'multipart/form-data',
-            url: "/userJoin",
-            data: data,
-            processData: false,
-            contentType: false,
-            cache: false,
+            dataType : 'json',
+            url: "/auth/insertUser",
+            data: params,
             success: function (result) {
                 console.log("SUCCESS");
             },
@@ -120,6 +125,6 @@
                 console.log("ERROR : ", e);
             }
         });
-        // document.location.href='index.html';
+        document.location.href='/auth/login';
     })
 </script>

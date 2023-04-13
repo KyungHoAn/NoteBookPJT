@@ -71,7 +71,7 @@
 
                     <div>
                         <h6 class="title is-6">
-                            <a onclick="location.href='/joinView'">회원가입</a>
+                            <a onclick="location.href='/auth/join'">회원가입</a>
                             &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;
                             <a>비밀번호 찾기</a>
                         </h6>
