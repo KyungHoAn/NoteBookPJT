@@ -58,6 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .logoutUrl(Url.AUTH.LOGOUT_PROC)
+                .logoutSuccessUrl("/")
                 .invalidateHttpSession(true)
                 .deleteCookies("JSESSIONID")
                 .and()
@@ -65,7 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //세션관리
                 .sessionManagement()
                 .maximumSessions(200) 				//세션 허용 갯수
-                .expiredUrl(Url.AUTH.LOGIN)		 	//세션 만료시 이동할 페이지
+                .expiredUrl(Url.AUTH.MAIN_JSP)		 	//세션 만료시 이동할 페이지
                 .sessionRegistry(sessionRegistry())
                 .maxSessionsPreventsLogin(true);	//동시 로그인 차단, false인 경우 기존 세션 만료
     }

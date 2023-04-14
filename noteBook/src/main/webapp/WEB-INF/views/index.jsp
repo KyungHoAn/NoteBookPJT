@@ -17,8 +17,14 @@
       </ul>
       <i class="bi bi-list mobile-nav-toggle d-none"></i>
     </nav>
-
-    <a class="btn-getstarted scrollto" onclick="location.href='/auth/login'">로그인</a>
+    <c:choose>
+      <c:when test="${empty sessUserInfo.userId}">
+        <a class="btn-getstarted scrollto" onclick="location.href='/auth/login'">로그인</a>
+      </c:when>
+      <c:otherwise>
+        <a class="btn-getstarted scrollto" onclick="location.href='/auth/logout-proc'">로그아웃</a>
+      </c:otherwise>
+    </c:choose>
 
   </div>
 </header><!-- End Header -->

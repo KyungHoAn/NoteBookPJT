@@ -15,7 +15,11 @@
             data: params,
             success: function(result) {
                 console.log(result);
-                location.href='/';
+                if(result.resultCode != "00") {
+                    console.log(result.resultMessage);
+                } else {
+                    location.href=result.targetUrl;
+                }
             },
             error: function(request, status, error) {
 

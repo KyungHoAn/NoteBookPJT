@@ -36,4 +36,9 @@ public class LoginController {
     public Map<String, Object> insertUser(@ModelAttribute UserInfo userInfo) {
         return loginService.checkLoginInsert(userInfo);
     }
+
+    @GetMapping(value = Url.AUTH.LOGOUT)
+    public String logout() {
+        return Url.AUTH.LOGOUT_PROC;
+    }
 }
