@@ -39,6 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .csrf().disable()
+                .formLogin().disable()
                 .authorizeRequests()
                 .antMatchers("/","/auth/**").permitAll()					//로그인, 회원가입 접속허용
                 .antMatchers("/resource/**/images/**").permitAll()		//이미지
@@ -65,7 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement()
                 .maximumSessions(200) 				//세션 허용 갯수
                 .expiredUrl(Url.AUTH.LOGIN)		 	//세션 만료시 이동할 페이지
-                .sessionRegistry(sesionRegistry())
+                .sessionRegistry(sessionRegistry())
                 .maxSessionsPreventsLogin(true);	//동시 로그인 차단, false인 경우 기존 세션 만료
     }
 
@@ -86,7 +87,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public SessionRegistry sesionRegistry() {
+    public SessionRegistry sessionRegistry() {
         return new SpringSecuritySessionRegistImpl();
     }
 

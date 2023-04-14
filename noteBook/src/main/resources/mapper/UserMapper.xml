@@ -8,6 +8,15 @@
         SELECT COUNT(*) FROM USER u
     </select>
 
+    <!-- 사용자 정보 조회 -->
+    <select id="getUserInfo" parameterType="String" resultType="UserInfo">
+        SELECT *
+        FROM
+            TB_USER
+        WHERE
+            USER_ID = #{userId}
+    </select>
+
     <!-- 사용자 등록 -->
     <insert id="insertUser" parameterType="UserInfo">
         INSERT INTO

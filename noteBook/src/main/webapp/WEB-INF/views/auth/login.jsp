@@ -51,7 +51,7 @@
 
                     <div class="field">
                         <p class="control has-icons-left has-icons-right">
-                            <input class="input" type="id" placeholder="Id" style="width: 10cm">
+                            <input class="input" id="loginId" name="un" type="id" placeholder="Id" style="width: 10cm">
                             <span class="icon is-small is-left">
                               <i class="fas fa-envelope"></i>
                             </span>
@@ -62,11 +62,11 @@
                     </div>
                     <div class="field">
                         <p class="control has-icons-left">
-                            <input class="input" type="password" placeholder="Password" style="width: 10cm; margin-left: 3.3cm">
+                            <input class="input" type="password" id="loginPw" name="up" placeholder="Password" style="width: 10cm; margin-left: 2.1cm">
                             <span class="icon is-small is-left">
                               <i class="fas fa-lock"></i>
                             </span>
-                            <button type="button" class="button is-primary is-light" id="loginBtn">로그인</Button>
+                            <button type="button" class="button is-primary is-light" id="loginBtn" onclick="loginSubmit()">로그인</button>
                         </p>
                     </div>
 
