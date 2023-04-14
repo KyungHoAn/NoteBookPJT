@@ -53,19 +53,20 @@
                         <p class="control has-icons-left has-icons-right">
                             <input class="input" type="id" placeholder="Id" style="width: 10cm">
                             <span class="icon is-small is-left">
-                  <i class="fas fa-envelope"></i>
-                </span>
+                              <i class="fas fa-envelope"></i>
+                            </span>
                             <span class="icon is-small is-right">
-                  <i class="fas fa-check"></i>
-                </span>
+                              <i class="fas fa-check"></i>
+                            </span>
                         </p>
                     </div>
                     <div class="field">
                         <p class="control has-icons-left">
-                            <input class="input" type="password" placeholder="Password" style="width: 10cm">
+                            <input class="input" type="password" placeholder="Password" style="width: 10cm; margin-left: 3.3cm">
                             <span class="icon is-small is-left">
-                  <i class="fas fa-lock"></i>
-                </span>
+                              <i class="fas fa-lock"></i>
+                            </span>
+                            <button type="button" class="button is-primary is-light" id="loginBtn">로그인</Button>
                         </p>
                     </div>
 
