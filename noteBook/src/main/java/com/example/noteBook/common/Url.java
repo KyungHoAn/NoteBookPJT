@@ -42,7 +42,8 @@ public final class Url {
         public static final String ADDBOOK          = "/book/addBook";
     }
 
-    public static final class BLOG {
+    public static final class COMMUNITY {
+        public static final String COMMUNITY        = "/note/community";
         public static final String COMMUNITY_JSP    = TILES_ROOT+"/community/community";
 
         public static final String GETCOMMUNITY_JSP = TILES_ROOT+"/community/getCommunity";
