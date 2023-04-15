@@ -59,8 +59,8 @@
             <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
 
               <div class="col-lg-4">
-                <div class="">
-                  <img src="https://gimg.gilbut.co.kr/book/BN003654/rn_view_BN003654.jpg" class="img-fluid" alt="" style="width:200px; height:250px;">
+                <div class="" id="bookImg">
+
                 </div>
               </div>
 
@@ -71,16 +71,9 @@
                 <div class="tab-content">
 
                   <div class="tab-pane fade show active" id="tab1">
-                    <div>
-                      <li><strong>책 제목</strong>: 시나공 정보처리기사 실기</li>
-                      <li><strong>저자</strong>: 김정준, 강윤석, 김용값, 김우경</li>
-                      <li><strong>출판사</strong>: 길벗안앤디</li>
-                      <li><strong>책 가격</strong>: 35,000</li>
-                      <li><strong>판매 가격</strong>: <input type="text" style="height: 20px;"> </li>
-                      <li><strong>판매 책 정보</strong>:</li>
-                      <textarea rows="4" cols="70"></textarea>
-                    </div>
+
                   </div><!-- End Tab 1 Content -->
+
                 </div>
                 <div style="margin-top: 50px;">
                   <button type="button" class="btn btn-outline-secondary btn-lg" onClick="location.href='myPage.html'">책정보 저장하기</button>
