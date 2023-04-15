@@ -50,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //로그인 화면 설정
                 .formLogin()
                 .permitAll()
-                .loginPage(Url.AUTH.LOGIN_JSP)
+                .loginPage(Url.AUTH.LOGIN)
                 .loginProcessingUrl(Url.AUTH.LOGIN_PROC)
                 .successHandler(loginSuccessHandler)
                 .failureHandler(loginFailureHandler)
