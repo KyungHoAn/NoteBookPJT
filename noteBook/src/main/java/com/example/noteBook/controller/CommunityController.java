@@ -20,12 +20,12 @@ public class CommunityController {
         return Url.COMMUNITY.COMMUNITY_JSP;
     }
 
-    @GetMapping("/getCommunityView")
+    @GetMapping(value = Url.COMMUNITY.GETCOMMUNITY)
     public String getCommunityView(@RequestParam Map<String, Object> params) throws Exception {
         return Url.COMMUNITY.GETCOMMUNITY_JSP;
     }
 
-    @GetMapping("/addCommunityView")
+    @GetMapping(value = Url.COMMUNITY.ADDCOMMUNITY)
     public String addCommunity(@RequestParam Map<String, Object> params) throws Exception {
         return Url.COMMUNITY.ADDCOMMUNITY_JSP;
     }

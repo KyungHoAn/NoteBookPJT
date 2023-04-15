@@ -57,7 +57,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public String searchBook(String isbn) throws Exception {
+    public String searchBook(String isbn){
         HttpURLConnection con = null;
         String result = "";
         try {
@@ -96,7 +96,7 @@ public class BookServiceImpl implements BookService {
 
     /* 결과를 파싱하는 메소드 @Param response @Param fiels @return*/
     public Map<String, Object> getResult(String response, String[] fields){
-        Map<String, Object> rtnObj = new HashMap<>();
+        Map<String, Object> rtnObj = new HashMap<> ();
 
         try {
             JSONParser parser = new JSONParser();
@@ -122,9 +122,6 @@ public class BookServiceImpl implements BookService {
         }catch(Exception e) {
             System.out.println("getResult error -> "+"파싱 실패, "+e.getMessage());
         }
-        System.out.println("==============");
-        System.out.println(rtnObj);
-        System.out.println("==============");
         return rtnObj;
     }
 }

@@ -33,7 +33,7 @@ public class UserInfo implements UserDetails {
     private String handPhoneNo;
 
     //학교
-    private String Univ;
+    private String univ;
 
     //사용여부
     private String useYn;

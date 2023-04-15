@@ -23,6 +23,8 @@ public class LoginSuccessHandler extends CoTopComponent implements Authenticatio
         //default 성공
         String resultCode = "00";
 
+        UserInfo been = (UserInfo) auth.getPrincipal();
+
         HttpSession session = request.getSession(true);
         session.setMaxInactiveInterval(60 * 60 * 3);
 
@@ -30,6 +32,11 @@ public class LoginSuccessHandler extends CoTopComponent implements Authenticatio
         session.setAttribute("authority",((UserInfo) auth.getPrincipal()).getAuthority());
         session.setAttribute("authorityNm",((UserInfo) auth.getPrincipal()).getAuthorityNm());
         session.setAttribute("auth",((UserInfo) auth.getPrincipal()).getAuth());
+
+        // session 추가
+        session.setAttribute("userName", been.getUsername());
+        session.setAttribute("userId", been.getUserId());
+        session.setAttribute("univ", been.getUniv());
 
         //Response 결과 값을 넣어줌
         JsonObject loginResult = new JsonObject();

@@ -20,7 +20,7 @@
             <i class="bi bi-list mobile-nav-toggle d-none"></i>
         </nav><!-- .navbar -->
 
-        <a class="btn-getstarted scrollto" href="index.html#about">로그아웃</a>
+        <a class="btn-getstarted scrollto" onclick="location.href='/auth/logout-proc'">로그아웃</a>
 
     </div>
 </header><!-- End Header -->
@@ -49,7 +49,7 @@
             <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
 
                 <div class="col-lg-4">
-                    <div class="about-img">
+                    <div class="">
                         <img src="" class="img-fluid" alt="" style="width:200px; height:250px;">
                     </div>
                 </div>
@@ -59,12 +59,10 @@
 
                     <!-- Tab Content -->
                     <div class="tab-content">
-
                         <div class="tab-pane fade show active" id="tab1">
-
-                            <li><strong>닉네임</strong>: 홍길동</li>
-                            <li><strong>학교</strong>: 하버드</li>
-                            <li><strong>이메일</strong>: 가나다@하버드</li>
+                            <li><strong>닉네임</strong>: ${userName}</li>
+                            <li><strong>학교</strong>: ${univ}</li>
+                            <li><strong>이메일</strong>: ${userId}</li>
                             <li><a href="#"><strong>비밀번호 변경</strong></a></li>
                         </div><!-- End Tab 1 Content -->
                     </div>
@@ -79,7 +77,7 @@
 
             <div class="section-header">
                 <h2>등록한 정보</h2>
-                <button type="button" class="btn btn-outline-secondary" onclick="location.href='/addBookView'">책 등록하기</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="location.href='/book/addBook'">책 등록하기</button>
             </div>
 
             <div class="row gy-5">
@@ -93,7 +91,7 @@
                             <div class="icon">
                                 <i class="bi bi-activity"></i>
                             </div>
-                            <a onclick="location.href='/getBook'" class="stretched-link">
+                            <a onclick="location.href='/book/getBook'" class="stretched-link">
                                 <h3>정보처리 기사</h3>
                             </a>
                             <p>원광대학교</p>
@@ -104,7 +102,7 @@
                 <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
                     <div class="service-item">
                         <div class="img">
-                            <img src="assets/img/services-2.jpg" class="img-fluid" alt="">
+                            <img src="" class="img-fluid" alt="">
                         </div>
                         <div class="details position-relative">
                             <div class="icon">
@@ -136,7 +134,7 @@
                 <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                     <div class="service-item">
                         <div class="img">
-                            <img src="assets/img/services-1.jpg" class="img-fluid" alt="">
+                            <img src="" class="img-fluid" alt="">
                         </div>
                         <div class="details position-relative">
                             <div class="icon">
@@ -153,7 +151,7 @@
                 <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
                     <div class="service-item">
                         <div class="img">
-                            <img src="assets/img/services-2.jpg" class="img-fluid" alt="">
+                            <img src="" class="img-fluid" alt="">
                         </div>
                         <div class="details position-relative">
                             <div class="icon">
@@ -193,7 +191,7 @@
                                 </div> -->
 
                                 <h2 class="title">
-                                    <a href="blog-details.html">공대 네트워크 전공책 구합니다.</a>
+                                    <a href="">공대 네트워크 전공책 구합니다.</a>
                                 </h2>
 
                                 <div class="meta-top">

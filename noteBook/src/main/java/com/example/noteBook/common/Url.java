@@ -31,6 +31,7 @@ public final class Url {
     }
 
     public static final class LIST {
+        public static final String MYPAGE           = "/myPageView";
         public static final String USERINFO_JSP     = TILES_ROOT+"/myPage/myPage";
     }
 
@@ -40,18 +41,25 @@ public final class Url {
         public static final String GETBOOK_JSP      = TILES_ROOT+"/myPage/getBook";
 
         public static final String ADDBOOK          = "/book/addBook";
+
+        public static final String GETBOOK          = "/book/getBook";
+
+        public static final String ISBNBOOK           = "/searchBook";
     }
 
     public static final class COMMUNITY {
-        public static final String COMMUNITY        = "/note/community";
+        public static final String COMMUNITY        = "/community";
         public static final String COMMUNITY_JSP    = TILES_ROOT+"/community/community";
 
+        public static final String GETCOMMUNITY     = "/getCommunity";
         public static final String GETCOMMUNITY_JSP = TILES_ROOT+"/community/getCommunity";
 
+        public static final String ADDCOMMUNITY     = "/addCommunity";
         public static final String ADDCOMMUNITY_JSP = TILES_ROOT+"/community/addCommunity";
     }
 
     public static final class MAP {
+        public static final String MAPVIEW          = "/mapView";
         public static final String MAP_JSP          = TILES_ROOT+"/map/map";
     }
 }

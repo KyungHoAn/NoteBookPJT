@@ -10,14 +10,14 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a onclick="location.href='/'"><span>Home</span></a></li>
-                <li><a onclick="location.href='/communityView'">커뮤니티</a></li>
+                <li><a onclick="location.href='/community'">커뮤니티</a></li>
                 <li><a onclick="location.href='/mapView'">캠퍼스 맵</a></li>
                 <li><a onclick="location.href='/myPageView'">myPage</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle d-none"></i>
         </nav><!-- .navbar -->
 
-        <a class="btn-getstarted scrollto" onclick="location.href='/loginView'">로그아웃</a>
+        <a class="btn-getstarted scrollto" onclick="location.href='/auth/logout-proc'">로그아웃</a>
 
     </div>
 </header><!-- End Header -->
@@ -51,7 +51,7 @@
                         <div class="col-lg-6">
                             <article class="d-flex flex-column">
                                 <h2 class="title">
-                                    <a onclick="location.href='/getCommunityView'">공대 네트워크 전공책 구합니다.</a>
+                                    <a onclick="location.href='/getCommunity'">공대 네트워크 전공책 구합니다.</a>
                                 </h2>
 
                                 <div class="meta-top">
@@ -189,7 +189,7 @@
                                 <button type="submit"><i class="bi bi-search"></i></button>
                             </form>
                             <div style="margin-top: 20px;">
-                                <button class="btn btn-outline-secondary" onclick="location.href='/addCommunityView'">게시글 작성</button>
+                                <button class="btn btn-outline-secondary" onclick="location.href='/addCommunity'">게시글 작성</button>
                             </div>
                         </div><!-- End sidebar search formn-->
 

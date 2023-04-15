@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class UserInfoController {
 
-    @GetMapping("/myPageView")
+    @GetMapping(value = Url.LIST.MYPAGE)
     public String userInfoView(Model model) throws Exception {
         return Url.LIST.USERINFO_JSP;
     }

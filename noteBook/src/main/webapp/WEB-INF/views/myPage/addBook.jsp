@@ -59,7 +59,7 @@
             <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
 
               <div class="col-lg-4">
-                <div class="about-img">
+                <div class="">
                   <img src="https://gimg.gilbut.co.kr/book/BN003654/rn_view_BN003654.jpg" class="img-fluid" alt="" style="width:200px; height:250px;">
                 </div>
               </div>

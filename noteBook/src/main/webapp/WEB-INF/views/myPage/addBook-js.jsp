@@ -5,15 +5,18 @@
         let book = document.getElementById('detail_book');
         book.style.display = 'block';
         let isbn = $("#isbn").val();
-        console.log(isbn);
         let data = {"isbn":isbn};
+
         $.ajax({
             type:"POST",
             enctype: 'multipart/form-data',
-            url: "/book/addBook",
+            url: "/searchBook",
             data: data,
             success: function(result) {
-                console.log("success");
+                if(result.code == "00" || true) {
+                    console.log("===success===")
+                    console.log(${bootDetail})
+                }
             },
             error: function (e) {
                 console.log("ERROR : ", e);

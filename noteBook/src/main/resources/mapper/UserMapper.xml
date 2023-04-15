@@ -23,8 +23,8 @@
             TB_USER(
                 USER_ID
                 , PASSWORD
-                , USER_NICK
-                , USER_UNIV
+                , USER_NAME
+                , univ
                 , USE_YN
             )
         VALUES(

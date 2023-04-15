@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MapController {
 
-    @GetMapping("/mapView")
+    @GetMapping(value = Url.MAP.MAPVIEW)
     public String mapView() {
         return Url.MAP.MAP_JSP;
     }
