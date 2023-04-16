@@ -2,6 +2,7 @@ package com.example.NoteBook.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
 import java.util.Map;
 
 @Mapper
@@ -14,7 +15,10 @@ public interface BookMapper {
     Map<String, Object> getBook(Map<String, Object> params);
 
     //책 리스트
-    Map<String, Object> getBookList(Map<String, Object> params);
+    List<Map<String, Object>> getBookList(Map<String, Object> params);
+
+    // 사용자 책 리스트
+    List<Map<String, Object>> getUserBookList(Map<String, Object> params);
 
     //책 정보 수정
     Map<String, Object> updateBook(Map<String, Object> params);

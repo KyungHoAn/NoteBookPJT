@@ -29,4 +29,18 @@
             , #{price}
         )
     </insert>
+
+    <!-- 사용자가 올린 책 목록 -->
+    <select id="getUserBookList" resultType="map">
+        SELECT *
+        FROM TB_BOOKDETAIL
+        WHERE USER_ID = #{userId}
+    </select>
+
+    <!-- 사용자가 올린 책 상세 -->
+    <select id ="getBook" resultType="map">
+        SELECT *
+        FROM TB_BOOKDETAIL
+        WHERE USER_ID= #{userId} AND BOOK_IDX = #{bookIdx}
+    </select>
 </mapper>

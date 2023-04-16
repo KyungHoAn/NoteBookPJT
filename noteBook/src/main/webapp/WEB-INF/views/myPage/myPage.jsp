@@ -3,10 +3,7 @@
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top" data-scrollto-offset="0">
     <div class="container-fluid d-flex align-items-center justify-content-between">
-
         <a onclick="location.href='/'" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
-            <!-- <img src="assets/img/logo.png" alt=""> -->
             <h1>공책<span>.</span></h1>
         </a>
 
@@ -81,41 +78,24 @@
             </div>
 
             <div class="row gy-5">
-
-                <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="service-item">
-                        <div class="img" style="margin-left: 60px;">
-                            <img src="https://gimg.gilbut.co.kr/book/BN003654/rn_view_BN003654.jpg" class="img-fluid" alt="" style="width: 200px;">
-                        </div>
-                        <div class="details position-relative">
-                            <div class="icon">
-                                <i class="bi bi-activity"></i>
+                <c:forEach var="var" items="${list.list}" varStatus="status">
+                    <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="service-item">
+                            <div class="img" style="margin-left: 60px;">
+                                <img src="${var.BOOK_IMG}" class="img-fluid" alt="" style="width: 200px;">
                             </div>
-                            <a onclick="location.href='/book/getBook'" class="stretched-link">
-                                <h3>정보처리 기사</h3>
-                            </a>
-                            <p>원광대학교</p>
-                        </div>
-                    </div>
-                </div><!-- End Service Item -->
-
-                <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="service-item">
-                        <div class="img">
-                            <img src="" class="img-fluid" alt="">
-                        </div>
-                        <div class="details position-relative">
-                            <div class="icon">
-                                <i class="bi bi-broadcast"></i>
+                            <div class="details position-relative">
+                                <div class="icon">
+                                    <i class="bi bi-activity"></i>
+                                </div>
+                                <a onclick="location.href='/book/getBook'" class="stretched-link">
+                                    <h3>${var.BOOK_TITLE}</h3>
+                                </a>
+                                <p>판매자: ${var.USER_NAME}</p>
                             </div>
-                            <a href="#" class="stretched-link">
-                                <h3>Eosle Commodi</h3>
-                            </a>
-                            <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
                         </div>
-                    </div>
-                </div><!-- End Service Item -->
-
+                    </div><!-- End Service Item -->
+                </c:forEach>
             </div>
 
         </div>
@@ -246,8 +226,7 @@
 
         </div>
     </div>
-
-</footer><!-- End Footer -->
+</footer>
 <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <div id="preloader"></div>

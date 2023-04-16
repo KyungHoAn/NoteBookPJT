@@ -8,7 +8,7 @@
         <tiles:insertAttribute name="meta"/>
         <tiles:insertAttribute name="styles"/>
         <tiles:insertAttribute name="scripts"/>
-        <tiles:insertAttribute name="contents-js" flush="true"/>
+<%--        <tiles:insertAttribute name="contents-js" flush="true"/>--%>
     </head>
     <body>
         <tiles:insertAttribute name="contents" ignore="true"/>

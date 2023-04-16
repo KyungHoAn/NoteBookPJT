@@ -24,12 +24,12 @@ public class BookController {
     BookService bookService;
 
     @GetMapping(value = Url.BOOK.ADDBOOK)
-    public String addBookView(@RequestParam Map<String, Object> params) throws Exception {
+    public String addBookView() throws Exception {
         return Url.BOOK.ADDBOOK_JSP;
     }
 
     @GetMapping(value = Url.BOOK.GETBOOK)
-    public String getBookView(@RequestParam Map<String, Object> params) throws Exception {
+    public String getBookView() throws Exception {
         return Url.BOOK.GETBOOK_JSP;
     }
 
