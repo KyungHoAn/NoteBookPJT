@@ -38,6 +38,6 @@
 
     $("#deleteBookBtn").click(function() {
         let data = {"bookIdx": ${list.BOOK_IDX}};
-        
+
     })
 </script>

@@ -14,7 +14,7 @@
             data: data,
             success: function(result) {
                 if(result.code == "00" || true) {
-                    if(result.total >1) {
+                    if(result.total == "1") {
                         book.style.display = 'block';
                         let bookImgHtml = '';
                         bookImgHtml +='<img src="'+result.result[0].image+'" class="img-fluid" alt="" style="width:300px; height:350px;">';
