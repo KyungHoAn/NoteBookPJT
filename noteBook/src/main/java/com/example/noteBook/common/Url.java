@@ -44,7 +44,9 @@ public final class Url {
 
         public static final String GETBOOK          = "/book/getBook";
 
-        public static final String ISBNBOOK           = "/searchBook";
+        public static final String ISBNBOOK         = "/searchBook";
+
+        public static final String INSERTBBOK       = "/insertBook";
     }
 
     public static final class COMMUNITY {

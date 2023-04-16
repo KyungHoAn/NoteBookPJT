@@ -2,6 +2,7 @@ package com.example.NoteBook.controller;
 
 import com.example.NoteBook.common.Url;
 import com.example.NoteBook.service.BookService;
+import org.apache.catalina.session.StandardSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
@@ -49,5 +52,16 @@ public class BookController {
             result.put("code","99");
         }
         return result;
+    }
+
+    @ResponseBody
+    @PostMapping(value = Url.BOOK.INSERTBBOK)
+    public void insertBook(@RequestParam Map<String, Object> params, HttpServletRequest request) throws Exception {
+        HttpSession session = request.getSession();
+        String name = (String) session.getAttribute("userName");
+        String id = (String) session.getAttribute("userId");
+        params.put("userName", name);
+        params.put("userId", id);
+        bookService.addBook(params);
     }
 }

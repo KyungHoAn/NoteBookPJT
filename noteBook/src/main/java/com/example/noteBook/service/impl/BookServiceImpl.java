@@ -1,10 +1,12 @@
 package com.example.NoteBook.service.impl;
 
+import com.example.NoteBook.dao.BookMapper;
 import com.example.NoteBook.service.BookService;
 import lombok.extern.slf4j.Slf4j;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -29,11 +31,14 @@ public class BookServiceImpl implements BookService {
     @Value("${Secret_KEY}")
     private String SECRET_KEY;
 
+    @Autowired
+    BookMapper bookMapper;
+
     final String baseUrl = "https://openapi.naver.com/v1/search/book.json?query=";
 
     @Override
-    public Map<String, Object> addBook(Map<String, Object> params) throws Exception {
-        return null;
+    public void addBook(Map<String, Object> params) throws Exception {
+        bookMapper.insertBook(params);
     }
 
     @Override

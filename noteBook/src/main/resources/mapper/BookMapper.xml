@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.NoteBook.dao.BookMapper">
+
+    <!-- 책 등록 -->
+    <insert id="insertBook" parameterType="map">
+        INSERT INTO TB_BOOKDETAIL (
+            USER_ID
+            , USER_NAME
+            , BOOK_TITLE
+            , BOOK_AUTHOR
+            , BOOK_PUBLISHER
+            , BOOK_PRICE
+            , BOOK_IMG
+            , BOOK_CONTENT
+            , BOOK_SELLING_PRICE
+        ) VALUES (
+            #{userId}
+            , #{userName}
+            , #{title}
+            , #{author}
+            , #{publisher}
+            , #{bookPrice}
+            , #{bookImg}
+            , #{content}
+            , #{price}
+        )
+    </insert>
+</mapper>

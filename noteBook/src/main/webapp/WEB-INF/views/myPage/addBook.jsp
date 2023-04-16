@@ -18,7 +18,7 @@
       <i class="bi bi-list mobile-nav-toggle d-none"></i>
     </nav><!-- .navbar -->
 
-    <a class="btn-getstarted scrollto">로그아웃</a>
+    <a class="btn-getstarted scrollto" onclick="location.href='/auth/logout-proc'">로그아웃</a>
 
   </div>
 </header><!-- End Header -->
@@ -50,39 +50,41 @@
           <input class="input is-normal" id="isbn" name="isbn" type="text" style="width: 15cm" placeholder="ISBN 입력">
           <button type="button" id="searchBtn" class="btn btn-outline-secondary">책 검색하기</button></div>
       </div>
+      <form id="bookDetail">
+        <!-- ======= Book Section ======= -->
+        <div style="margin-left: 150px; display:none" id="detail_book">
+          <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
 
-      <!-- ======= Book Section ======= -->
-      <div style="margin-left: 150px; display:none" id="detail_book">
-        <section id="about" class="about">
-          <div class="container" data-aos="fade-up">
+              <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-4">
+                  <div class="" id="bookImg">
 
-              <div class="col-lg-4">
-                <div class="" id="bookImg">
-
+                  </div>
                 </div>
-              </div>
 
-              <div class="col-lg-7">
-                <h3 class="pt-0 pt-lg-5">책 정보</h3>
+                <div class="col-lg-7">
+                  <h3 class="pt-0 pt-lg-5">책 정보</h3>
 
-                <!-- Tab Content -->
-                <div class="tab-content">
+                  <!-- Tab Content -->
+                  <div class="tab-content">
 
-                  <div class="tab-pane fade show active" id="tab1">
+                    <div class="tab-pane fade show active" id="tab1">
 
-                  </div><!-- End Tab 1 Content -->
+                    </div><!-- End Tab 1 Content -->
 
-                </div>
-                <div style="margin-top: 50px;">
-                  <button type="button" class="btn btn-outline-secondary btn-lg" onClick="location.href='myPage.html'">책정보 저장하기</button>
+                  </div>
+                  <div style="margin-top: 50px;">
+                    <button type="button" class="btn btn-outline-secondary btn-lg" id="insertBookBtn">책정보 저장하기</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section><!-- End About Section -->
-      </div>
+          </section><!-- End About Section -->
+        </div>
+      </form>
+
     </div>
   </section><!-- End Services Section -->
 

@@ -4,7 +4,7 @@ import java.io.InputStream;
 import java.util.Map;
 
 public interface BookService {
-    Map<String, Object> addBook(Map<String, Object> params) throws Exception;
+    void addBook(Map<String, Object> params) throws Exception;
     Map<String, Object> listBook(Map<String, Object> params) throws Exception;
     Map<String, Object> getBook(Map<String, Object> params) throws Exception;
     Map<String, Object> deleteBook(Map<String, Object> params) throws Exception;
