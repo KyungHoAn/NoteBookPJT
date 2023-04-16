@@ -35,12 +35,13 @@
         SELECT *
         FROM TB_BOOKDETAIL
         WHERE USER_ID = #{userId}
+        ORDER BY BOOK_UPLOAD_DATE DESC
     </select>
 
     <!-- 사용자가 올린 책 상세 -->
     <select id ="getBook" resultType="map">
         SELECT *
         FROM TB_BOOKDETAIL
-        WHERE USER_ID= #{userId} AND BOOK_IDX = #{bookIdx}
+        WHERE BOOK_IDX = #{bookIdx}
     </select>
 </mapper>

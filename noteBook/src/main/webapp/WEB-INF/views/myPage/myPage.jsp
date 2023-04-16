@@ -73,7 +73,7 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
-                <h2>등록한 정보</h2>
+                <h2>등록한 책 정보</h2>
                 <button type="button" class="btn btn-outline-secondary" onclick="location.href='/book/addBook'">책 등록하기</button>
             </div>
 
@@ -88,7 +88,7 @@
                                 <div class="icon">
                                     <i class="bi bi-activity"></i>
                                 </div>
-                                <a onclick="location.href='/book/getBook'" class="stretched-link">
+                                <a onclick="location.href='/book/getBook?bookIdx='+${var.BOOK_IDX}" class="stretched-link">
                                     <h3>${var.BOOK_TITLE}</h3>
                                 </a>
                                 <p>판매자: ${var.USER_NAME}</p>
@@ -106,7 +106,7 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
-                <h2>찜한 정보</h2>
+                <h2>찜한 책 정보</h2>
             </div>
 
             <div class="row gy-5">

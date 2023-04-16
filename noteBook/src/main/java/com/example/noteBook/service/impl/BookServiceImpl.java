@@ -52,7 +52,10 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Map<String, Object> getBook(Map<String, Object> params) throws Exception {
-        return null;
+        Map<String, Object> result = new HashMap<>();
+        result = bookMapper.getBook(params);
+
+        return result;
     }
 
     @Override

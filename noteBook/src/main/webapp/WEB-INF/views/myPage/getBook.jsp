@@ -51,19 +51,15 @@
                         <div class="swiper-wrapper align-items-center">
 
                             <div class="swiper-slide">
-                                <img src="https://gimg.gilbut.co.kr/book/BN003654/rn_view_BN003654.jpg" alt="" style="width: 400px;">
+                                <img src="${list.BOOK_IMG}" alt="" style="width: 400px;">
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="assets/img/portfolio/product-1.jpg" alt="">
+                                <img src="" alt="">
                             </div>
 
                             <div class="swiper-slide">
-                                <img src="assets/img/portfolio/branding-1.jpg" alt="">
-                            </div>
-
-                            <div class="swiper-slide">
-                                <img src="assets/img/portfolio/books-1.jpg" alt="">
+                                <img src="" alt="">
                             </div>
 
                         </div>
@@ -73,20 +69,36 @@
 
                 <div class="col-lg-4">
                     <div class="portfolio-info">
-                        <h3>시나공 정보처리기사<button type="button" id="deleteBook" class="btn btn-outline-secondary" style="float: right;" onClick="location.href='myPage.html'">책 삭제</button></h3>
+                        <h3>시나공 정보처리기사
+                            <c:if test="${userId eq list.USER_ID}">
+                                <button type="button" id="deleteBook" class="btn btn-outline-secondary" style="float: right;" onClick="location.href='myPage.html'">책 삭제</button>
+                            </c:if>
+                        </h3>
                         <ul>
                             <li><strong>Category</strong>: BOOK</li>
-                            <li><strong>책</strong>: 시나공 정보처리기사 실기</li>
-                            <li><strong>저자</strong>: 김철수</li>
-                            <li><strong>출판사</strong>: 00출판사</li>
-                            <li><strong>가격</strong>: 2000원<button type="button" class="btn btn-outline-secondary" style="margin-left:10px;">가격수정</button></li>
-                            <li><strong>판매자</strong>: 홍길동</li>
+                            <li><strong>책</strong>: ${list.BOOK_TITLE}</li>
+                            <li><strong>저자</strong>: ${list.BOOK_AUTHOR}</li>
+                            <li><strong>출판사</strong>: ${list.BOOK_PUBLISHER}</li>
+                            <li><strong>판매 가격</strong>:
+                                <c:if test="${userId eq list.USER_ID}">
+                                    <input class="input is-normal" type="text" id="bookPrice" name="bookPrice" value="${list.BOOK_SELLING_PRICE}" style="width:100px"> 원
+                                    <button type="button" id="priceBtn" class="btn btn-outline-secondary" style="margin-left:10px;">가격수정</button>
+                                </c:if>
+                                <c:if test="${userId ne list.USER_ID}">
+                                    ${list.BOOK_SELLING_PRICE} 원
+                                </c:if>
+                            </li>
+                            <li><strong>판매자</strong>: ${list.USER_NAME}</li>
                         </ul>
                     </div>
                     <div class="portfolio-description">
-                        <h2>책의 상세 내용 <button type="button" class="btn btn-outline-secondary" style="margin-left:10px;">내용수정</button></h2>
+                        <h2>책의 상세 내용
+                            <c:if test="${userId eq list.USER_ID}">
+                                <button type="button" class="btn btn-outline-secondary" style="margin-left:10px;">내용수정</button>
+                            </c:if>
+                        </h2>
                         <p>
-                            12pg 노트필기한거 말고는 깨끗한 책입니다.!!
+                            ${list.BOOK_CONTENT}
                         </p>
                     </div>
                 </div>

@@ -25,8 +25,7 @@ public class UserInfoController {
         String id = (String) session.getAttribute("userId");
         params.put("userId", id);
         model.addAttribute("list",bookService.listBook(params));
-        System.out.println("====");
-        System.out.println(model);
+
         return Url.LIST.USERINFO_JSP;
     }
 }

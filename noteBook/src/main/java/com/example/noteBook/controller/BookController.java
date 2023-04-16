@@ -29,7 +29,11 @@ public class BookController {
     }
 
     @GetMapping(value = Url.BOOK.GETBOOK)
-    public String getBookView() throws Exception {
+    public String getBookView(@RequestParam("bookIdx") String idx, Model model, HttpServletRequest request) throws Exception {
+        Map<String, Object> result = new HashMap<>();
+        result.put("bookIdx", idx);
+        model.addAttribute("list", bookService.getBook(result));
+
         return Url.BOOK.GETBOOK_JSP;
     }
 
