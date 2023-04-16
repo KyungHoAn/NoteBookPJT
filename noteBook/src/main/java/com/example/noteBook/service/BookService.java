@@ -12,5 +12,6 @@ public interface BookService {
     String searchBook(String url);
     String readBody(InputStream body);
     Map<String, Object> getResult(String response, String[] fields);
-
+    void updateBookPrice(Map<String, Object> params) throws Exception;
+    void updateBookContent(Map<String, Object> params) throws Exception;
 }

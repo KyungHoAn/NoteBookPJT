@@ -17,9 +17,7 @@
             </ul>
             <i class="bi bi-list mobile-nav-toggle d-none"></i>
         </nav><!-- .navbar -->
-
-        <a class="btn-getstarted scrollto" href="">로그아웃</a>
-
+        <a class="btn-getstarted scrollto" onclick="location.href='/auth/logout-proc'">로그아웃</a>
     </div>
 </header><!-- End Header -->
 
@@ -57,11 +55,6 @@
                             <div class="swiper-slide">
                                 <img src="" alt="">
                             </div>
-
-                            <div class="swiper-slide">
-                                <img src="" alt="">
-                            </div>
-
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -71,7 +64,7 @@
                     <div class="portfolio-info">
                         <h3>시나공 정보처리기사
                             <c:if test="${userId eq list.USER_ID}">
-                                <button type="button" id="deleteBook" class="btn btn-outline-secondary" style="float: right;" onClick="location.href='myPage.html'">책 삭제</button>
+                                <button type="button" id="deleteBookBtn" class="btn btn-outline-secondary" style="float: right;">책 삭제</button>
                             </c:if>
                         </h3>
                         <ul>
@@ -94,11 +87,16 @@
                     <div class="portfolio-description">
                         <h2>책의 상세 내용
                             <c:if test="${userId eq list.USER_ID}">
-                                <button type="button" class="btn btn-outline-secondary" style="margin-left:10px;">내용수정</button>
+                                <button type="button" id="contentBtn" class="btn btn-outline-secondary" style="margin-left:10px;">내용수정</button>
                             </c:if>
                         </h2>
                         <p>
-                            ${list.BOOK_CONTENT}
+                            <c:if test="${userId eq list.USER_ID}">
+                                <textarea class="input is-normal" id="content" name="content">${list.BOOK_CONTENT}</textarea>
+                            </c:if>
+                            <c:if test="${userId ne list.USER_ID}">
+                                ${list.BOOK_CONTENT}
+                            </c:if>
                         </p>
                     </div>
                 </div>

@@ -4,7 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.NoteBook.dao.BookMapper">
-
     <!-- 책 등록 -->
     <insert id="insertBook" parameterType="map">
         INSERT INTO TB_BOOKDETAIL (
@@ -44,4 +43,23 @@
         FROM TB_BOOKDETAIL
         WHERE BOOK_IDX = #{bookIdx}
     </select>
+
+    <!-- 책 가격 수정 -->
+    <update id="updateBookPrice" parameterType="map">
+        UPDATE
+            TB_BOOKDETAIL
+        SET
+            BOOK_SELLING_PRICE = #{bookPrice}
+        WHERE BOOK_IDX = #{bookIdx} AND USER_ID = #{userId}
+    </update>
+
+    <!-- 책 내용 수정 -->
+    <update id="updateBookContent" parameterType="map">
+        UPDATE
+            TB_BOOKDETAIL
+        SET
+            BOOK_CONTENT = #{bookContent}
+        WHERE BOOK_IDX = #{bookIdx} AND USER_ID = #{userId}
+    </update>
+
 </mapper>

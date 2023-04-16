@@ -68,4 +68,22 @@ public class BookController {
         params.put("userId", id);
         bookService.addBook(params);
     }
+
+    @ResponseBody
+    @PostMapping(value = Url.BOOK.UPDATEPRICE)
+    public void updateBookPrice(@RequestParam Map<String, Object> params, HttpServletRequest request) throws Exception {
+        HttpSession session = request.getSession();
+        String id = (String) session.getAttribute("userId");
+        params.put("userId",id);
+        bookService.updateBookPrice(params);
+    }
+
+    @ResponseBody
+    @PostMapping(value = Url.BOOK.UPDATECONTENT)
+    public void updateBookContent(@RequestParam Map<String, Object> params, HttpServletRequest request) throws Exception {
+        HttpSession session = request.getSession();
+        String id = (String) session.getAttribute("userId");
+        params.put("userId", id);
+        bookService.updateBookContent(params);
+    }
 }

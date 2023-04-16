@@ -136,4 +136,14 @@ public class BookServiceImpl implements BookService {
         }
         return rtnObj;
     }
+
+    @Override
+    public void updateBookPrice(Map<String, Object> params) throws Exception {
+        bookMapper.updateBookPrice(params);
+    }
+
+    @Override
+    public void updateBookContent(Map<String, Object> params) throws Exception {
+        bookMapper.updateBookContent(params);
+    }
 }

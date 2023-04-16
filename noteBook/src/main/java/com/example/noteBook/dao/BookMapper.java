@@ -25,4 +25,10 @@ public interface BookMapper {
 
     //책 정보 삭제
     Map<String, Object> deleteBook(Map<String, Object> params);
+
+    //책 가격 수정
+    void updateBookPrice(Map<String, Object> params);
+
+    //책 내용 수정
+    void updateBookContent(Map<String, Object> params);
 }
