@@ -59,13 +59,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Map<String, Object> deleteBook(Map<String, Object> params) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Map<String, Object> updateBook(Map<String, Object> params) throws Exception {
-        return null;
+    public void deleteBook(Map<String, Object> params) throws Exception {
     }
 
     @Override
@@ -145,5 +139,25 @@ public class BookServiceImpl implements BookService {
     @Override
     public void updateBookContent(Map<String, Object> params) throws Exception {
         bookMapper.updateBookContent(params);
+    }
+
+
+
+    @Override
+    public Map<String, Object> insertBookChat(Map<String, Object> params) {
+        Map<String, Object> result = new HashMap<>();
+        bookMapper.insertBookChat(params);
+
+        List<Map<String, Object>> chatList = bookMapper.getBookChatList(params);
+        System.out.println("=======");
+        System.out.println(chatList);
+        result.put("list",chatList);
+        return result;
+    }
+
+    @Override
+    public List<Map<String, Object>> getBookChatList(Map<String, Object> params) {
+        List<Map<String, Object>> chatList = bookMapper.getBookChatList(params);
+        return chatList;
     }
 }

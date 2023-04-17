@@ -113,13 +113,13 @@
                     <div class="media-content">
                         <div class="field">
                             <p class="control">
-                                <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                                <textarea class="textarea" id="bookChat" name="bookChat" placeholder="게시글 작성"></textarea>
                             </p>
                         </div>
                         <nav class="level">
                             <div class="level-left">
                                 <div class="level-item">
-                                    <a class="button is-info">Submit</a>
+                                    <a class="button is-info" id="chatBtn">게시글 작성</a>
                                 </div>
                             </div>
                         </nav>
@@ -163,6 +163,7 @@
                             <button class="delete"></button>
                         </div>
                     </div>
+
                     <div class="media">
                         <figure class="media-left">
                             <p class="image is-64x64">
@@ -199,7 +200,6 @@
                         </div>
                     </div>
                 </div><!--End 커뮤니티 comments-->
-
 
             </div>
         </div>

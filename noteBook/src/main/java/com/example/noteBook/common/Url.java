@@ -33,6 +33,7 @@ public final class Url {
         public static final String INSERTBBOK       = "/insertBook";
         public static final String UPDATEPRICE      = "/updateBookPrice";
         public static final String UPDATECONTENT    = "/updateBookContent";
+        public static final String BOOKCHAT         = "/insertBookChat";
     }
 
     public static final class COMMUNITY {

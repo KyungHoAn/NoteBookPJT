@@ -31,4 +31,10 @@ public interface BookMapper {
 
     //책 내용 수정
     void updateBookContent(Map<String, Object> params);
+
+    //책 게시글 작성
+    Map<String, Object> insertBookChat(Map<String, Object> params);
+
+    //책 게시글 리스트
+    List<Map<String, Object>> getBookChatList(Map<String, Object> params);
 }

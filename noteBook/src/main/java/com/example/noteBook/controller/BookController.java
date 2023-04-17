@@ -33,6 +33,7 @@ public class BookController {
         Map<String, Object> result = new HashMap<>();
         result.put("bookIdx", idx);
         model.addAttribute("list", bookService.getBook(result));
+        model.addAttribute("chatList", bookService.getBookChatList(result));
 
         return Url.BOOK.GETBOOK_JSP;
     }
@@ -46,7 +47,7 @@ public class BookController {
             String url = URLEncoder.encode(isbn, "UTF-8");
             String response = bookService.searchBook(url);
 
-            String[] fields = {"title","link","publisher","description","image","author","price","isbn","pubdate"};
+            String[] fields = {"title","link","publisher","description","image","author","discount","isbn","pubdate"};
             model.addAttribute("bootDetail",bookService.getResult(response, fields));
             result = bookService.getResult(response, fields);
             result.put("success", true);
@@ -86,4 +87,26 @@ public class BookController {
         params.put("userId", id);
         bookService.updateBookContent(params);
     }
+
+    @ResponseBody
+    @PostMapping(value = Url.BOOK.BOOKCHAT)
+    public Map<String, Object> insertBookChat(@RequestParam Map<String, Object> params, HttpServletRequest request) throws Exception {
+        Map<String, Object> result = new HashMap<>();
+        HttpSession session = request.getSession();
+        String id= (String) session.getAttribute("userId");
+        String name = (String) session.getAttribute("userName");
+        params.put("userId", id);
+        params.put("userName", name);
+
+        try{
+            result = bookService.insertBookChat(params);
+            result.put("success", true);
+            result.put("code","00");
+        }catch (Exception e) {
+            result.put("success", false);
+            result.put("code", "99");
+        }
+        return result;
+    }
+
 }

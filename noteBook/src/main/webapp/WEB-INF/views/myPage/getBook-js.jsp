@@ -40,4 +40,24 @@
         let data = {"bookIdx": ${list.BOOK_IDX}};
 
     })
+
+    $("#chatBtn").click(function() {
+        let chatContent = $("#bookChat").val();
+        console.log(chatContent);
+        let data = {"bookChat": chatContent, "bookIdx":${list.BOOK_IDX}};
+
+        $.ajax({
+            type:"POST",
+            enctype: 'multipart/form-data',
+            url:'/insertBookChat',
+            data: data,
+            success: function(result) {
+
+            },
+            error: function(e) {
+                console.log("ERROR : ", e);
+            }
+        });
+    });
+
 </script>
