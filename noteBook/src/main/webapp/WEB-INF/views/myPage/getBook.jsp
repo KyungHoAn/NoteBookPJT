@@ -128,77 +128,45 @@
 
                 <!-- 게시글 -->
                 <div class="comments">
-                    <div class="media">
-                        <figure class="media-left">
-                            <p class="image is-64x64">
-                                <img src="https://bulma.io/images/placeholders/128x128.png">
-                            </p>
-                        </figure>
-
-                        <div class="media-content">
-                            <div class="content">
-                                <p>
-                                    <strong>홍길동</strong> <small>@wonkang</small> <small>31m</small>
-                                    <br>
-                                    책을 사고 싶습니다!
+                    <c:forEach var="var" items="${chatList}" varStatus="status">
+                        <div class="media">
+                            <figure class="media-left">
+                                <p class="image is-64x64">
+                                    <img src="https://bulma.io/images/placeholders/128x128.png">
                                 </p>
+                            </figure>
+
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <strong>${var.USER_NAME}</strong> <small>${var.USER_ID}</small> <small>${var.CHAT_DATE}</small>
+                                        <br>
+                                        ${var.CHAT_CONTENT}
+                                    </p>
+                                </div>
+
+                                <nav class="level is-mobile">
+                                    <div class="level-left">
+                                        <a class="level-item">
+                                            <span class="icon is-small"><i class="fas fa-reply"></i></span>
+                                        </a>
+                                        <a class="level-item">
+                                            <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+                                        </a>
+                                        <a class="level-item">
+                                            <span class="icon is-small"><i class="fas fa-heart"></i></span>
+                                        </a>
+                                    </div>
+                                </nav>
                             </div>
 
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <a class="level-item">
-                                        <span class="icon is-small"><i class="fas fa-reply"></i></span>
-                                    </a>
-                                    <a class="level-item">
-                                        <span class="icon is-small"><i class="fas fa-retweet"></i></span>
-                                    </a>
-                                    <a class="level-item">
-                                        <span class="icon is-small"><i class="fas fa-heart"></i></span>
-                                    </a>
-                                </div>
-                            </nav>
-                        </div>
-
-                        <div class="media-right">
-                            <button class="delete"></button>
-                        </div>
-                    </div>
-
-                    <div class="media">
-                        <figure class="media-left">
-                            <p class="image is-64x64">
-                                <img src="https://bulma.io/images/placeholders/128x128.png">
-                            </p>
-                        </figure>
-
-                        <div class="media-content">
-                            <div class="content">
-                                <p>
-                                    <strong>홍길순</strong> <small>@wonkang</small> <small>31m</small>
-                                    <br>
-                                    책을 사고 싶습니다!
-                                </p>
+                            <div class="media-right">
+                                <c:if test="${userId eq var.USER_ID}">
+                                    <button class="delete" type="button" id="chatDel"></button>
+                                </c:if>
                             </div>
-
-                            <nav class="level is-mobile">
-                                <div class="level-left">
-                                    <a class="level-item">
-                                        <span class="icon is-small"><i class="fas fa-reply"></i></span>
-                                    </a>
-                                    <a class="level-item">
-                                        <span class="icon is-small"><i class="fas fa-retweet"></i></span>
-                                    </a>
-                                    <a class="level-item">
-                                        <span class="icon is-small"><i class="fas fa-heart"></i></span>
-                                    </a>
-                                </div>
-                            </nav>
                         </div>
-
-                        <div class="media-right">
-                            <button class="delete"></button>
-                        </div>
-                    </div>
+                    </c:forEach>
                 </div><!--End 커뮤니티 comments-->
 
             </div>

@@ -158,6 +158,8 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<Map<String, Object>> getBookChatList(Map<String, Object> params) {
         List<Map<String, Object>> chatList = bookMapper.getBookChatList(params);
+        System.out.println("getchatList");
+        System.out.println(chatList);
         return chatList;
     }
 }
