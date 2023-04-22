@@ -129,7 +129,7 @@
                 <!-- 게시글 -->
                 <div class="comments" id="bookComments">
                     <c:forEach var="var" items="${chatList}" varStatus="status">
-                        <div class="media">
+                        <div class="media" id="${var.BOOK_CHAT_IDX}">
                             <figure class="media-left">
                                 <p class="image is-64x64">
                                     <img src="https://bulma.io/images/placeholders/128x128.png">
@@ -162,7 +162,7 @@
 
                             <div class="media-right">
                                 <c:if test="${userId eq var.USER_ID}">
-                                    <button class="delete" type="button" id="chatDel" onclick="bookChatDel('${var.BOOK_CHAT_IDX}','${var.USER_ID}')"></button>
+                                    <button class="delete" type="button" id="chatDel" onclick="bookChatDel(${var.BOOK_CHAT_IDX})"></button>
                                 </c:if>
                             </div>
                         </div>

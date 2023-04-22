@@ -44,7 +44,6 @@
     // 책 게시물 작성
     $("#chatBtn").click(function() {
         let chatContent = $("#bookChat").val();
-        console.log(chatContent);
         let data = {"bookChat": chatContent, "bookIdx":${list.BOOK_IDX}};
 
         $.ajax({
@@ -55,7 +54,7 @@
             success: function(result) {
                 let chatHtml ='';
                 if(result.code == "00" || true) {
-                    chatHtml += '<div class="media">';
+                    chatHtml += '<div class="media" id="'+result.BOOK_CHAT_IDX+'">';
                     chatHtml += '<figure class="media-left"><p class="image is-64x64"><img src="https://bulma.io/images/placeholders/128x128.png"></p></figure>';
                     chatHtml += '<div class="media-content">';
                     chatHtml +='<div class="content">';
@@ -68,10 +67,13 @@
                         '<a class="level-item"> ' +
                         '<span class="icon is-small"><i class="fas fa-retweet"></i></span> ' +
                         '</a> ' +
-                        '<a class="level-item"> <span class="icon is-small"><i class="fas fa-heart"></i></span> </a> </div> ' +
+                        '<a class="level-item"> <span class="icon is-small"><i class="fas fa-heart"></i></span> </a></div> ' +
                         '</nav></div>';
-                    chatHtml +='<div class="media-right"> <button class="delete" type="button" id="chatDel"></button> </div>';
-                    chatHtml +='</div>';
+                    chatHtml +='<div class="media-right">';
+                    if("${userId}" == result.USER_ID) {
+                        chatHtml +='<button class="delete" type="button" id="chatDel" onclick="bookChatDel('+result.BOOK_CHAT_IDX+')"></button>';
+                    }
+                    chatHtml +='</div></div>';
                 }
                 $("#bookComments").append(chatHtml);
             },
@@ -81,8 +83,25 @@
         });
     });
 
-    function bookChatDel(chatIdx, userId) {
-        let data = {"chatIdx":chatIdx, "userId": userId};
+    function bookChatDel(chatIdx) {
+        let data = {"chatIdx":chatIdx};
+        let chatCont = document.getElementById(chatIdx);
+        $.ajax({
+            type:"POST",
+            enctype: 'multipart/form-data',
+            url: "/deleteBookChat",
+            data: data,
+            success: function (result) {
+                if(result.code == "00" || true) {
+                    chatCont.remove();
+                } else {
+                    alert("게시물을 삭제할 수 없습니다. 관리자에게 문의하십시오")
+                }
+            },
+            error : function (e) {
+                console.log("ERROR : ", e)
+            }
+        })
 
     }
 

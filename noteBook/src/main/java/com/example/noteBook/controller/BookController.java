@@ -109,4 +109,19 @@ public class BookController {
         return result;
     }
 
+    @ResponseBody
+    @PostMapping(value = Url.BOOK.DELCHAT)
+    public Map<String, Object> deleteChat(@RequestParam Map<String, Object> params) throws Exception {
+        Map<String, Object> result = new HashMap<>();
+        try{
+            bookService.deleteChat(params);
+            result.put("success", true);
+            result.put("code","00");
+        } catch (Exception e) {
+            result.put("success", false);
+            result.put("code", "99");
+        }
+        return result;
+    }
+
 }

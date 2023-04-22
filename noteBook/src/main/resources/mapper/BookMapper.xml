@@ -92,4 +92,10 @@
         ORDER BY CHAT_DATE DESC LIMIT 1
     </select>
 
+    <!--책 게시글 삭제 -->
+    <delete id="deleteChat" parameterType="map">
+        DELETE FROM TB_BOOK_CHAT
+        WHERE BOOK_CHAT_IDX = #{chatIdx}
+    </delete>
+
 </mapper>

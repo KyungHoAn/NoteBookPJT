@@ -39,4 +39,6 @@ public interface BookMapper {
     List<Map<String, Object>> getBookChatList(Map<String, Object> params);
     //마지막 게시글
     Map<String, Object> getBookChat(Map<String, Object> params);
+    //책 게시슬 삭제
+    void deleteChat(Map<String, Object> params);
 }
