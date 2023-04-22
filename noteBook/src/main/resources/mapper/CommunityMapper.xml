@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.NoteBook.dao.CommunityMapper">
+    <!-- 책 등록 -->
+    <insert id="insertBook" parameterType="map">
+        INSERT INTO TB_COMMU (
+              USER_ID
+            , USER_NAME
+            , COMMU_TITLE
+            , COMMU_CONTENT
+            , COMMU_TAG
+        ) VALUES (
+            #{userId}
+            , #{userName}
+            , #{title}
+            , #{content}
+            , #{commuTag}
+        )
+    </insert>
+
+    <select id="getCommunityTag" resultType="map">
+        SELECT TAG_NAME
+        FROM TB_COMMU_TAG
+        WHERE TAG_NUMBER = #{tagNumber}
+    </select>
+</mapper>

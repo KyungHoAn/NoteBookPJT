@@ -43,52 +43,54 @@
     </div><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Details Section ======= -->
-    <section id="blog" class="blog">
-        <div class="container" data-aos="fade-up">
-            <div class="row g-5">
-                <div>
-                    <article class="blog-details" style="margin-bottom: 50px;">
-                        <h2 class="title">제목</h2>
-                        <div style="margin-top: 10px;">
-                            <input class="input is-rounded" type="text" placeholder="제목 입력">
-                        </div>
+    <form id="addCommunity">
+        <section id="blog" class="blog">
+            <div class="container" data-aos="fade-up">
+                <div class="row g-5">
+                    <div>
+                        <article class="blog-details" style="margin-bottom: 50px;">
+                            <h2 class="title">제목</h2>
+                            <div style="margin-top: 10px;">
+                                <input class="input is-rounded" type="text" id="title" name="title" placeholder="제목 입력">
+                            </div>
 
-                        <h3 class="title">내용</h3>
+                            <h3 class="title">내용</h3>
 
-                        <div class="content">
-                            <textarea rows="5" cols="145"></textarea>
-                        </div><!-- End post content -->
+                            <div class="content">
+                                <textarea id="content" name="content" rows="5" cols="145"></textarea>
+                            </div>
 
-                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                            <label class="btn btn-outline-success" for="btncheck1">책</label>
+                            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                                <input type="checkbox" class="btn-check" id="btnCheck1" name="btnCheck1" autocomplete="off">
+                                <label class="btn btn-outline-success" for="btnCheck1">책</label>
 
-                            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                            <label class="btn btn-outline-success" for="btncheck2">스터디</label>
+                                <input type="checkbox" class="btn-check" id="btnCheck2" name="btnCheck2" autocomplete="off">
+                                <label class="btn btn-outline-success" for="btnCheck2">스터디</label>
 
-                            <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                            <label class="btn btn-outline-success" for="btncheck3">칭찬방</label>
+                                <input type="checkbox" class="btn-check" id="btnCheck3" name="btnCheck3" autocomplete="off">
+                                <label class="btn btn-outline-success" for="btnCheck3">칭찬방</label>
 
-                            <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
-                            <label class="btn btn-outline-success" for="btncheck4">비난방</label>
+                                <input type="checkbox" class="btn-check" id="btnCheck4" name="btnCheck4" autocomplete="off">
+                                <label class="btn btn-outline-success" for="btnCheck4">비난방</label>
 
-                            <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
-                            <label class="btn btn-outline-success" for="btncheck5">지도</label>
+                                <input type="checkbox" class="btn-check" id="btnCheck5" name="btnCheck5" autocomplete="off">
+                                <label class="btn btn-outline-success" for="btnCheck5">지도</label>
 
-                            <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
-                            <label class="btn btn-outline-success" for="btncheck6">공구</label>
-                        </div>
+                                <input type="checkbox" class="btn-check" id="btnCheck6" name="btnCheck6" autocomplete="off">
+                                <label class="btn btn-outline-success" for="btnCheck6">공구</label>
+                            </div>
 
-                        <div style="margin-top: 40px;">
-                            <button type="button" class="btn btn-outline-secondary btn-lg" onClick="location.href='blog.html'">커뮤니티 올리기</button>
-                        </div>
+                            <div style="margin-top: 40px;">
+                                <button type="button" class="btn btn-outline-secondary btn-lg" id="addCommunityBtn">커뮤니티 올리기</button>
+                            </div>
 
-                    </article><!-- End blog post -->
+                        </article><!-- End blog post -->
+                    </div>
                 </div>
-            </div>
 
-        </div>
-    </section><!-- End Blog Details Section -->
+            </div>
+        </section><!-- End Blog Details Section -->
+    </form>
 
 </main><!-- End #main -->
 
