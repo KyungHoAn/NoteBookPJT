@@ -19,12 +19,10 @@ public interface BookMapper {
 
     // 사용자 책 리스트
     List<Map<String, Object>> getUserBookList(Map<String, Object> params);
-
-    //책 정보 수정
-    Map<String, Object> updateBook(Map<String, Object> params);
-
     //책 정보 삭제
-    Map<String, Object> deleteBook(Map<String, Object> params);
+    void deleteBook(Map<String, Object> params);
+    //책 댓글 전부 삭제
+    void deleteAllChat(Map<String, Object> params);
 
     //책 가격 수정
     void updateBookPrice(Map<String, Object> params);

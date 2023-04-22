@@ -37,8 +37,37 @@
     });
 
     $("#deleteBookBtn").click(function() {
-        let data = {"bookIdx": ${list.BOOK_IDX}};
 
+        let data = {"bookIdx": ${list.BOOK_IDX}};
+        console.log(data);
+
+        Swal.fire({
+            title: '해당 책을 지우시겠습니까?',
+            text: "책을 삭제하시면 댓글도 지워집니다!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '삭제!',
+            cancelButtonText: '취소'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type:"POST",
+                    enctype: 'multipart/form-data',
+                    url:"/deleteBook",
+                    data: data,
+                    success: function(result) {
+                        if(result.code == "00" || true) {
+                            document.location.href='/myPageView';
+                        }
+                    },
+                    error: function (e) {
+                        console.log("ERROR : ", e);
+                    }
+                });
+            }
+        })
     })
 
     // 책 게시물 작성

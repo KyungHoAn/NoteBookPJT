@@ -12,6 +12,9 @@
 <script type="text/javascript" src="../js/bootstrap/glightbox.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap/isotope.pkgd.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap/aos.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <meta name="_csrf" content="${_csrf.token}"/>
 <script>
     let csrfToken = $("meta[name='_csrf']").attr("content");

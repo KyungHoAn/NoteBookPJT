@@ -4,6 +4,7 @@ import com.example.NoteBook.common.Url;
 import com.example.NoteBook.service.BookService;
 import org.apache.catalina.session.StandardSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -120,6 +121,21 @@ public class BookController {
         } catch (Exception e) {
             result.put("success", false);
             result.put("code", "99");
+        }
+        return result;
+    }
+
+    @ResponseBody
+    @PostMapping(value = Url.BOOK.DELBOOK)
+    public Map<String, Object> deleteBook(@RequestParam Map<String, Object> params) throws Exception {
+        Map<String, Object> result = new HashMap<>();
+        try {
+            bookService.deleteBook(params);
+            result.put("success", true);
+            result.put("code", "00");
+        } catch (Exception e) {
+            result.put("success", false);
+            result.put("code","00");
         }
         return result;
     }

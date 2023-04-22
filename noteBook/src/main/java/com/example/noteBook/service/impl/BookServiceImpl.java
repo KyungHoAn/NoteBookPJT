@@ -60,6 +60,8 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void deleteBook(Map<String, Object> params) throws Exception {
+        bookMapper.deleteBook(params);
+        bookMapper.deleteAllChat(params);
     }
 
     @Override

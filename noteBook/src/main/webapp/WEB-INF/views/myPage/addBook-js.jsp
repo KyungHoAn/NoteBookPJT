@@ -59,7 +59,7 @@
                 document.location.href='/myPageView';
             },
             error: function(e) {
-
+                console.log("ERROR : ", e);
             }
         })
     })
