@@ -110,41 +110,24 @@
             </div>
 
             <div class="row gy-5">
-
-                <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="service-item">
-                        <div class="img">
-                            <img src="" class="img-fluid" alt="">
-                        </div>
-                        <div class="details position-relative">
-                            <div class="icon">
-                                <i class="bi bi-activity"></i>
+                <c:forEach var="var" items="${basket.list}" varStatus="status">
+                    <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="service-item">
+                            <div class="img" style="margin-left: 60px;">
+                                <img src="${var.BOOK_IMG}" class="img-fluid" alt="" style="width: 200px;">
                             </div>
-                            <a href="#" class="stretched-link">
-                                <h3>Nesciunt Mete</h3>
-                            </a>
-                            <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis.</p>
-                        </div>
-                    </div>
-                </div><!-- End Service Item -->
-
-                <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="service-item">
-                        <div class="img">
-                            <img src="" class="img-fluid" alt="">
-                        </div>
-                        <div class="details position-relative">
-                            <div class="icon">
-                                <i class="bi bi-broadcast"></i>
+                            <div class="details position-relative">
+                                <div class="icon">
+                                    <i class="bi bi-activity"></i>
+                                </div>
+                                <a onclick="location.href='/book/getBook?bookIdx='+${var.BOOK_IDX}" class="stretched-link">
+                                    <h3>${var.BOOK_TITLE}</h3>
+                                </a>
+                                <p>판매자: ${var.USER_NAME}</p>
                             </div>
-                            <a href="#" class="stretched-link">
-                                <h3>Eosle Commodi</h3>
-                            </a>
-                            <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
                         </div>
-                    </div>
-                </div><!-- End Service Item -->
-
+                    </div><!-- End Service Item -->
+                </c:forEach>
             </div>
 
         </div>

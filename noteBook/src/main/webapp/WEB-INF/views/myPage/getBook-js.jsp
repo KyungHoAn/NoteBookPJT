@@ -130,8 +130,37 @@
             error : function (e) {
                 console.log("ERROR : ", e)
             }
-        })
+        });
+    }
 
+    console.log("${basket.BOOK_BASKET_IDX}")
+
+    function basketBtn(flag) {
+        console.log(flag)
+        let data = {"bookIdx":"${list.BOOK_IDX}", "flag": flag};
+        $.ajax({
+            type:"POST",
+            enctype: 'multipart/form-data',
+            url: "/insertBasket",
+            data: data,
+            success: function (result) {
+                if(result.code == "00" || true) {
+                    let basketHtml = '';
+                    let baskIdx = "${basket.BOOK_BASKET_IDX}";
+                    console.log("baskIDx == > "+baskIdx)
+                    if(result.BASKET_FLAG == 1) {
+                        basketHtml += '<button type="button" id="basketBtn" class="btn btn-outline-secondary" style="float: right;" onclick="basketBtn(3)">찜 취소</button>';
+                    } else {
+                        basketHtml += '<button type="button" id="basketBtn" class="btn btn-outline-secondary" style="float: right;" onclick="basketBtn(4)">찜하기</button>';
+                    }
+                    $("#basketBtn").remove();
+                    $("#basket").append(basketHtml);
+                }
+            },
+            error: function (e) {
+                console.log("ERROR : ", e)
+            }
+        });
     }
 
 </script>

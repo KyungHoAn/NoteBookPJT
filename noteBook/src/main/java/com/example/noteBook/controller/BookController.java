@@ -1,6 +1,7 @@
 package com.example.NoteBook.controller;
 
 import com.example.NoteBook.common.Url;
+import com.example.NoteBook.dao.BookMapper;
 import com.example.NoteBook.service.BookService;
 import org.apache.catalina.session.StandardSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class BookController {
     @Autowired
     BookService bookService;
 
+    @Autowired
+    BookMapper bookMapper;
+
     @GetMapping(value = Url.BOOK.ADDBOOK)
     public String addBookView() throws Exception {
         return Url.BOOK.ADDBOOK_JSP;
@@ -31,11 +35,17 @@ public class BookController {
 
     @GetMapping(value = Url.BOOK.GETBOOK)
     public String getBookView(@RequestParam("bookIdx") String idx, Model model, HttpServletRequest request) throws Exception {
+        HttpSession session = request.getSession();
+        String id = (String) session.getAttribute("userId");
         Map<String, Object> result = new HashMap<>();
         result.put("bookIdx", idx);
+        result.put("userId", id);
+
         model.addAttribute("list", bookService.getBook(result));
         model.addAttribute("chatList", bookService.getBookChatList(result));
-
+        if(bookMapper.getBasketBook(result) != null) {
+            model.addAttribute("basket",bookMapper.getBasketBook(result));
+        }
         return Url.BOOK.GETBOOK_JSP;
     }
 
@@ -136,6 +146,25 @@ public class BookController {
         } catch (Exception e) {
             result.put("success", false);
             result.put("code","00");
+        }
+        return result;
+    }
+
+    @ResponseBody
+    @PostMapping(value = Url.BOOK.INSERTBASKET)
+    public Map<String, Object> insertBasket(@RequestParam Map<String, Object> params, HttpServletRequest request, Model model) throws Exception {
+        Map<String, Object> result = new HashMap<>();
+        HttpSession session = request.getSession();
+        String id = (String) session.getAttribute("userId");
+        params.put("userId", id);
+
+        try {
+            result = bookService.insertBasketBook(params);
+            result.put("success", true);
+            result.put("code", "00");
+        } catch (Exception e) {
+            result.put("success", false);
+            result.put("code", "99");
         }
         return result;
     }

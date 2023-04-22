@@ -163,4 +163,41 @@ public class BookServiceImpl implements BookService {
     public void deleteChat(Map<String, Object> params) throws Exception {
         bookMapper.deleteChat(params);
     }
+
+    @Override
+    public Map<String, Object> insertBasketBook(Map<String, Object> params) throws Exception {
+        String flag = (String) params.get("flag");
+        if(flag.equals("1")){
+            bookMapper.insertBasketBook(params);
+        } else if (flag.equals("2")){
+            params.put("basketFlag", "0");
+            bookMapper.updateBasketBook(params);
+        } else if (flag.equals("3")){
+            params.put("basketFlag", "0");
+            bookMapper.updateBasketBook(params);
+        } else {
+            params.put("basketFlag", "1");
+            bookMapper.updateBasketBook(params);
+        }
+        return bookMapper.getBasketBook(params);
+    }
+
+    @Override
+    public Map<String, Object> basketBookList(Map<String, Object> params) throws Exception {
+        List<Map<String, Object>> basketList = new ArrayList<>();
+        Map<String, Object> result = new HashMap<>();
+        List<Map<String, Object>> basketBook = bookMapper.basketBookList(params);
+
+        for(int i=0; i<basketBook.size(); i++){
+            String book_flag = (String) basketBook.get(i).get("BASKET_FLAG");
+            if(book_flag.equals("1")) {
+                String bookIdx = (String) basketBook.get(i).get("BOOK_IDX");
+                params.put("bookIdx", bookIdx);
+                basketList.add(bookMapper.getBook(params));
+            }
+        }
+        result.put("list",basketList);
+
+        return result;
+    }
 }

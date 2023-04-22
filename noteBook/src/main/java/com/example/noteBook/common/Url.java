@@ -36,7 +36,8 @@ public final class Url {
         public static final String BOOKCHAT         = "/insertBookChat";
         public static final String TESTCHAT         = "/testInsertChat";
         public static final String DELCHAT          = "/deleteBookChat";
-        public static final String DELBOOK       = "/deleteBook";
+        public static final String DELBOOK          = "/deleteBook";
+        public static final String INSERTBASKET     = "/insertBasket";
     }
 
     public static final class COMMUNITY {

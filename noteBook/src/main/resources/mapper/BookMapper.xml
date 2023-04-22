@@ -114,4 +114,39 @@
         SELECT * FROM TB_BOOKDETAIL ORDER BY BOOK_UPLOAD_DATE DESC
     </select>
 
+    <!-- 책 찜정보 저장 -->
+    <insert id="insertBasketBook" parameterType="map">
+        INSERT INTO TB_BOOK_BASKET (
+              BOOK_IDX
+            , USER_ID
+            , BASKET_FLAG
+        ) VALUES (
+            #{bookIdx}
+            , #{userId}
+            , 1
+        )
+    </insert>
+
+    <update id="updateBasketBook" parameterType="map">
+        UPDATE
+            TB_BOOK_BASKET
+        SET
+            BASKET_FLAG = #{basketFlag}
+        WHERE
+            BOOK_IDX = #{bookIdx} AND USER_ID = #{userId}
+    </update>
+
+    <!-- 찜 정보 -->
+    <select id ="getBasketBook" resultType="map">
+        SELECT *
+        FROM TB_BOOK_BASKET
+        WHERE BOOK_IDX = #{bookIdx} AND USER_ID = #{userId}
+    </select>
+
+    <select id ="basketBookList" resultType="map">
+        SELECT *
+        FROM TB_BOOK_BASKET
+        WHERE USER_ID = #{userId}
+    </select>
+
 </mapper>

@@ -62,12 +62,23 @@
 
                 <div class="col-lg-4">
                     <div class="portfolio-info">
-                        <h3>시나공 정보처리기사
+                        <h3 id="basket">시나공 정보처리기사
                             <c:if test="${userId eq list.USER_ID}">
                                 <button type="button" id="deleteBookBtn" class="btn btn-outline-secondary" style="float: right;">책 삭제</button>
                             </c:if>
+
                             <c:if test="${userId ne list.USER_ID}">
-                                <button type="button" id="basketBtn" class="btn btn-outline-secondary" style="float: right;">찜하기</button>
+                                <c:if test="${basket eq null}">
+                                    <button type="button" id="basketBtn" class="btn btn-outline-secondary" style="float: right;" onclick="basketBtn(1)">찜하기</button>
+                                </c:if>
+                                <c:if test="${basket ne null}">
+                                    <c:if test="${basket.BASKET_FLAG == 1}">
+                                        <button type="button" id="basketBtn" class="btn btn-outline-secondary" style="float: right;" onclick="basketBtn(2)">찜 취소</button>
+                                    </c:if>
+                                    <c:if test="${basket.BASKET_FLAG == 0}">
+                                        <button type="button" id="basketBtn" class="btn btn-outline-secondary" style="float: right;" onclick="basketBtn(4)">찜 하기</button>
+                                    </c:if>
+                                </c:if>
                             </c:if>
                         </h3>
                         <ul>

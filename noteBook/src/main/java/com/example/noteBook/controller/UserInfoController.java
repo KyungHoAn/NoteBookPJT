@@ -25,6 +25,7 @@ public class UserInfoController {
         String id = (String) session.getAttribute("userId");
         params.put("userId", id);
         model.addAttribute("list",bookService.userListBook(params));
+        model.addAttribute("basket",bookService.basketBookList(params));
 
         return Url.LIST.USERINFO_JSP;
     }

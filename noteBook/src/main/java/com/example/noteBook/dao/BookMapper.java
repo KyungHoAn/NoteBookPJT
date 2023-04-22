@@ -32,4 +32,11 @@ public interface BookMapper {
     Map<String, Object> getBookChat(Map<String, Object> params);
     //책 게시슬 삭제
     void deleteChat(Map<String, Object> params);
+    //책 찜정보 저장
+    void insertBasketBook(Map<String, Object> params);
+    //책 찜정보 가져오기
+    Map<String, Object> getBasketBook(Map<String, Object> params);
+    // 책 찜정보 update
+    void updateBasketBook(Map<String, Object> params);
+    List<Map<String, Object>> basketBookList(Map<String, Object> params);
 }

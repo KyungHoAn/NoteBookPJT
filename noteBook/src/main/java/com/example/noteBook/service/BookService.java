@@ -17,4 +17,6 @@ public interface BookService {
     Map<String, Object> insertBookChat(Map<String, Object> params);
     List<Map<String, Object>> getBookChatList(Map<String, Object> params);
     void deleteChat(Map<String, Object> params) throws Exception;
+    Map<String, Object> insertBasketBook(Map<String, Object> params) throws Exception;
+    Map<String, Object> basketBookList(Map<String, Object> params) throws Exception;
 }
