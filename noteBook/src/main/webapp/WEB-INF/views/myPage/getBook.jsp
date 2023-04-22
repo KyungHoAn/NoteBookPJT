@@ -127,7 +127,7 @@
                 </article>
 
                 <!-- 게시글 -->
-                <div class="comments">
+                <div class="comments" id="bookComments">
                     <c:forEach var="var" items="${chatList}" varStatus="status">
                         <div class="media">
                             <figure class="media-left">
@@ -162,7 +162,7 @@
 
                             <div class="media-right">
                                 <c:if test="${userId eq var.USER_ID}">
-                                    <button class="delete" type="button" id="chatDel"></button>
+                                    <button class="delete" type="button" id="chatDel" onclick="bookChatDel('${var.BOOK_CHAT_IDX}','${var.USER_ID}')"></button>
                                 </c:if>
                             </div>
                         </div>

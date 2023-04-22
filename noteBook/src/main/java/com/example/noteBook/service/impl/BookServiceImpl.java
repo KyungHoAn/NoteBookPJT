@@ -147,19 +147,18 @@ public class BookServiceImpl implements BookService {
     public Map<String, Object> insertBookChat(Map<String, Object> params) {
         Map<String, Object> result = new HashMap<>();
         bookMapper.insertBookChat(params);
+        params.get("");
 
-        List<Map<String, Object>> chatList = bookMapper.getBookChatList(params);
+//        List<Map<String, Object>> chatList = bookMapper.getBookChatList(params);
+        Map<String, Object> lastChat = bookMapper.getBookChat(params);
         System.out.println("=======");
-        System.out.println(chatList);
-        result.put("list",chatList);
-        return result;
+        System.out.println(lastChat);;
+        return lastChat;
     }
 
     @Override
     public List<Map<String, Object>> getBookChatList(Map<String, Object> params) {
         List<Map<String, Object>> chatList = bookMapper.getBookChatList(params);
-        System.out.println("getchatList");
-        System.out.println(chatList);
         return chatList;
     }
 }

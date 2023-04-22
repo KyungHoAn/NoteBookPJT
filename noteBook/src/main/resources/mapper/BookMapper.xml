@@ -84,4 +84,12 @@
         WHERE BOOK_IDX = #{bookIdx}
     </select>
 
+    <!-- 책 게시글 -->
+    <select id="getBookChat" resultType="map">
+        SELECT *
+        FROM TB_BOOK_CHAT
+        WHERE BOOK_IDX = #{bookIdx}
+        ORDER BY CHAT_DATE DESC LIMIT 1
+    </select>
+
 </mapper>
