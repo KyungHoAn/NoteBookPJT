@@ -24,7 +24,7 @@ public class UserInfoController {
         HttpSession session = request.getSession();
         String id = (String) session.getAttribute("userId");
         params.put("userId", id);
-        model.addAttribute("list",bookService.listBook(params));
+        model.addAttribute("list",bookService.userListBook(params));
 
         return Url.LIST.USERINFO_JSP;
     }

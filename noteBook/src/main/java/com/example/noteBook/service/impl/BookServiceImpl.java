@@ -42,7 +42,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Map<String, Object> listBook(Map<String, Object> params) throws Exception {
+    public Map<String, Object> userListBook(Map<String, Object> params) throws Exception {
         Map<String, Object> result = new HashMap<>();
         List<Map<String, Object>> bookList = bookMapper.getUserBookList(params);
 

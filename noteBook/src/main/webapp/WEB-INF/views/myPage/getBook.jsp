@@ -66,6 +66,9 @@
                             <c:if test="${userId eq list.USER_ID}">
                                 <button type="button" id="deleteBookBtn" class="btn btn-outline-secondary" style="float: right;">책 삭제</button>
                             </c:if>
+                            <c:if test="${userId ne list.USER_ID}">
+                                <button type="button" id="basketBtn" class="btn btn-outline-secondary" style="float: right;">찜하기</button>
+                            </c:if>
                         </h3>
                         <ul>
                             <li><strong>Category</strong>: BOOK</li>

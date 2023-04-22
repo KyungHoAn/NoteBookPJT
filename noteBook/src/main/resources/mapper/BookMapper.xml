@@ -109,4 +109,9 @@
         WHERE BOOK_IDX = #{bookIdx}
     </delete>
 
+    <!-- 전체 책 리스트 -->
+    <select id ="getBookList" resultType="map">
+        SELECT * FROM TB_BOOKDETAIL ORDER BY BOOK_UPLOAD_DATE DESC
+    </select>
+
 </mapper>

@@ -6,7 +6,7 @@ import java.util.Map;
 
 public interface BookService {
     void addBook(Map<String, Object> params) throws Exception;
-    Map<String, Object> listBook(Map<String, Object> params) throws Exception;
+    Map<String, Object> userListBook(Map<String, Object> params) throws Exception;
     Map<String, Object> getBook(Map<String, Object> params) throws Exception;
     void deleteBook(Map<String, Object> params) throws Exception;
     String searchBook(String url);

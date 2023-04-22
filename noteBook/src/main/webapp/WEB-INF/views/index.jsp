@@ -34,7 +34,6 @@
     <h2><span>공책</span>에 오신것을 환영합니다.</h2>
     <p>공책은 전공책 거래 커뮤니티 플랫폼 입니다.</p>
     <div class="d-flex">
-      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
     </div>
   </div>
 </section>
@@ -54,112 +53,24 @@
       </div>
 
       <div class="row gy-5">
-
-        <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-          <div class="service-item">
-            <div class="img" style="margin-left: 60px;">
-              <img src="https://gimg.gilbut.co.kr/book/BN003654/rn_view_BN003654.jpg" class="img-fluid" alt="" style="width: 300px;">
-            </div>
-            <div class="details position-relative">
-              <div class="icon">
-                <i class="bi bi-activity"></i>
+        <c:forEach var="var" items="${list}" varStatus="status">
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-item">
+              <div class="img" style="margin-left: 70px;">
+                <img src="${var.BOOK_IMG}" class="img-fluid" alt="" style="width: 280px;">
               </div>
-              <a onclick="location.href='/getBookView'" class="stretched-link">
-                <h3>정보처리 기사</h3>
-              </a>
-              <p>원광대학교</p>
-            </div>
-          </div>
-        </div><!-- End Service Item -->
-
-        <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-          <div class="service-item">
-            <div class="img">
-              <img src="https://gimg.gilbut.co.kr/book/BN003654/rn_view_BN003654.jpg" class="img-fluid" alt="" style="width: 300px;">
-            </div>
-            <div class="details position-relative">
-              <div class="icon">
-                <i class="bi bi-broadcast"></i>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-activity"></i>
+                </div>
+                <a onclick="location.href='/book/getBook?bookIdx='+${var.BOOK_IDX}" class="stretched-link">
+                  <h3>${var.BOOK_TITLE}</h3>
+                </a>
+                <p>판매자: ${var.USER_NAME}</p>
               </div>
-              <a href="book_details.html" class="stretched-link">
-                <h3>Eosle Commodi</h3>
-              </a>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
             </div>
-          </div>
-        </div><!-- End Service Item -->
-
-        <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-          <div class="service-item">
-            <div class="img">
-              <img src="https://gimg.gilbut.co.kr/book/BN003654/rn_view_BN003654.jpg" class="img-fluid" alt="" style="width: 300px;">
-            </div>
-            <div class="details position-relative">
-              <div class="icon">
-                <i class="bi bi-easel"></i>
-              </div>
-              <a href="book_details.html" class="stretched-link">
-                <h3>Ledo Markt</h3>
-              </a>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
-            </div>
-          </div>
-        </div><!-- End Service Item -->
-
-        <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
-          <div class="service-item">
-            <div class="img">
-              <img src="https://gimg.gilbut.co.kr/book/BN003654/rn_view_BN003654.jpg" class="img-fluid" alt="" style="width: 300px;">
-            </div>
-            <div class="details position-relative">
-              <div class="icon">
-                <i class="bi bi-bounding-box-circles"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Asperiores Commodit</h3>
-              </a>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div>
-        </div><!-- End Service Item -->
-
-        <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
-          <div class="service-item">
-            <div class="img">
-              <img src="https://gimg.gilbut.co.kr/book/BN003654/rn_view_BN003654.jpg" class="img-fluid" alt="" style="width: 300px;">
-            </div>
-            <div class="details position-relative">
-              <div class="icon">
-                <i class="bi bi-calendar4-week"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Velit Doloremque</h3>
-              </a>
-              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div>
-        </div><!-- End Service Item -->
-
-        <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="700">
-          <div class="service-item">
-            <div class="img">
-              <img src="https://gimg.gilbut.co.kr/book/BN003654/rn_view_BN003654.jpg" class="img-fluid" alt="" style="width: 300px;">
-            </div>
-            <div class="details position-relative">
-              <div class="icon">
-                <i class="bi bi-chat-square-text"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Dolori Architecto</h3>
-              </a>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div>
-        </div><!-- End Service Item -->
-
+          </div><!-- End Service Item -->
+        </c:forEach>
       </div>
     </div>
   </section><!-- End Services Section -->

@@ -1,11 +1,16 @@
 package com.example.NoteBook.controller;
 
 import com.example.NoteBook.common.Url;
+import com.example.NoteBook.dao.BookMapper;
 import com.example.NoteBook.service.AuthService;
+import com.example.NoteBook.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,8 +21,12 @@ public class MainController {
     @Autowired
     AuthService authService;
 
+    @Autowired
+    BookMapper bookMapper;
+
     @RequestMapping("/")
-    public String main() {
+    public String main(Model model) throws Exception {
+        model.addAttribute("list", bookMapper.getBookList());
         return Url.AUTH.MAIN_JSP;
     }
 
