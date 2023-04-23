@@ -11,7 +11,7 @@ import java.io.Writer;
 public class Paginator extends SimpleTagSupport {
 
     // ******************************************************************
-    // *                                           페이지 네비게이터 템플릿 (Debult)                                     *
+    // *   페이지 네비게이터 템플릿 (Debult)   *
     // ******************************************************************
     private String MainSB   ="";
     private String FistB   ="<li><a class='#$class' href='javascript:;' onclick='#$goPage(##);'>#$title</a></li>";
@@ -22,30 +22,30 @@ public class Paginator extends SimpleTagSupport {
     private String LastB   ="<li><a class='#$class' href='javascript:;' onclick='#$goPage(##);'>#$title</a></li>";
     private String MainEB   ="";
 
-    String goPageScript = "goPage";                     // 이동 이벤트 Script Function Name (해당 스크립트의 인자는 페이지 번호만 받아야함, 추가 검색조건은 함수내에서 처리할 것)   (설정은 JSTL 속성으로 입력)
-    int curPage;                  // 현재 페이지                                 (설정은 JSTL 속성으로 입력)
-    int totPages;                  // 전체 페이지                                 (설정은 JSTL 속성으로 입력)
-    int blockSize = 10;               // 블록 크기                                    (설정은 JSTL 속성으로 입력)
-    int skipSize = 1;               // 이전/다음 선택시 이동할 페이지 갯수            (설정은 JSTL 속성으로 입력)
+    String goPageScript = "goPage";                 // 이동 이벤트 Script Function Name (해당 스크립트의 인자는 페이지 번호만 받아야함, 추가 검색조건은 함수내에서 처리할 것)   (설정은 JSTL 속성으로 입력)
+    int curPage;                                    // 현재 페이지       (설정은 JSTL 속성으로 입력)
+    int totPages;                                   // 전체 페이지       (설정은 JSTL 속성으로 입력)
+    int blockSize = 10;                             // 블록 크기         (설정은 JSTL 속성으로 입력)
+    int skipSize = 1;                               // 이전/다음 선택시 이동할 페이지 갯수            (설정은 JSTL 속성으로 입력)
 
     // Options
     boolean goFirstUse = false;                     // 처음 페이지 사용 여부      (설정은 JSTL 속성으로 입력)
-    boolean goLastUse = false;                     // 마지막 페이지 사용 여부      (설정은 JSTL 속성으로 입력)
+    boolean goLastUse = false;                      // 마지막 페이지 사용 여부      (설정은 JSTL 속성으로 입력)
 
     // CSS Class
-    private String paginatorBlockClass = "";         // paginator 전체 메인 블록   (설정은 JSTL 속성으로 입력)
-    private String goFirstClass = "";                  // 처음 페이지               (설정은 JSTL 속성으로 입력)
-    private String prevPageClass = "prev";               // 이전 페이지               (설정은 JSTL 속성으로 입력)
-    private String curPageClass = "on";               // 현재 페이지               (설정은 JSTL 속성으로 입력)
-    private String defaultPageClass = "";            // 다른 페이지               (설정은 JSTL 속성으로 입력)
-    private String nextPageClass = "next";               // 다음 페이지                (설정은 JSTL 속성으로 입력)
-    private String goLastClass = "";                  // 마지막 페이지               (설정은 JSTL 속성으로 입력)
+    private String paginatorBlockClass = "";        // paginator 전체 메인 블록   (설정은 JSTL 속성으로 입력)
+    private String goFirstClass = "";               // 처음 페이지               (설정은 JSTL 속성으로 입력)
+    private String prevPageClass = "prev";          // 이전 페이지               (설정은 JSTL 속성으로 입력)
+    private String curPageClass = "on";             // 현재 페이지               (설정은 JSTL 속성으로 입력)
+    private String defaultPageClass = "";           // 다른 페이지               (설정은 JSTL 속성으로 입력)
+    private String nextPageClass = "next";          // 다음 페이지                (설정은 JSTL 속성으로 입력)
+    private String goLastClass = "";                // 마지막 페이지               (설정은 JSTL 속성으로 입력)
 
     // Label
-    private String goFirstLabel = "처음";         // 처음 페이지 타이틀            (설정은 JSTL 속성으로 입력)
-    private String prevPageLabel = "이전";         // 이전 페이지 타이틀            (설정은 JSTL 속성으로 입력)
-    private String nextPageLabel = "다음";         // 다음 페이지 타이틀            (설정은 JSTL 속성으로 입력)
-    private String goLastLabel = "마지막";         // 마지막 페이지 타이틀         (설정은 JSTL 속성으로 입력)
+    private String goFirstLabel = "처음";            // 처음 페이지 타이틀            (설정은 JSTL 속성으로 입력)
+    private String prevPageLabel = "이전";           // 이전 페이지 타이틀            (설정은 JSTL 속성으로 입력)
+    private String nextPageLabel = "다음";           // 다음 페이지 타이틀            (설정은 JSTL 속성으로 입력)
+    private String goLastLabel = "마지막";            // 마지막 페이지 타이틀         (설정은 JSTL 속성으로 입력)
 
     private Writer getWriter() {
         JspWriter out = getJspContext().getOut();
