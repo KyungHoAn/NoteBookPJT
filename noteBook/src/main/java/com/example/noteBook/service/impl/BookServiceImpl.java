@@ -145,7 +145,6 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Map<String, Object> insertBookChat(Map<String, Object> params) {
-        Map<String, Object> result = new HashMap<>();
         bookMapper.insertBookChat(params);
 
 //        List<Map<String, Object>> chatList = bookMapper.getBookChatList(params);
