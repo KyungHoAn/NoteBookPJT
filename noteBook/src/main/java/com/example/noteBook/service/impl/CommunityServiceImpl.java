@@ -1,7 +1,9 @@
 package com.example.NoteBook.service.impl;
 
+import com.example.NoteBook.dao.CommunityMapper;
 import com.example.NoteBook.service.CommunityService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -9,6 +11,10 @@ import java.util.Map;
 @Service
 @Slf4j
 public class CommunityServiceImpl implements CommunityService {
+
+    @Autowired
+    CommunityMapper communityMapper;
+
     @Override
     public void insertCommunity(Map<String, Object> params) {
         System.out.println("===insertCommunity===");
