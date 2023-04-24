@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.NoteBook.dao.CommunityMapper">
-    <!-- 책 등록 -->
+
     <insert id="insertBook" parameterType="map">
         INSERT INTO TB_COMMU (
               USER_ID
@@ -26,4 +26,46 @@
         FROM TB_COMMU_TAG
         WHERE TAG_NUMBER = #{tagNumber}
     </select>
+
+    <!-- 게시판 리스트 조회 -->
+    <select id="getCommunityList" resultType="map">
+        SELECT *
+        FROM TB_COMMUNITY
+        <if test="">
+            WHERE
+        </if>
+    </select>
+
+    <!-- 게시판 count -->
+    <select id="getCommunityCnt" resultType="int">
+        SELECT
+            count(*)
+        FROM
+            TB_COMMUNITY
+    </select>
+
+    <!-- 게시판 상세 조회 -->
+    <select id="getCommunityDetail" resultType="map">
+        SELECT *
+        FROM TB_COMMUNITY
+        WHERE COMMU_IDX = #{commuIdx}
+    </select>
+
+    <!-- 게시판 수정 -->
+    <update id="updateCommunity">
+        UPDATE
+            TB_COMMUNITY
+        SET
+            COMMU_TITLE = #{commuTitle}
+            , COMMU_CONTENT = #{commuContent}
+            , COMMU_TAG = #{commuTag}
+        WHERE COMMU_IDX = #{commuIdx}
+    </update>
+
+    <!-- 게시판 삭제 -->
+    <delete id="deleteCommunity" parameterType="map">
+        DELETE FROM TB_COMMUNITY
+        WHERE COMMU_IDX = #{commuIdx}
+    </delete>
+
 </mapper>
