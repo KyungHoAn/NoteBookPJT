@@ -11,13 +11,11 @@
             , USER_NAME
             , COMMU_TITLE
             , COMMU_CONTENT
-            , COMMU_TAG
         ) VALUES (
             #{userId}
             , #{userName}
             , #{title}
             , #{content}
-            , #{commuTag}
         )
     </insert>
 
