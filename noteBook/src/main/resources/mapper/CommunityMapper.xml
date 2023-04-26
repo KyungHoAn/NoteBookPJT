@@ -5,17 +5,53 @@
 
 <mapper namespace="com.example.NoteBook.dao.CommunityMapper">
 
-    <insert id="insertBook" parameterType="map">
-        INSERT INTO TB_COMMU (
+    <insert id="insertCommunity" parameterType="map">
+        INSERT INTO TB_COMMUNITY (
               USER_ID
             , USER_NAME
             , COMMU_TITLE
             , COMMU_CONTENT
+            <if test="btnCheck1.equals('on')">
+                , CODE_BOOK
+            </if>
+            <if test="btnCheck2.equals('on')">
+                , CODE_STUDY
+            </if>
+            <if test="btnCheck3.equals('on')">
+                , CODE_GOOD
+            </if>
+            <if test="btnCheck4.equals('on')">
+                , CODE_BAD
+            </if>
+            <if test="btnCheck5.equals('on')">
+                , CODE_MAP
+            </if>
+            <if test="btnCheck6.equals('on')">
+                , CODE_COMPARE
+            </if>
         ) VALUES (
             #{userId}
             , #{userName}
             , #{title}
             , #{content}
+            <if test="btnCheck1.equals('on')">
+                , 1
+            </if>
+            <if test="btnCheck2.equals('on')">
+                , 2
+            </if>
+            <if test="btnCheck3.equals('on')">
+                , 3
+            </if>
+            <if test="btnCheck4.equals('on')">
+                , 4
+            </if>
+            <if test="btnCheck5.equals('on')">
+                , 5
+            </if>
+            <if test="btnCheck6.equals('on')">
+                , 6
+            </if>
         )
     </insert>
 

@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @Service
@@ -17,8 +18,26 @@ public class CommunityServiceImpl implements CommunityService {
 
     @Override
     public void insertCommunity(Map<String, Object> params) {
-        System.out.println("===insertCommunity===");
-        System.out.println(params);
+        if(params.get("btnCheck1") == null) {
+            params.put("btnCheck1", "off");
+        }
+        if(params.get("btnCheck2") == null) {
+            params.put("btnCheck2", "off");
+        }
+        if(params.get("btnCheck3") == null) {
+            params.put("btnCheck3", "off");
+        }
+        if(params.get("btnCheck4") == null) {
+            params.put("btnCheck4", "off");
+        }
+        if(params.get("btnCheck5") == null) {
+            params.put("btnCheck5", "off");
+        }
+        if(params.get("btnCheck6") == null) {
+            params.put("btnCheck6", "off");
+        }
+
+//        communityMapper.insertCommunity(params);
     }
 
     @Override

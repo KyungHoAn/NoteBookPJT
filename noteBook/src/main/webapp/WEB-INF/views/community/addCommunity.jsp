@@ -49,12 +49,12 @@
                 <div class="row g-5">
                     <div>
                         <article class="blog-details" style="margin-bottom: 50px;">
-                            <h2 class="title">제목</h2>
+                            <h2 class="title">제목 *</h2>
                             <div style="margin-top: 10px;">
                                 <input class="input is-rounded" type="text" id="title" name="title" placeholder="제목 입력">
                             </div>
 
-                            <h3 class="title">내용</h3>
+                            <h3 class="title">내용 *</h3>
 
                             <div class="content">
                                 <textarea id="content" name="content" rows="5" cols="145"></textarea>
