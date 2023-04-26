@@ -65,9 +65,7 @@
     <select id="getCommunityList" resultType="map">
         SELECT *
         FROM TB_COMMUNITY
-        <if test="">
-            WHERE
-        </if>
+        ORDER BY COMMU_DATE DESC
     </select>
 
     <!-- 게시판 count -->

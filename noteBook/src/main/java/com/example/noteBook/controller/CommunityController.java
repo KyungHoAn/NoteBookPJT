@@ -1,9 +1,11 @@
 package com.example.NoteBook.controller;
 
 import com.example.NoteBook.common.Url;
+import com.example.NoteBook.dao.CommunityMapper;
 import com.example.NoteBook.service.CommunityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,8 +22,16 @@ public class CommunityController {
     @Autowired
     CommunityService communityService;
 
+    @Autowired
+    CommunityMapper communityMapper;
+
     @GetMapping(value = Url.COMMUNITY.COMMUNITY)
-    public String communityView() {
+    public String communityView(Model model, HttpServletRequest request) {
+        Map<String, Object> result = new HashMap<>();
+        System.out.println("=====community View-------");
+        System.out.println(communityMapper.getCommunityList(result));
+        model.addAttribute("list",communityMapper.getCommunityList(result));
+//        communityMapper.getCommunityList();
         return Url.COMMUNITY.COMMUNITY_JSP;
     }
 

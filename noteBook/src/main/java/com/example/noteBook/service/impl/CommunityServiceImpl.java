@@ -37,7 +37,7 @@ public class CommunityServiceImpl implements CommunityService {
             params.put("btnCheck6", "off");
         }
 
-//        communityMapper.insertCommunity(params);
+        communityMapper.insertCommunity(params);
     }
 
     @Override
