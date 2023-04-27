@@ -111,7 +111,12 @@
 
     <!-- 전체 책 리스트 -->
     <select id ="getBookList" resultType="map">
-        SELECT * FROM TB_BOOKDETAIL ORDER BY BOOK_UPLOAD_DATE DESC
+        SELECT *
+        FROM TB_BOOKDETAIL
+        <if test="searchBook != null and !searchBook.equals('')">
+            WHERE BOOK_TITLE LIKE '%${searchBook}%'
+        </if>
+        ORDER BY BOOK_UPLOAD_DATE DESC
     </select>
 
     <!-- 책 찜정보 저장 -->

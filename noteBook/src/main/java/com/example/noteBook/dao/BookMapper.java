@@ -13,7 +13,7 @@ public interface BookMapper {
     //책 상세 정보
     Map<String, Object> getBook(Map<String, Object> params);
     //책 리스트
-    List<Map<String, Object>> getBookList();
+    List<Map<String, Object>> getBookList(Map<String, Object> params);
     // 사용자 책 리스트
     List<Map<String, Object>> getUserBookList(Map<String, Object> params);
     //책 정보 삭제

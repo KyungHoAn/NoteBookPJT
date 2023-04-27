@@ -169,4 +169,22 @@ public class BookController {
         return result;
     }
 
+    @ResponseBody
+    @GetMapping(value = Url.BOOK.SEARCHBOOKLIST)
+    public Map<String, Object> searchBookList(@RequestParam Map<String, Object> params) {
+        System.out.println("=====booklist controller ====");
+        System.out.println(params);
+        Map<String, Object> result = new HashMap<>();
+        try {
+            result = bookService.getBookList(params);
+            result.put("success",true);
+            result.put("code","00");
+        } catch (Exception e) {
+            result.put("success", false);
+            result.put("code","99");
+        }
+        System.out.println("======");
+        System.out.println(result);
+        return result;
+    }
 }

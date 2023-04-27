@@ -26,7 +26,8 @@ public class MainController {
 
     @RequestMapping("/")
     public String main(Model model) throws Exception {
-        model.addAttribute("list", bookMapper.getBookList());
+        Map<String, Object> result = new HashMap<>();
+        model.addAttribute("list", bookMapper.getBookList(result));
         return Url.AUTH.MAIN_JSP;
     }
 

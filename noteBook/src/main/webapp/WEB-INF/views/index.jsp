@@ -48,11 +48,15 @@
         <h2>책 찾아보기</h2>
       </div>
 
-      <div class="section-header">
-        <input class="input is-normal" type="text" style="width: 15cm" placeholder="책 검색">
-      </div>
+      <c:choose>
+        <c:when test="${not empty sessUserInfo.userId}">
+          <div class="section-header">
+            <input class="input is-normal" type="text" id="searchBook" style="width: 15cm" placeholder="책 검색">
+          </div>
+        </c:when>
+      </c:choose>
 
-      <div class="row gy-5">
+      <div class="row gy-5" id="bookList">
         <c:forEach var="var" items="${list}" varStatus="status">
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item">
@@ -69,7 +73,7 @@
                 <p>판매자: ${var.USER_NAME}</p>
               </div>
             </div>
-          </div><!-- End Service Item -->
+          </div>
         </c:forEach>
       </div>
     </div>
