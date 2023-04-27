@@ -84,7 +84,12 @@
         SET
             COMMU_TITLE = #{commuTitle}
             , COMMU_CONTENT = #{commuContent}
-            , COMMU_TAG = #{commuTag}
+            , CODE_BOOK = #{btnCheck1}
+            , CODE_STUDY = #{btnCheck2}
+            , CODE_GOOD = #{btnCheck3}
+            , CODE_BAD = #{btnCheck4}
+            , CODE_MAP = #{btnCheck5}
+            , CODE_COMPARE = #{btnCheck6}
         WHERE COMMU_IDX = #{commuIdx}
     </update>
 

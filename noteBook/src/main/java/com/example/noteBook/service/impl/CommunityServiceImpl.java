@@ -42,7 +42,25 @@ public class CommunityServiceImpl implements CommunityService {
 
     @Override
     public void updateCommunity(Map<String, Object> params) {
-
+        if(params.get("btnCheck1") == null) {
+            params.put("btnCheck1", null);
+        }
+        if(params.get("btnCheck2") == null) {
+            params.put("btnCheck2", null);
+        }
+        if(params.get("btnCheck3") == null) {
+            params.put("btnCheck3", null);
+        }
+        if(params.get("btnCheck14") == null) {
+            params.put("btnCheck5", null);
+        }
+        if(params.get("btnCheck5") == null) {
+            params.put("btnCheck5", null);
+        }
+        if(params.get("btnCheck6") == null) {
+            params.put("btnCheck6", null);
+        }
+        communityMapper.updateCommunity(params);
     }
 
     @Override

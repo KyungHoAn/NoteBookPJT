@@ -102,11 +102,27 @@ public class CommunityController {
         return result;
     }
 
-    @GetMapping(value = Url.COMMUNITY.UPDATECOMMUNITY)
-    public String updateCommunity(@RequestParam("commuIdx") String communityIdx, Model model) {
+    @GetMapping(value = Url.COMMUNITY.UPDATECOMMUNITYVIEW)
+    public String updateCommunityView(@RequestParam("commuIdx") String communityIdx, Model model) {
         Map<String, Object> result = new HashMap<>();
         result.put("commuIdx", communityIdx);
         model.addAttribute("list", communityMapper.getCommunityDetail(result));
         return Url.COMMUNITY.UPDATECOMMUNITY_JSP;
+    }
+
+    @ResponseBody
+    @PostMapping(Url.COMMUNITY.UPDATECOMMUNITY)
+    public Map<String, Object> updateCommunity(@RequestParam Map<String, Object> params) throws Exception {
+        Map<String, Object> result = new HashMap<>();
+        try{
+            communityService.updateCommunity(params);
+            result.put("success", true);
+            result.put("code", "00");
+        } catch (Exception e) {
+            result.put("success", false);
+            result.put("code", "99");
+        }
+
+        return result;
     }
 }

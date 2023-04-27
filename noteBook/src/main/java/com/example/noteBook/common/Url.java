@@ -50,14 +50,13 @@ public final class Url {
 
         public static final String ADDCOMMUNITY     = "/addCommunity";
         public static final String ADDCOMMUNITY_JSP = TILES_ROOT+"/community/addCommunity";
-        public static final String UPDATECOMMUNITY  = "/updateCommunity";
+        public static final String UPDATECOMMUNITYVIEW         = "/updateCommunity";
         public static final String UPDATECOMMUNITY_JSP     = TILES_ROOT+"/community/updateCommunity";
 
         public static final String INSERTCOMMUNITY         = "/insertCommunity";
         public static final String INSERTCOMMUNITYCHAT     = "/insertCommunityChat";
         public static final String DELETECOMMUNITYCHAT     = "/deleteCommunityChat";
-
-
+        public static final String UPDATECOMMUNITY         = "/updateCommunity";
     }
 
     public static final class MAP {

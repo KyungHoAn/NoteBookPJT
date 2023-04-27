@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/WEB-INF/template/constants.jsp"%>
-
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top" data-scrollto-offset="0">
     <div class="container-fluid d-flex align-items-center justify-content-between">
@@ -43,7 +42,7 @@
     </div><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Details Section ======= -->
-    <form id="addCommunity">
+    <form id="updateCommunity">
         <section id="blog" class="blog">
             <div class="container" data-aos="fade-up">
                 <div class="row g-5">
@@ -60,29 +59,71 @@
                             </div>
 
                             <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                                <input type="checkbox" class="btn-check" id="btnCheck1" name="btnCheck1" autocomplete="off">
-                                <label class="btn btn-outline-success" for="btnCheck1">책</label>
-
-                                <input type="checkbox" class="btn-check" id="btnCheck2" name="btnCheck2" autocomplete="off">
-                                <label class="btn btn-outline-success" for="btnCheck2">스터디</label>
-
-                                <input type="checkbox" class="btn-check" id="btnCheck3" name="btnCheck3" autocomplete="off">
-                                <label class="btn btn-outline-success" for="btnCheck3">칭찬방</label>
-
-                                <input type="checkbox" class="btn-check" id="btnCheck4" name="btnCheck4" autocomplete="off">
-                                <label class="btn btn-outline-success" for="btnCheck4">비난방</label>
-
-                                <input type="checkbox" class="btn-check" id="btnCheck5" name="btnCheck5" autocomplete="off">
-                                <label class="btn btn-outline-success" for="btnCheck5">지도</label>
-
-                                <input type="checkbox" class="btn-check" id="btnCheck6" name="btnCheck6" autocomplete="off">
-                                <label class="btn btn-outline-success" for="btnCheck6">공구</label>
+                                <c:choose>
+                                    <c:when test="${list.CODE_BOOK ne null}">
+                                        <input type="checkbox" class="btn-check" id="btnCheck1" name="btnCheck1" autocomplete="off" checked>
+                                        <label class="btn btn-outline-success" for="btnCheck1">책</label>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <input type="checkbox" class="btn-check" id="btnCheck1" name="btnCheck1" autocomplete="off">
+                                        <label class="btn btn-outline-success" for="btnCheck1">책</label>
+                                    </c:otherwise>
+                                </c:choose>
+                                <c:choose>
+                                    <c:when test="${list.CODE_STUDY ne null}">
+                                        <input type="checkbox" class="btn-check" id="btnCheck2" name="btnCheck2" autocomplete="off" checked>
+                                        <label class="btn btn-outline-success" for="btnCheck2">스터디</label>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <input type="checkbox" class="btn-check" id="btnCheck2" name="btnCheck2" autocomplete="off">
+                                        <label class="btn btn-outline-success" for="btnCheck2">스터디</label>
+                                    </c:otherwise>
+                                </c:choose>
+                                <c:choose>
+                                    <c:when test="${list.CODE_GOOD ne null}">
+                                        <input type="checkbox" class="btn-check" id="btnCheck3" name="btnCheck3" autocomplete="off" checked>
+                                        <label class="btn btn-outline-success" for="btnCheck3">칭찬방</label>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <input type="checkbox" class="btn-check" id="btnCheck3" name="btnCheck3" autocomplete="off">
+                                        <label class="btn btn-outline-success" for="btnCheck3">칭찬방</label>
+                                    </c:otherwise>
+                                </c:choose>
+                                <c:choose>
+                                    <c:when test="${list.CODE_BAD ne null}">
+                                        <input type="checkbox" class="btn-check" id="btnCheck4" name="btnCheck4" autocomplete="off" checked>
+                                        <label class="btn btn-outline-success" for="btnCheck4">비난방</label>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <input type="checkbox" class="btn-check" id="btnCheck4" name="btnCheck4" autocomplete="off">
+                                        <label class="btn btn-outline-success" for="btnCheck4">비난방</label>
+                                    </c:otherwise>
+                                </c:choose>
+                                <c:choose>
+                                    <c:when test="${list.CODE_MAP ne null}">
+                                        <input type="checkbox" class="btn-check" id="btnCheck5" name="btnCheck5" autocomplete="off" checked>
+                                        <label class="btn btn-outline-success" for="btnCheck5">지도</label>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <input type="checkbox" class="btn-check" id="btnCheck5" name="btnCheck5" autocomplete="off">
+                                        <label class="btn btn-outline-success" for="btnCheck5">지도</label>
+                                    </c:otherwise>
+                                </c:choose>
+                                <c:choose>
+                                    <c:when test="${list.CODE_COMPARE ne null}">
+                                        <input type="checkbox" class="btn-check" id="btnCheck6" name="btnCheck6" autocomplete="off" checked>
+                                        <label class="btn btn-outline-success" for="btnCheck6">공구</label>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <input type="checkbox" class="btn-check" id="btnCheck6" name="btnCheck6" autocomplete="off">
+                                        <label class="btn btn-outline-success" for="btnCheck6">공구</label>
+                                    </c:otherwise>
+                                </c:choose>
                             </div>
-
+                            <input type="hidden" id="commuIdx" name="commuIdx" value="${list.COMMU_IDX}">
                             <div style="margin-top: 40px;">
-                                <button type="button" class="btn btn-outline-secondary btn-lg" id="addCommunityBtn">커뮤니티 올리기</button>
+                                <button type="button" class="btn btn-outline-secondary btn-lg" id="updateCommunityBtn">커뮤니티 올리기</button>
                             </div>
-
                         </article><!-- End blog post -->
                     </div>
                 </div>
@@ -100,11 +141,8 @@
         <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
 
             <div class="d-flex flex-column align-items-center align-items-lg-start">
-                <div class="copyright">
-                    &copy; Copyright <strong><span>HeroBiz</span></strong>. All Rights Reserved
-                </div>
                 <div class="credits">
-                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                    Designed by <a href="">Team. Spring</a>
                 </div>
             </div>
 
@@ -115,7 +153,6 @@
                 <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
                 <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
             </div>
-
         </div>
     </div>
 
