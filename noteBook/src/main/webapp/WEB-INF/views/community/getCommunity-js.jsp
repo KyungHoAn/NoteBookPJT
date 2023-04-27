@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="/WEB-INF/template/constants.jsp"%>
 <script type="text/javascript">
 
     // 커뮤니티 게시물 작성

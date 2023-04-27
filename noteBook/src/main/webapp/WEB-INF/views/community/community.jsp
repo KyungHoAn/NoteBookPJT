@@ -55,9 +55,9 @@
                                     </h2>
                                     <div class="meta-top">
                                         <ul>
-                                            <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">${var.USER_NAME}</a></li><br>
-                                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2023-05-01">${var.commu_date}</time></a></li><br>
-                                            <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
+                                            <li class="d-flex align-items-center"><i class="bi bi-person"></i>${var.USER_NAME}</li><br>
+                                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i><time datetime="2023-05-01">${var.commu_date}</time></li><br>
+                                            <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>12 Comments</li>
                                         </ul>
                                     </div>
 

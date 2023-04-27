@@ -1,5 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="/WEB-INF/template/constants.jsp"%>
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top" data-scrollto-offset="0">
   <div class="container-fluid d-flex align-items-center justify-content-between">
@@ -83,8 +83,10 @@
                 </c:if>
               </ul>
               <div style="float: right;">
-                <button type="button" class="btn btn-outline-secondary">수정</button>
-                <button type="button" class="btn btn-outline-secondary">삭제</button>
+                <c:if test="${userId eq list.USER_ID}">
+                  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/updateCommunity?commuIdx='+${list.COMMU_IDX}">수정</button>
+                  <button type="button" class="btn btn-outline-secondary" id="deleteCommunity">삭제</button>
+                </c:if>
               </div>
             </div><!-- End meta bottom -->
 
@@ -169,7 +171,7 @@
                 <button type="submit"><i class="bi bi-search"></i></button>
               </form>
               <div style="margin-top: 20px;">
-                <button class="btn btn-outline-secondary" onclick="location.href='/addCommunityView'">게시글 작성</button>
+                <button class="btn btn-outline-secondary" onclick="location.href='/addCommunity'">게시글 작성</button>
               </div>
             </div><!-- End sidebar search formn-->
 

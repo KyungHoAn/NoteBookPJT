@@ -101,4 +101,12 @@ public class CommunityController {
         }
         return result;
     }
+
+    @GetMapping(value = Url.COMMUNITY.UPDATECOMMUNITY)
+    public String updateCommunity(@RequestParam("commuIdx") String communityIdx, Model model) {
+        Map<String, Object> result = new HashMap<>();
+        result.put("commuIdx", communityIdx);
+        model.addAttribute("list", communityMapper.getCommunityDetail(result));
+        return Url.COMMUNITY.UPDATECOMMUNITY_JSP;
+    }
 }
