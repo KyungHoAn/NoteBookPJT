@@ -8,5 +8,6 @@ public interface CommunityService {
     void deleteCommunty(Map<String, Object> params);
     Map<String, Object> getCommunity(Map<String, Object> params);
     Map<String, Object> communityList(Map<String, Object> params);
-
+    Map<String, Object> insertCommunityChat(Map<String, Object> params);
+    void deleteCommunityChat(Map<String, Object> params);
 }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top" data-scrollto-offset="0">
@@ -15,9 +16,7 @@
       </ul>
       <i class="bi bi-list mobile-nav-toggle d-none"></i>
     </nav><!-- .navbar -->
-
-    <a class="btn-getstarted scrollto" onclick="">로그아웃</a>
-
+    <a class="btn-getstarted scrollto" onclick="location.href='/auth/logout-proc'">로그아웃</a>
   </div>
 </header><!-- End Header -->
 
@@ -31,7 +30,7 @@
         <h2>커뮤니티 상세</h2>
         <ol>
           <li><a onclick="location.href='/'">Home</a></li>
-          <li><a onclick="location.href='/communityView'">커뮤니티</a></li>
+          <li><a onclick="location.href='/community'">커뮤니티</a></li>
           <li>커뮤니티 상세</li>
         </ol>
       </div>
@@ -45,31 +44,47 @@
       <div class="row g-5">
         <div class="col-lg-8">
           <article class="blog-details" style="margin-bottom: 50px;">
-            <h2 class="title">공대 네트워크책 공구할 사람 구합니다.</h2>
+            <h2 class="title">${list.COMMU_TITLE}</h2>
 
             <div class="meta-top">
               <ul>
-                <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2020-01-01">Jan 1, 2022</time></a></li>
-                <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
+                <li class="d-flex align-items-center"><i class="bi bi-person"></i>${list.USER_NAME}</li>
+                <li class="d-flex align-items-center"><i class="bi bi-clock"></i><time datetime="2020-01-01">${list.commu_date}</time></li>
+                <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>12 Comments</li>
               </ul>
             </div><!-- End meta top -->
 
             <div class="content">
               <p>
-                ㅈㄱㄴ 네트워크 책 공구할 사람 찾습니다. 정가 30000원인데 여러명이서 같이하면 인당 20000원에 가지고 가실 수 있어요!
+                ${list.COMMU_CONTENT}
               </p>
             </div><!-- End post content -->
 
             <div class="meta-bottom">
               <i class="bi bi-tags"></i>
               <ul class="tags">
-                <li><a href="#">책</a></li>
-                <li><a href="#">공구</a></li>
+                <c:if test="${list.CODE_BOOK ne null}">
+                  <li>책</li>
+                </c:if>
+                <c:if test="${list.CODE_STUDY ne null}">
+                  <li>스터디</li>
+                </c:if>
+                <c:if test="${list.CODE_GOOD ne null}">
+                  <li>칭찬방</li>
+                </c:if>
+                <c:if test="${list.CODE_BAD ne null}">
+                  <li>비난방</li>
+                </c:if>
+                <c:if test="${list.CODE_MAP ne null}">
+                  <li>지도</li>
+                </c:if>
+                <c:if test="${list.CODE_COMPARE ne null}">
+                  <li>공구</li>
+                </c:if>
               </ul>
               <div style="float: right;">
-                <button type="button" class="btn btn-outline-secondary" onClick="location.href='add_blog.html'">수정</button>
-                <button type="button" class="btn btn-outline-secondary" onClick="location.href='blog.html'">삭제</button>
+                <button type="button" class="btn btn-outline-secondary">수정</button>
+                <button type="button" class="btn btn-outline-secondary">삭제</button>
               </div>
             </div><!-- End meta bottom -->
 
@@ -85,90 +100,59 @@
               <div class="media-content">
                 <div class="field">
                   <p class="control">
-                    <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                    <textarea class="textarea" id="communityChat" name="communityChat" placeholder="게시글 작성"></textarea>
                   </p>
                 </div>
                 <nav class="level">
                   <div class="level-left">
                     <div class="level-item">
-                      <a class="button is-info">Submit</a>
+                      <a class="button is-info" id="chatBtn">게시글 작성</a>
                     </div>
                   </div>
                 </nav>
               </div>
             </article>
 
-            <div class="comments">
-              <div class="media">
-                <figure class="media-left">
-                  <p class="image is-64x64">
-                    <img src="https://bulma.io/images/placeholders/128x128.png">
-                  </p>
-                </figure>
-
-                <div class="media-content">
-                  <div class="content">
-                    <p>
-                      <strong>홍길동</strong> <small>@wonkang</small> <small>31m</small>
-                      <br>
-                      책을 사고 싶습니다!
+            <div class="comments" id="communityComments">
+              <c:forEach var="var" items="${chatList}" varStatus="status">
+                <div class="media" id="${var.COMMUNITY_CHAT_IDX}">
+                  <figure class="media-left">
+                    <p class="image is-64x64">
+                      <img src="https://bulma.io/images/placeholders/128x128.png">
                     </p>
+                  </figure>
+
+                  <div class="media-content">
+                    <div class="content">
+                      <p>
+                        <strong>${var.USER_NAME}</strong> <small>${var.USER_ID}</small> <small>${var.CHAT_DATE}</small>
+                        <br>
+                          ${var.CHAT_CONTENT}
+                      </p>
+                    </div>
+
+                    <nav class="level is-mobile">
+                      <div class="level-left">
+                        <a class="level-item">
+                          <span class="icon is-small"><i class="fas fa-reply"></i></span>
+                        </a>
+                        <a class="level-item">
+                          <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+                        </a>
+                        <a class="level-item">
+                          <span class="icon is-small"><i class="fas fa-heart"></i></span>
+                        </a>
+                      </div>
+                    </nav>
                   </div>
 
-                  <nav class="level is-mobile">
-                    <div class="level-left">
-                      <a class="level-item">
-                        <span class="icon is-small"><i class="fas fa-reply"></i></span>
-                      </a>
-                      <a class="level-item">
-                        <span class="icon is-small"><i class="fas fa-retweet"></i></span>
-                      </a>
-                      <a class="level-item">
-                        <span class="icon is-small"><i class="fas fa-heart"></i></span>
-                      </a>
-                    </div>
-                  </nav>
-                </div>
-
-                <div class="media-right">
-                  <button class="delete"></button>
-                </div>
-              </div>
-              <div class="media">
-                <figure class="media-left">
-                  <p class="image is-64x64">
-                    <img src="https://bulma.io/images/placeholders/128x128.png">
-                  </p>
-                </figure>
-
-                <div class="media-content">
-                  <div class="content">
-                    <p>
-                      <strong>홍길순</strong> <small>@wonkang</small> <small>31m</small>
-                      <br>
-                      책을 사고 싶습니다!
-                    </p>
+                  <div class="media-right">
+                    <c:if test="${userId eq var.USER_ID}">
+                      <button class="delete" type="button" id="chatDel" onclick="bookChatDel(${var.COMMUNITY_CHAT_IDX})"></button>
+                    </c:if>
                   </div>
-
-                  <nav class="level is-mobile">
-                    <div class="level-left">
-                      <a class="level-item">
-                        <span class="icon is-small"><i class="fas fa-reply"></i></span>
-                      </a>
-                      <a class="level-item">
-                        <span class="icon is-small"><i class="fas fa-retweet"></i></span>
-                      </a>
-                      <a class="level-item">
-                        <span class="icon is-small"><i class="fas fa-heart"></i></span>
-                      </a>
-                    </div>
-                  </nav>
                 </div>
-
-                <div class="media-right">
-                  <button class="delete"></button>
-                </div>
-              </div>
+              </c:forEach>
             </div><!-- End blog comments -->
           </div>
 

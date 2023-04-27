@@ -8,10 +8,13 @@ import java.util.Map;
 @Mapper
 public interface CommunityMapper {
     void insertCommunity(Map<String, Object> params);
-    String getCommunityTag(Map<String, Object> params);
     List<Map<String, Object>> getCommunityList(Map<String, Object> params);
     String getCommunityListCnt(int count);
     Map<String, Object> getCommunityDetail(Map<String, Object> params);
     void updateCommunity(Map<String, Object> params);
     void deleteCommunity(Map<String, Object> params);
+    void insertCommunityChat(Map<String, Object> params);
+    Map<String, Object> getCommunityChat(Map<String, Object> params);
+    List<Map<String, Object>> getCommunityChatList(Map<String, Object> params);
+    void deleteChat(Map<String, Object> params);
 }

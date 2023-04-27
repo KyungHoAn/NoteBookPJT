@@ -28,15 +28,16 @@ public class CommunityController {
     @GetMapping(value = Url.COMMUNITY.COMMUNITY)
     public String communityView(Model model, HttpServletRequest request) {
         Map<String, Object> result = new HashMap<>();
-        System.out.println("=====community View-------");
-        System.out.println(communityMapper.getCommunityList(result));
         model.addAttribute("list",communityMapper.getCommunityList(result));
-//        communityMapper.getCommunityList();
         return Url.COMMUNITY.COMMUNITY_JSP;
     }
 
     @GetMapping(value = Url.COMMUNITY.GETCOMMUNITY)
-    public String getCommunityView(@RequestParam Map<String, Object> params) throws Exception {
+    public String getCommunityView(@RequestParam("communityIdx") String idx, Model model, HttpServletRequest request) throws Exception {
+        Map<String, Object> result = new HashMap<>();
+        result.put("commuIdx", idx);
+        model.addAttribute("list",communityMapper.getCommunityDetail(result));
+        model.addAttribute("chatList", communityMapper.getCommunityChatList(result));
         return Url.COMMUNITY.GETCOMMUNITY_JSP;
     }
 
@@ -56,6 +57,42 @@ public class CommunityController {
         params.put("userName", name);
         try {
             communityService.insertCommunity(params);
+            result.put("success", true);
+            result.put("code", "00");
+        } catch (Exception e) {
+            result.put("success", false);
+            result.put("code", "99");
+        }
+        return result;
+    }
+
+    @ResponseBody
+    @PostMapping(value = Url.COMMUNITY.INSERTCOMMUNITYCHAT)
+    public Map<String, Object> insertCommunityChat(@RequestParam Map<String, Object> params, HttpServletRequest request) throws Exception {
+        Map<String, Object> result = new HashMap<>();
+        HttpSession session  = request.getSession();
+        String id = (String) session.getAttribute("userId");
+        String name = (String) session.getAttribute("userName");
+        params.put("userId", id);
+        params.put("userName", name);
+
+        try {
+            result = communityService.insertCommunityChat(params);
+            result.put("success", true);
+            result.put("code", "00");
+        } catch (Exception e) {
+            result.put("success", false);
+            result.put("code", "99");
+        }
+        return result;
+    }
+
+    @ResponseBody
+    @PostMapping(value = Url.COMMUNITY.DELETECOMMUNITYCHAT)
+    public Map<String, Object> communityChatdDel(@RequestParam Map<String, Object> params) {
+        Map<String, Object> result = new HashMap<>();
+        try{
+            communityService.deleteCommunityChat(params);
             result.put("success", true);
             result.put("code", "00");
         } catch (Exception e) {

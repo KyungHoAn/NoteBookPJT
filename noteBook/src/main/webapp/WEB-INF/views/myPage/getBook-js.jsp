@@ -124,7 +124,7 @@
                 if(result.code == "00" || true) {
                     chatCont.remove();
                 } else {
-                    alert("게시물을 삭제할 수 없습니다. 관리자에게 문의하십시오")
+                    alert("게시글을 삭제할 수 없습니다. \n 관리자에게 문의하십시오")
                 }
             },
             error : function (e) {

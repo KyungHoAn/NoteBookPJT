@@ -55,12 +55,6 @@
         )
     </insert>
 
-    <select id="getCommunityTag" resultType="map">
-        SELECT TAG_NAME
-        FROM TB_COMMU_TAG
-        WHERE TAG_NUMBER = #{tagNumber}
-    </select>
-
     <!-- 게시판 리스트 조회 -->
     <select id="getCommunityList" resultType="map">
         SELECT *
@@ -98,6 +92,38 @@
     <delete id="deleteCommunity" parameterType="map">
         DELETE FROM TB_COMMUNITY
         WHERE COMMU_IDX = #{commuIdx}
+    </delete>
+
+    <insert id="insertCommunityChat" parameterType="map">
+        INSERT INTO TB_COMMUNITY_CHAT (
+            COMMUNITY_IDX
+            , USER_ID
+            , USER_NAME
+            , CHAT_CONTENT
+        ) VALUES (
+            #{communityIdx}
+            , #{userId}
+            , #{userName}
+            , #{chatContent}
+        )
+    </insert>
+
+    <select id="getCommunityChat" resultType="map">
+        SELECT *
+        FROM TB_COMMUNITY_CHAT
+        WHERE USER_ID = #{userId} AND COMMUNITY_IDX = #{communityIdx}
+        ORDER BY CHAT_DATE DESC LIMIT 1
+    </select>
+
+    <select id="getCommunityChatList" resultType="map">
+        SELECT *
+        FROM TB_COMMUNITY_CHAT
+        WHERE COMMUNITY_IDX = #{commuIdx}
+    </select>
+
+    <delete id="deleteChat" parameterType="map">
+        DELETE FROM TB_COMMUNITY_CHAT
+        WHERE COMMUNITY_CHAT_IDX = #{chatIdx}
     </delete>
 
 </mapper>

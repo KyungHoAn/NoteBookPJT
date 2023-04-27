@@ -52,11 +52,24 @@ public class CommunityServiceImpl implements CommunityService {
 
     @Override
     public Map<String, Object> getCommunity(Map<String, Object> params) {
-        return null;
+        return communityMapper.getCommunityDetail(params);
     }
 
     @Override
     public Map<String, Object> communityList(Map<String, Object> params) {
         return null;
+    }
+
+    @Override
+    public Map<String, Object> insertCommunityChat(Map<String, Object> params) {
+        communityMapper.insertCommunityChat(params);
+
+        Map<String, Object> result = communityMapper.getCommunityChat(params);
+        return result;
+    }
+
+    @Override
+    public void deleteCommunityChat(Map<String, Object> params) {
+        communityMapper.deleteChat(params);
     }
 }

@@ -51,7 +51,9 @@ public final class Url {
         public static final String ADDCOMMUNITY     = "/addCommunity";
         public static final String ADDCOMMUNITY_JSP = TILES_ROOT+"/community/addCommunity";
 
-        public static final String INSERTCOMMUNITY  = "/insertCommunity";
+        public static final String INSERTCOMMUNITY         = "/insertCommunity";
+        public static final String INSERTCOMMUNITYCHAT     = "/insertCommunityChat";
+        public static final String DELETECOMMUNITYCHAT     = "/deleteCommunityChat";
 
     }
 

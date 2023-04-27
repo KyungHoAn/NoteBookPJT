@@ -51,7 +51,7 @@
                             <div class="col-lg-6">
                                 <article class="d-flex flex-column">
                                     <h2 class="title">
-                                        <a onclick="location.href='/getCommunity'">${var.COMMU_TITLE}</a>
+                                        <a onclick="location.href='/getCommunity?communityIdx='+${var.COMMU_IDX}">${var.COMMU_TITLE}</a>
                                     </h2>
                                     <div class="meta-top">
                                         <ul>
