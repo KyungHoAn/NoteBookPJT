@@ -47,125 +47,29 @@
                 <div class="col-lg-8">
 
                     <div class="row gy-4 posts-list">
+                        <c:forEach var="var" items="${list}" varStatus="status">
+                            <div class="col-lg-6">
+                                <article class="d-flex flex-column">
+                                    <h2 class="title">
+                                        <a onclick="location.href='/getCommunity'">${var.COMMU_TITLE}</a>
+                                    </h2>
+                                    <div class="meta-top">
+                                        <ul>
+                                            <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">${var.USER_NAME}</a></li><br>
+                                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2023-05-01">${var.commu_date}</time></a></li><br>
+                                            <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
+                                        </ul>
+                                    </div>
 
-                        <div class="col-lg-6">
-                            <article class="d-flex flex-column">
-                                <h2 class="title">
-                                    <a onclick="location.href='/getCommunity'">공대 네트워크 전공책 구합니다.</a>
-                                </h2>
+                                    <div class="content">
+                                        <p>
+                                            ${var.COMMU_CONTENT}
+                                        </p>
+                                    </div>
 
-                                <div class="meta-top">
-                                    <ul>
-                                        <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">닉네임</a></li>
-                                        <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">May 01, 2023</time></a></li>
-                                        <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="content">
-                                    <p>
-                                        공대 네트워크 전공책 구합니다!! 댓글 달아주세요
-                                    </p>
-                                </div>
-
-                            </article>
-                        </div><!-- End post list item -->
-
-                        <div class="col-lg-6">
-                            <article class="d-flex flex-column">
-
-                                <h2 class="title">
-                                    <a href="blog-details.html">공대 000 수업 칭찬</a>
-                                </h2>
-
-                                <div class="meta-top">
-                                    <ul>
-                                        <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                                        <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                                        <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="content">
-                                    <p>
-                                        칭찬방 입니다.
-                                    </p>
-                                </div>
-
-                            </article>
-                        </div><!-- End post list item -->
-
-                        <div class="col-lg-6">
-                            <article class="d-flex flex-column">
-
-                                <h2 class="title">
-                                    <a href="blog-details.html">컴소공 난리남</a>
-                                </h2>
-
-                                <div class="meta-top">
-                                    <ul>
-                                        <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                                        <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                                        <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="content">
-                                    <p>
-                                        ㄹㅇ ㅋㅋ
-                                    </p>
-                                </div>
-                            </article>
-                        </div><!-- End post list item -->
-
-                        <div class="col-lg-6">
-                            <article class="d-flex flex-column">
-
-                                <h2 class="title">
-                                    <a href="blog-details.html">영어 스터디 그룹원 모집!</a>
-                                </h2>
-
-                                <div class="meta-top">
-                                    <ul>
-                                        <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                                        <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                                        <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="content">
-                                    <p>
-                                        선책순 5명!!!
-                                    </p>
-                                </div>
-
-                            </article>
-                        </div><!-- End post list item -->
-
-                        <div class="col-lg-6">
-                            <article class="d-flex flex-column">
-
-                                <h2 class="title">
-                                    <a href="blog-details.html">프로젝트 같이 진행할사람!</a>
-                                </h2>
-
-                                <div class="meta-top">
-                                    <ul>
-                                        <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                                        <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                                        <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="content">
-                                    <p>
-                                        웹 프로젝트 할겁니다! 프론트엔드 / 백엔드 / 디자인 / DB 인원 구함
-                                    </p>
-                                </div>
-
-                            </article>
-                        </div><!-- End post list item -->
-
+                                </article>
+                            </div><!-- End post list item -->
+                        </c:forEach>
                     </div><!-- End blog posts list -->
 
                     <div class="blog-pagination">
