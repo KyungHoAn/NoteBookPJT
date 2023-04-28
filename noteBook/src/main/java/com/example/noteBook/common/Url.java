@@ -57,6 +57,7 @@ public final class Url {
         public static final String INSERTCOMMUNITYCHAT     = "/insertCommunityChat";
         public static final String DELETECOMMUNITYCHAT     = "/deleteCommunityChat";
         public static final String UPDATECOMMUNITY         = "/updateCommunity";
+        public static final String DELETECOMMUNITY          = "/deleteCommunity";
     }
 
     public static final class MAP {

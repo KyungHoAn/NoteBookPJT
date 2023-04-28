@@ -13,6 +13,7 @@ public interface CommunityMapper {
     Map<String, Object> getCommunityDetail(Map<String, Object> params);
     void updateCommunity(Map<String, Object> params);
     void deleteCommunity(Map<String, Object> params);
+    void deleteCommunityChatAll(Map<String, Object> params);
     void insertCommunityChat(Map<String, Object> params);
     Map<String, Object> getCommunityChat(Map<String, Object> params);
     List<Map<String, Object>> getCommunityChatList(Map<String, Object> params);

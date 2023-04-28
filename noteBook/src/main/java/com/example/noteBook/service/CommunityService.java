@@ -5,7 +5,7 @@ import java.util.Map;
 public interface CommunityService {
     void insertCommunity(Map<String, Object> params);
     void updateCommunity(Map<String, Object> params);
-    void deleteCommunty(Map<String, Object> params);
+    void deleteCommunity(Map<String, Object> params);
     Map<String, Object> getCommunity(Map<String, Object> params);
     Map<String, Object> communityList(Map<String, Object> params);
     Map<String, Object> insertCommunityChat(Map<String, Object> params);

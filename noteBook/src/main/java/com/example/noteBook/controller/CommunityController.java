@@ -122,7 +122,21 @@ public class CommunityController {
             result.put("success", false);
             result.put("code", "99");
         }
+        return result;
+    }
 
+    @ResponseBody
+    @PostMapping(Url.COMMUNITY.DELETECOMMUNITY)
+    public Map<String, Object> deleteCommunity(@RequestParam Map<String, Object> params) throws Exception {
+        Map<String, Object> result = new HashMap<>();
+        try{
+            communityService.deleteCommunity(params);
+            result.put("success", true);
+            result.put("code", "00");
+        } catch (Exception e) {
+            result.put("success", false);
+            result.put("code", "99");
+        }
         return result;
     }
 }

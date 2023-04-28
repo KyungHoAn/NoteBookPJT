@@ -62,6 +62,26 @@
                 console.log("ERROR : ", e);
             }
         });
-
     }
+
+
+    $("#deleteCommunity").click(function() {
+        console.log('delete')
+        let data = {"commuIdx": "${list.COMMU_IDX}"};
+        $.ajax({
+            type: "POST",
+            data: data,
+            url: "/deleteCommunity",
+            success: function(result) {
+                if(result.code= "00" || true) {
+                    Swal.fire('정상적으로 게시되었습니다.').then((result) => {
+                        location.href = '/community';
+                    });
+                }
+            },
+            error: function (e) {
+                console.log("ERROR : "+ e)
+            }
+        });
+    })
 </script>

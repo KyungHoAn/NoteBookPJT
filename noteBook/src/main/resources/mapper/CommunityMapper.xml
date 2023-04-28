@@ -4,7 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.NoteBook.dao.CommunityMapper">
-
     <insert id="insertCommunity" parameterType="map">
         INSERT INTO TB_COMMUNITY (
               USER_ID
@@ -93,12 +92,6 @@
         WHERE COMMU_IDX = #{commuIdx}
     </update>
 
-    <!-- 게시판 삭제 -->
-    <delete id="deleteCommunity" parameterType="map">
-        DELETE FROM TB_COMMUNITY
-        WHERE COMMU_IDX = #{commuIdx}
-    </delete>
-
     <insert id="insertCommunityChat" parameterType="map">
         INSERT INTO TB_COMMUNITY_CHAT (
             COMMUNITY_IDX
@@ -129,6 +122,17 @@
     <delete id="deleteChat" parameterType="map">
         DELETE FROM TB_COMMUNITY_CHAT
         WHERE COMMUNITY_CHAT_IDX = #{chatIdx}
+    </delete>
+
+    <!-- 게시판 삭제 -->
+    <delete id="deleteCommunity" parameterType="map">
+        DELETE FROM TB_COMMUNITY
+        WHERE COMMU_IDX = #{commuIdx}
+    </delete>
+
+    <delete id="deleteCommunityChatAll" parameterType="map">
+        DELETE FROM TB_COMMUNITY_CHAT
+        WHERE COMMUNITY_IDX = #{commuIdx}
     </delete>
 
 </mapper>
