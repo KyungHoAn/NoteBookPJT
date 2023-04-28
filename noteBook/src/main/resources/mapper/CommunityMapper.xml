@@ -82,8 +82,8 @@
         UPDATE
             TB_COMMUNITY
         SET
-            COMMU_TITLE = #{commuTitle}
-            , COMMU_CONTENT = #{commuContent}
+            COMMU_TITLE = #{title}
+            , COMMU_CONTENT = #{content}
             , CODE_BOOK = #{btnCheck1}
             , CODE_STUDY = #{btnCheck2}
             , CODE_GOOD = #{btnCheck3}

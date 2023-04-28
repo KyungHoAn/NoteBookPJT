@@ -44,21 +44,33 @@ public class CommunityServiceImpl implements CommunityService {
     public void updateCommunity(Map<String, Object> params) {
         if(params.get("btnCheck1") == null) {
             params.put("btnCheck1", null);
+        } else {
+            params.put("btnCheck1", 1);
         }
         if(params.get("btnCheck2") == null) {
             params.put("btnCheck2", null);
+        } else {
+            params.put("btnCheck2", 2);
         }
         if(params.get("btnCheck3") == null) {
             params.put("btnCheck3", null);
+        } else {
+            params.put("btnCheck3", 3);
         }
-        if(params.get("btnCheck14") == null) {
-            params.put("btnCheck5", null);
+        if(params.get("btnCheck4") == null) {
+            params.put("btnCheck4", null);
+        } else {
+            params.put("btnCheck4", 4);
         }
         if(params.get("btnCheck5") == null) {
             params.put("btnCheck5", null);
+        } else {
+            params.put("btnCheck5", 5);
         }
         if(params.get("btnCheck6") == null) {
             params.put("btnCheck6", null);
+        } else {
+            params.put("btnCheck6", 6);
         }
         communityMapper.updateCommunity(params);
     }
