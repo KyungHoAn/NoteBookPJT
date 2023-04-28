@@ -81,6 +81,7 @@
             url:'/insertBookChat',
             data: data,
             success: function(result) {
+                $("#bookChat").val('');
                 let chatHtml ='';
                 if(result.code == "00" || true) {
                     chatHtml += '<div class="media" id="'+result.BOOK_CHAT_IDX+'">';

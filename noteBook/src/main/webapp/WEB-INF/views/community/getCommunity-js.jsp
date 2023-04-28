@@ -12,7 +12,7 @@
             url: "/insertCommunityChat",
             data: data,
             success : function(result) {
-                console.log(result);
+                $("#communityChat").val('');
                 let chatHtml = '';
                 if(result.code == "00" || true) {
                     chatHtml += '<div class="media" id="'+result.COMMUNITY_IDX+'">';
