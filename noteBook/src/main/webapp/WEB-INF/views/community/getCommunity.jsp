@@ -178,11 +178,12 @@
             <div class="sidebar-item categories">
               <h3 class="sidebar-title">Categories</h3>
               <ul class="mt-3">
-                <li><a href="#">중고거래 <span>(25)</span></a></li>
-                <li><a href="#">칭찬양파 <span>(12)</span></a></li>
-                <li><a href="#">비난양파 <span>(5)</span></a></li>
-                <li><a href="#">캠퍼스 맵 <span>(22)</span></a></li>
-                <li><a href="#">스터디 <span>(8)</span></a></li>
+                <li><a href="#">책 중고거래 <span>(${tag.bookNum})</span></a></li>
+                <li><a href="#">스터디 <span>(${tag.studyNum})</span></a></li>
+                <li><a href="#">칭찬양파 <span>(${tag.goodNum})</span></a></li>
+                <li><a href="#">비난양파 <span>(${tag.badNum})</span></a></li>
+                <li><a href="#">캠퍼스 맵 <span>(${tag.mapNum})</span></a></li>
+                <li><a href="#">공구<span>(${tag.mapNum})</span></a></li>
               </ul>
             </div><!-- End sidebar categories-->
 
@@ -190,57 +191,17 @@
               <h3 class="sidebar-title">최근 게시물</h3>
 
               <div class="mt-3">
-
-                <div class="post-item mt-3">
-                  <div>
-                    <h4><a href="blog-post.html">공대 네트워크 전공책 공구할사람 모집합니다.</a></h4>
-                    <time datetime="2020-01-01">Jan 1, 2020</time>
-                  </div>
-                </div><!-- End recent post item-->
-
-                <div class="post-item">
-                  <div>
-                    <h4><a href="blog-post.html">공대 000 수업 칭찬</a></h4>
-                    <time datetime="2020-01-01">Jan 1, 2020</time>
-                  </div>
-                </div><!-- End recent post item-->
-
-                <div class="post-item">
-                  <div>
-                    <h4><a href="blog-post.html">컴소공 난리남</a></h4>
-                    <time datetime="2020-01-01">Jan 1, 2020</time>
-                  </div>
-                </div><!-- End recent post item-->
-
-                <div class="post-item">
-                  <div>
-                    <h4><a href="blog-post.html">영어 스터디 그룹원 모집</a></h4>
-                    <time datetime="2020-01-01">Jan 1, 2020</time>
-                  </div>
-                </div><!-- End recent post item-->
-
-                <div class="post-item">
-                  <div>
-                    <h4><a href="blog-post.html">프로젝트 같이 진행할사람!</a></h4>
-                    <time datetime="2020-01-01">Jan 1, 2020</time>
-                  </div>
-                </div><!-- End recent post item-->
-
+                <c:forEach var="var" items="${subList}" varStatus="status">
+                  <div class="post-item mt-3">
+                    <div>
+                      <h4><a onclick="location.href='/getCommunity?communityIdx='+${var.COMMU_IDX}">${var.COMMU_TITLE}</a></h4>
+                      <time datetime="2023-01-01">${var.commu_date}</time>
+                    </div>
+                  </div><!-- End recent post item-->
+                </c:forEach>
               </div>
 
             </div><!-- End sidebar recent posts-->
-
-            <div class="sidebar-item tags">
-              <h3 class="sidebar-title">Tags</h3>
-              <ul class="mt-3">
-                <li><a href="#">책</a></li>
-                <li><a href="#">스터디</a></li>
-                <li><a href="#">칭찬방</a></li>
-                <li><a href="#">비난방</a></li>
-                <li><a href="#">지도</a></li>
-                <li><a href="#">공구</a></li>
-              </ul>
-            </div><!-- End sidebar tags-->
 
           </div><!-- End Blog Sidebar -->
 

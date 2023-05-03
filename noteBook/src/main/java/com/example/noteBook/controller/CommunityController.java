@@ -29,6 +29,8 @@ public class CommunityController {
     public String communityView(Model model, HttpServletRequest request) {
         Map<String, Object> result = new HashMap<>();
         model.addAttribute("list",communityMapper.getCommunityList(result));
+        model.addAttribute("tag", communityMapper.getTagCount());
+        model.addAttribute("subList", communityMapper.getSubCommunity());
         return Url.COMMUNITY.COMMUNITY_JSP;
     }
 
@@ -38,6 +40,8 @@ public class CommunityController {
         result.put("commuIdx", idx);
         model.addAttribute("list",communityMapper.getCommunityDetail(result));
         model.addAttribute("chatList", communityMapper.getCommunityChatList(result));
+        model.addAttribute("tag", communityMapper.getTagCount());
+        model.addAttribute("subList", communityMapper.getSubCommunity());
         return Url.COMMUNITY.GETCOMMUNITY_JSP;
     }
 
@@ -111,7 +115,7 @@ public class CommunityController {
     }
 
     @ResponseBody
-    @PostMapping(Url.COMMUNITY.UPDATECOMMUNITY)
+    @PostMapping(value = Url.COMMUNITY.UPDATECOMMUNITY)
     public Map<String, Object> updateCommunity(@RequestParam Map<String, Object> params) throws Exception {
         Map<String, Object> result = new HashMap<>();
         try{
@@ -126,7 +130,7 @@ public class CommunityController {
     }
 
     @ResponseBody
-    @PostMapping(Url.COMMUNITY.DELETECOMMUNITY)
+    @PostMapping(value = Url.COMMUNITY.DELETECOMMUNITY)
     public Map<String, Object> deleteCommunity(@RequestParam Map<String, Object> params) throws Exception {
         Map<String, Object> result = new HashMap<>();
         try{
@@ -139,4 +143,21 @@ public class CommunityController {
         }
         return result;
     }
+
+    @ResponseBody
+    @GetMapping(value = Url.COMMUNITY.TAGCOMMUNITY)
+    public Map<String, Object> getTagCommunity(@RequestParam Map<String, Object> params) throws Exception {
+        System.out.println(params);
+        Map<String, Object> result = new HashMap<>();
+        try {
+            result = communityService.getTagCommunity(params);
+            result.put("success", true);
+            result.put("code", "00");
+        } catch (Exception e) {
+            result.put("success", false);
+            result.put("code", "99");
+        }
+        return result;
+    }
+
 }

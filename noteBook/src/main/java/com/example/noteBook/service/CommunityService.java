@@ -10,4 +10,5 @@ public interface CommunityService {
     Map<String, Object> communityList(Map<String, Object> params);
     Map<String, Object> insertCommunityChat(Map<String, Object> params);
     void deleteCommunityChat(Map<String, Object> params);
+    Map<String, Object> getTagCommunity(Map<String, Object> params);
 }

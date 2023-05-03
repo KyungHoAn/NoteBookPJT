@@ -18,4 +18,6 @@ public interface CommunityMapper {
     Map<String, Object> getCommunityChat(Map<String, Object> params);
     List<Map<String, Object>> getCommunityChatList(Map<String, Object> params);
     void deleteChat(Map<String, Object> params);
+    Map<String, Object> getTagCount();
+    List<Map<String, Object>> getSubCommunity();
 }

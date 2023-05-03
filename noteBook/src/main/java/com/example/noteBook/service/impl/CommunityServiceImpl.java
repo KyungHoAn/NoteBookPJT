@@ -104,4 +104,14 @@ public class CommunityServiceImpl implements CommunityService {
     public void deleteCommunityChat(Map<String, Object> params) {
         communityMapper.deleteChat(params);
     }
+
+    @Override
+    public Map<String, Object> getTagCommunity(Map<String, Object> params) {
+        System.out.println("======");
+        System.out.println(params);
+        Map<String, Object> result = new HashMap<>();
+        result.put("list", communityMapper.getCommunityList(params));
+        System.out.println(result);
+        return result;
+    }
 }

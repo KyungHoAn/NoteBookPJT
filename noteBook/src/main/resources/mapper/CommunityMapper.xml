@@ -56,9 +56,28 @@
 
     <!-- 게시판 리스트 조회 -->
     <select id="getCommunityList" resultType="map">
-        SELECT *
-        FROM TB_COMMUNITY
-        ORDER BY COMMU_DATE DESC
+        SELECT TC.*,
+               (SELECT count(tcc.COMMUNITY_IDX) comentNum FROM TB_COMMUNITY_CHAT tcc WHERE tcc.COMMUNITY_IDX = TC.COMMU_IDX) comentNum
+        FROM TB_COMMUNITY TC
+        <if test="tagName != null and tagName.equals('bookTag')">
+            WHERE TC.CODE_BOOK = 1
+        </if>
+        <if test="tagName != null and tagName.equals('studyTag')">
+            WHERE TC.CODE_STUDY = 2
+        </if>
+        <if test="tagName != null and tagName.equals('goodTag')">
+            WHERE TC.CODE_GOOD = 3
+        </if>
+        <if test="tagName != null and tagName.equals('badTag')">
+            WHERE TC.CODE_BAD = 4
+        </if>
+        <if test="tagName != null and tagName.equals('mapTag')">
+            WHERE TC.CODE_MAP = 5
+        </if>
+        <if test="tagName != null and tagName.equals('compareTag')">
+            WHERE TC.CODE_COMPARE = 6
+        </if>
+        ORDER BY TC.COMMU_DATE DESC
     </select>
 
     <!-- 게시판 count -->
@@ -134,5 +153,22 @@
         DELETE FROM TB_COMMUNITY_CHAT
         WHERE COMMUNITY_IDX = #{commuIdx}
     </delete>
+
+    <select id="getTagCount" resultType="map">
+        SELECT count(CODE_BOOK) bookNum,
+               count(CODE_STUDY) studyNum,
+               count(CODE_GOOD) goodNum,
+               count(CODE_BAD) badNum,
+               count(CODE_MAP) mapNum,
+               count(CODE_COMPARE) compareNum
+        FROM TB_COMMUNITY
+    </select>
+
+    <select id="getSubCommunity" resultType="map">
+        SELECT *
+        FROM TB_COMMUNITY
+        ORDER BY commu_date desc
+        LIMIT 5
+    </select>
 
 </mapper>
