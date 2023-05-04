@@ -47,13 +47,8 @@
                 <div class="col-lg-6" style="margin:0 auto">
                     <div class="portfolio-details-slider swiper">
                         <div class="swiper-wrapper align-items-center">
-
                             <div class="swiper-slide">
                                 <img src="${list.BOOK_IMG}" alt="" style="width: 400px;">
-                            </div>
-
-                            <div class="swiper-slide">
-                                <img src="" alt="">
                             </div>
                         </div>
                         <div class="swiper-pagination"></div>
@@ -86,6 +81,7 @@
                             <li><strong>책</strong>: ${list.BOOK_TITLE}</li>
                             <li><strong>저자</strong>: ${list.BOOK_AUTHOR}</li>
                             <li><strong>출판사</strong>: ${list.BOOK_PUBLISHER}</li>
+                            <li><strong>판매자</strong>: ${list.USER_NAME}</li>
                             <li><strong>판매 가격</strong>:
                                 <c:if test="${userId eq list.USER_ID}">
                                     <input class="input is-normal" type="text" id="bookPrice" name="bookPrice" value="${list.BOOK_SELLING_PRICE}" style="width:100px"> 원
@@ -95,7 +91,18 @@
                                     ${list.BOOK_SELLING_PRICE} 원
                                 </c:if>
                             </li>
-                            <li><strong>판매자</strong>: ${list.USER_NAME}</li>
+                            <li>
+                                <form id="imgUploadForm">
+                                    <strong>책 사진 올리기 :</strong>
+    <%--                                <div class="filebox bs3-primary">--%>
+    <%--                                    <input class="upload-name" value="파일선택" disabled="disabled">--%>
+    <%--                                    <label for="ex_filename">업로드</label>--%>
+    <%--                                    <input type="file" id="ex_filename" class="upload-hidden">--%>
+    <%--                                </div>--%>
+                                    <input type="file" name="files" id="files">
+                                    <button type="button" id="imgUpload" class="btn btn-outline-secondary">업로드</button>
+                                </form>
+                            </li>
                         </ul>
                     </div>
                     <div class="portfolio-description">

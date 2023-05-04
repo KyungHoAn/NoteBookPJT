@@ -187,4 +187,12 @@ public class BookController {
         System.out.println(result);
         return result;
     }
+
+    @ResponseBody
+    @PostMapping(value = Url.BOOK.IMGUPLOAD)
+    public Map<String, Object> fileInsert(HttpServletRequest req, Map<String, Object> params) throws Exception {
+        Map<String, Object> result = new HashMap<>();
+
+        return result;
+    }
 }

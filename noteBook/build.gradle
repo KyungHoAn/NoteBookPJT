@@ -46,8 +46,6 @@ dependencies {
     implementation group: 'org.apache.tiles', name: 'tiles-jsp', version: '3.0.8'
     implementation group: 'org.apache.tiles', name: 'tiles-core', version: '3.0.8'
     // tiles
-//    implementation 'org.apache.tiles:tiles-jsp:3.0.8'
-//    implementation 'org.apache.tiles:tiles-core:3.0.8'
     implementation 'org.apache.tiles:tiles-servlet:3.0.8'
 
     // univcert
@@ -56,12 +54,17 @@ dependencies {
     // okhttp
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
 
-    // GSON
-//    implementation group: 'com.google.code.gson', name: 'gson', version: '2.10.1'
     /* gson */
     implementation 'com.google.code.gson:gson:2.8.6'
     //json simple
     implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+
+    //File Upload
+    implementation 'commons-io:commons-io:2.11.0'    /* Apache commons-io */
+    implementation group: 'commons-fileupload', name: 'commons-fileupload', version: '1.4' /* Apache Commons FileUpload */
+
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+
 }
 
 tasks.named('test') {

@@ -164,4 +164,22 @@
         });
     }
 
+    $('#imgUpload').click(function () {
+        // let fileInput = document.querySelector("input[name=files]")
+        // let fileObj = fileInput.files[0];
+        // let formData = new FormData();
+
+        let form = $('#imgUploadForm')[0];
+        let data = new FormData(form);
+
+        formData.append("uploadFile", fileObj);
+
+        console.log("fileList: "+fileList);
+        console.log("fileList[0].name:")
+        // $.ajax({
+        //     type:"POST",
+        //     enctype: "multipart/form-data",
+        // })
+    });
+
 </script>
