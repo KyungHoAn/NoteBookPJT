@@ -99,7 +99,8 @@
     <%--                                    <label for="ex_filename">업로드</label>--%>
     <%--                                    <input type="file" id="ex_filename" class="upload-hidden">--%>
     <%--                                </div>--%>
-                                    <input type="file" name="files" id="files">
+                                    <input type="hidden" name="bookIdx" value="${list.BOOK_IDX}">
+                                    <input type="file" name="files">
                                     <button type="button" id="imgUpload" class="btn btn-outline-secondary">업로드</button>
                                 </form>
                             </li>

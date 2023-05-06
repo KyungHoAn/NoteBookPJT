@@ -172,8 +172,6 @@ public class BookController {
     @ResponseBody
     @GetMapping(value = Url.BOOK.SEARCHBOOKLIST)
     public Map<String, Object> searchBookList(@RequestParam Map<String, Object> params) {
-        System.out.println("=====booklist controller ====");
-        System.out.println(params);
         Map<String, Object> result = new HashMap<>();
         try {
             result = bookService.getBookList(params);
@@ -192,6 +190,21 @@ public class BookController {
     @PostMapping(value = Url.BOOK.IMGUPLOAD)
     public Map<String, Object> fileInsert(HttpServletRequest req, Map<String, Object> params) throws Exception {
         Map<String, Object> result = new HashMap<>();
+        HttpSession session = req.getSession();
+        String id = (String) session.getAttribute("userId");
+        params.put("userId", id);
+
+        System.out.println("=======");
+        System.out.println(params);
+
+        try {
+
+            result.put("success", true);
+            result.put("code", "00");
+        } catch (Exception e) {
+            result.put("success", false);
+            result.put("code", "99");
+        }
 
         return result;
     }

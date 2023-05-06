@@ -134,8 +134,6 @@
         });
     }
 
-    console.log("${basket.BOOK_BASKET_IDX}")
-
     function basketBtn(flag) {
         console.log(flag)
         let data = {"bookIdx":"${list.BOOK_IDX}", "flag": flag};
@@ -169,17 +167,26 @@
         // let fileObj = fileInput.files[0];
         // let formData = new FormData();
 
+        console.log("-------")
         let form = $('#imgUploadForm')[0];
         let data = new FormData(form);
+        console.log(data)
 
-        formData.append("uploadFile", fileObj);
-
-        console.log("fileList: "+fileList);
-        console.log("fileList[0].name:")
-        // $.ajax({
-        //     type:"POST",
-        //     enctype: "multipart/form-data",
-        // })
+        $.ajax({
+            type:"POST",
+            enctype: "multipart/form-data",
+            url: "/imgUpload",
+            data: data,
+            processData: false,
+            contentType: false,
+            success: function (result) {
+                console.log("=====")
+                console.log(result);
+            },
+            error: function (e) {
+                console.log("ERROR: "+e);
+            }
+        });
     });
 
 </script>
