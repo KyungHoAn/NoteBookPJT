@@ -60,6 +60,7 @@ public final class Url {
         public static final String UPDATECOMMUNITY         = "/updateCommunity";
         public static final String DELETECOMMUNITY         = "/deleteCommunity";
         public static final String TAGCOMMUNITY            = "/tagCommunity";
+        public static final String PAGECOMMUNITY           = "/pageCommunity";
     }
 
     public static final class MAP {

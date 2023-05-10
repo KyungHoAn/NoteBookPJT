@@ -8,10 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -188,7 +186,8 @@ public class BookController {
 
     @ResponseBody
     @PostMapping(value = Url.BOOK.IMGUPLOAD)
-    public Map<String, Object> fileInsert(HttpServletRequest req, Map<String, Object> params) throws Exception {
+    public Map<String, Object> fileInsert(@RequestParam Map<String, Object> params, HttpServletRequest req){
+//        , @RequestPart MultipartFile files
         Map<String, Object> result = new HashMap<>();
         HttpSession session = req.getSession();
         String id = (String) session.getAttribute("userId");

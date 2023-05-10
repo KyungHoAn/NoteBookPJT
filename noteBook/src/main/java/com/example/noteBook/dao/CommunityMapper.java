@@ -20,4 +20,5 @@ public interface CommunityMapper {
     void deleteChat(Map<String, Object> params);
     Map<String, Object> getTagCount();
     List<Map<String, Object>> getSubCommunity();
+    int getCommunityCnt();
 }

@@ -107,11 +107,8 @@ public class CommunityServiceImpl implements CommunityService {
 
     @Override
     public Map<String, Object> getTagCommunity(Map<String, Object> params) {
-        System.out.println("======");
-        System.out.println(params);
         Map<String, Object> result = new HashMap<>();
         result.put("list", communityMapper.getCommunityList(params));
-        System.out.println(result);
         return result;
     }
 }

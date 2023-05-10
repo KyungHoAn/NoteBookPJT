@@ -70,13 +70,16 @@
                         </c:forEach>
                     </div><!-- End blog posts list -->
 
-                    <div class="blog-pagination">
-                        <ul class="justify-content-center">
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                        </ul>
-                    </div><!-- End blog pagination -->
+<%--                    <div class="text-center">--%>
+<%--                        <c:if test="${pageSize != 0}">--%>
+<%--                            <ul class="pagination">--%>
+<%--                                <paginator:print goPageScript="goPage" curPage="1" totPages="${pageSize}"/>--%>
+<%--                            </ul>--%>
+<%--                        </c:if>--%>
+<%--                    </div>--%>
+                    <div class="blog-pagination" id="pageList">
+
+                    </div>
 
                 </div>
 

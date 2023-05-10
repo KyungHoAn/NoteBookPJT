@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -28,10 +29,25 @@ public class CommunityController {
     @GetMapping(value = Url.COMMUNITY.COMMUNITY)
     public String communityView(Model model, HttpServletRequest request) {
         Map<String, Object> result = new HashMap<>();
+        result.put("offset",8);
         model.addAttribute("list",communityMapper.getCommunityList(result));
         model.addAttribute("tag", communityMapper.getTagCount());
         model.addAttribute("subList", communityMapper.getSubCommunity());
+        model.addAttribute("pageSize", communityMapper.getCommunityCnt());
         return Url.COMMUNITY.COMMUNITY_JSP;
+    }
+
+    @ResponseBody
+    @GetMapping(value = Url.COMMUNITY.PAGECOMMUNITY)
+    public Map<String, Object> pageCommunityView(@RequestParam Map<String, Object> params, Model model) {
+        Map<String, Object> result = new HashMap<>();
+        int startCnt = Integer.parseInt((String) params.get("startCnt"));
+        int offset = Integer.parseInt((String) params.get("offset"));
+        params.put("startCnt", startCnt);
+        params.put("offset", offset);
+        List<Map<String, Object>> communityList = communityMapper.getCommunityList(params);
+        result.put("communityList", communityList);
+        return result;
     }
 
     @GetMapping(value = Url.COMMUNITY.GETCOMMUNITY)

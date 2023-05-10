@@ -168,8 +168,13 @@
         // let formData = new FormData();
 
         console.log("-------")
-        let form = $('#imgUploadForm')[0];
-        let data = new FormData(form);
+        // let form = $('#imgUploadForm')[0];
+        // let data = new FormData(form);
+        let bookIdx = "${list.BOOK_IDX}";
+        let bookImg = $('#files').val();
+        console.log(bookIdx)
+        console.log(bookImg)
+        let data = {"bookIdx": bookIdx, "bookImg":bookImg};
         console.log(data)
 
         $.ajax({
@@ -179,6 +184,7 @@
             data: data,
             processData: false,
             contentType: false,
+            cache: false,
             success: function (result) {
                 console.log("=====")
                 console.log(result);
