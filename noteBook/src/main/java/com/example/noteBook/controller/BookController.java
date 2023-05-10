@@ -179,8 +179,6 @@ public class BookController {
             result.put("success", false);
             result.put("code","99");
         }
-        System.out.println("======");
-        System.out.println(result);
         return result;
     }
 

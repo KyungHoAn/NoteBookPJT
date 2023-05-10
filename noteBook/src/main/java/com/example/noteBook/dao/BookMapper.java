@@ -39,4 +39,5 @@ public interface BookMapper {
     // 책 찜정보 update
     void updateBasketBook(Map<String, Object> params);
     List<Map<String, Object>> basketBookList(Map<String, Object> params);
+    int getBookListCnt();
 }

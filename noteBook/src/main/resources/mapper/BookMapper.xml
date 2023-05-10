@@ -119,6 +119,11 @@
         ORDER BY BOOK_UPLOAD_DATE DESC
     </select>
 
+    <!-- 전체 책 갯수 -->
+    <select id="getBookListCnt" resultType="int">
+        SELECT count(*) from TB_BOOKDETAIL
+    </select>
+
     <!-- 책 찜정보 저장 -->
     <insert id="insertBasketBook" parameterType="map">
         INSERT INTO TB_BOOK_BASKET (

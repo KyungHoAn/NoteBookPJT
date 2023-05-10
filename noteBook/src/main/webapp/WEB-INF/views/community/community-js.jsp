@@ -61,7 +61,7 @@
                 for(let row of result.communityList) {
                     commuList += '<div class="col-lg-6">';
                     commuList += '<article class="d-flex flex-column">';
-                    commuList += '<h2 class="title"><a onclick="\'/getCommunity?communityIdx=\''+row.COMMU_IDX+'">'+row.COMMU_TITLE+'</a></h2>';
+                    commuList += '<h2 class="title"><a onclick="location.href=\'/getCommunity?communityIdx='+row.COMMU_IDX+'\'">'+row.COMMU_TITLE+'</a></h2>';
                     commuList += '<div class="meta-top"><ul>';
                     commuList += '<li class="d-flex align-items-center"><i class="bi bi-person"></i>'+row.USER_NAME+'</li><br>';
                     commuList += '<li class="d-flex align-items-center"><i class="bi bi-clock"></i><time datetime="2023-05-01">'+row.commu_date+'</time></li><br>';
@@ -94,7 +94,7 @@
                         console.log(row)
                         commuList += '<div class="col-lg-6">';
                         commuList += '<article class="d-flex flex-column">';
-                        commuList += '<h2 class="title"><a onclick="\'/getCommunity?communityIdx=\''+row.COMMU_IDX+'">'+row.COMMU_TITLE+'</a></h2>';
+                        commuList += '<h2 class="title"><a onclick="location.href=\'/getCommunity?communityIdx='+row.COMMU_IDX+'\'">'+row.COMMU_TITLE+'</a></h2>';
                         commuList += '<div class="meta-top"><ul>';
                         commuList += '<li class="d-flex align-items-center"><i class="bi bi-person"></i>'+row.USER_NAME+'</li><br>';
                         commuList += '<li class="d-flex align-items-center"><i class="bi bi-clock"></i><time datetime="2023-05-01">'+row.commu_date+'</time></li><br>';

@@ -78,7 +78,16 @@
       </div>
     </div>
   </section><!-- End Services Section -->
-
+  <section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+      <div class="row g-5">
+        <div class="col-lg-8">
+          <div class="blog-pagination" id="pageList">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main><!-- End #main -->
 
 <!-- ======= Footer ======= -->
