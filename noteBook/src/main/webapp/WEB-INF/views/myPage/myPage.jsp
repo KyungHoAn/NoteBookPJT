@@ -60,7 +60,6 @@
                             <li><strong>닉네임</strong>: ${userName}</li>
                             <li><strong>학교</strong>: ${univ}</li>
                             <li><strong>이메일</strong>: ${userId}</li>
-                            <li><a href="#"><strong>비밀번호 변경</strong></a></li>
                         </div><!-- End Tab 1 Content -->
                     </div>
                 </div>

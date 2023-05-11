@@ -4,6 +4,7 @@ import com.example.NoteBook.common.Url;
 import com.example.NoteBook.dao.BookMapper;
 import com.example.NoteBook.service.BookService;
 import org.apache.catalina.session.StandardSession;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
@@ -184,18 +185,15 @@ public class BookController {
 
     @ResponseBody
     @PostMapping(value = Url.BOOK.IMGUPLOAD)
-    public Map<String, Object> fileInsert(@RequestParam Map<String, Object> params, HttpServletRequest req){
-//        , @RequestPart MultipartFile files
+    public Map<String, Object> fileInsert(@RequestPart MultipartFile files, @RequestParam int bookIdx, HttpServletRequest req) throws Exception{
         Map<String, Object> result = new HashMap<>();
+        result.put("bookIdx", bookIdx);
         HttpSession session = req.getSession();
         String id = (String) session.getAttribute("userId");
-        params.put("userId", id);
-
-        System.out.println("=======");
-        System.out.println(params);
+        result.put("userId", id);
 
         try {
-
+            bookService.imgWrite(files, result);
             result.put("success", true);
             result.put("code", "00");
         } catch (Exception e) {

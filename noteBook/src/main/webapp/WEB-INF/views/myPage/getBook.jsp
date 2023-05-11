@@ -57,9 +57,12 @@
 
                 <div class="col-lg-4">
                     <div class="portfolio-info">
-                        <h3 id="basket">시나공 정보처리기사
+                        <h3 id="basket">${list.BOOK_TITLE}
                             <c:if test="${userId eq list.USER_ID}">
-                                <button type="button" id="deleteBookBtn" class="btn btn-outline-secondary" style="float: right;">책 삭제</button>
+                                <div>
+                                    <button type="button" id="deleteBookBtn" class="btn btn-outline-secondary" style="float: right;">책 삭제</button>
+                                    <br>
+                                </div>
                             </c:if>
 
                             <c:if test="${userId ne list.USER_ID}">

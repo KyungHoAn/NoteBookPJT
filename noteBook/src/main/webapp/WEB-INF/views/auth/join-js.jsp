@@ -10,20 +10,29 @@
         let univName = $("#univ").val();
         let data = {"univName":univName};
 
-        // success
-        // $.ajax({
-        //     type: "POST",
-        //     enctype: 'multipart/form-data',
-        //     url: "/userUniv",
-        //     data: data,
-        //     success: function (result) {
-        //         alert("학교 인증 완료")
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "/univ/userUniv",
+            data: data,
+            success: function (result) {
+                console.log(result)
+                if(result.success == false) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: result.message,
+                        footer: '<a href="https://incredible-raincoat-c52.notion.site/cdb55dd7ea5b475eaaf94ce76fa9eba4">인증 가능한 대학 확인</a>'
+                    })
+                } else {
+                    Swal.fire("학교 인증 완료")
                     email.style.display = 'block';
-        //     },
-        //     error: function (e) {
-        //         alert("학교 인증 실패")
-        //     }
-        // })
+                }
+            },
+            error: function (e) {
+                alert("관리자에게 문의하여 주십시오")
+            }
+        })
     });
 
     $("#emailCheck").click(function () {
@@ -33,19 +42,27 @@
 
         let data = {"email":id, "univName":univName};
 
-        // $.ajax({
-        //     type: "POST",
-        //     enctype: 'multipart/form-data',
-        //     url: "/userEmail",
-        //     data: data,
-        //     success: function (result) {
-        //         alert("이메일로 인증번호 전송되었습니다.")
-                code.style.display = 'block';
-        //     },
-        //     error: function (e) {
-        //         alert("이메일 인증 실패")
-        //     }
-        // })
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "/univ/userEmail",
+            data: data,
+            success: function (result) {
+                if(result.success == true) {
+                    Swal.fire("이메일로 인증번호가 발송되었습니다.")
+                    code.style.display = 'block';
+                } else {
+                    Swal.fire(
+                        result.message,
+                        'ex) wku.ac.kr -> wonkwang.ac.kr',
+                        'question'
+                    )
+                }
+            },
+            error: function (e) {
+                alert("ERROR 관리자에게 문의하여 주십시오")
+            }
+        })
     });
 
     $("#codeCheck").click(function () {
@@ -56,37 +73,54 @@
 
         let data = {"email":id, "univName":univName, "code":code};
 
-        // $.ajax({
-        //     type: "POST",
-        //     enctype: 'multipart/form-data',
-        //     url: "/userEmailCode",
-        //     data: data,
-        //     success: function (result) {
-        //         alert("코드 인증 완료.")
-                pwd.style.display = 'block';
-        //     },
-        //     error: function (e) {
-        //         alert("코드 인증 실패")
-        //     }
-        // })
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "/univ/userEmailCode",
+            data: data,
+            success: function (result) {
+                if(result.code == true) {
+                    Swal.fire("코드 인증완료")
+                    pwd.style.display = 'block';
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: result.message,
+                    })
+                }
+            },
+            error: function (e) {
+                alert("ERROR 관리자에게 문의하십시오 :" + e)
+            }
+        })
     })
 
     $("#nickBtn").click(function () {
         let nick = $("#nick").val();
         let data = {"nick": nick};
-
-        // $.ajax({
-        //     type: "POST",
-        //     enctype: 'multipart/form-data',
-        //     url: "/userNick",
-        //     data: data,
-        //     success: function (result) {
-        //         alert("닉네임을 사용할 수 있습니다.")
-        //     },
-        //     error: function (e) {
-        //         alert("중복된 닉네임입니다.")
-        //     }
-        // });
+        console.log(data)
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "/univ/userNick",
+            data: data,
+            success: function (result) {
+                console.log(result)
+                if(result.success == false) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: '동일한 이름이 존재합니다.',
+                    })
+                } else {
+                    Swal.fire("닉네임을 사용할 수 있습니다.")
+                }
+            },
+            error: function (e) {
+                alert("ERROR: "+e)
+            }
+        });
     })
 
     $("#pwdCheckBtn").click(function () {
@@ -94,16 +128,37 @@
         let secondPw = $("#sPassword").val();
 
         if(firstPw === secondPw) {
-            let join = document.getElementById('joinBox');
-            join.style.display = 'block';
+            if(secondPw != '') {
+                let join = document.getElementById('joinBox');
+                join.style.display = 'block';
+            }
         } else {
             alert("비밀번호가 다릅니다.")
         }
     })
 
     $('#joinBtn').click(function() {
-        // let form = $('#adminInfo')[0];
-        // let data = new FormData(form);
+        let userId = $("#id").val();
+        let password = $("#Password").val();
+        let userName = $("#nick").val();
+        let univ = $("#univ").val();
+
+        if(userId == '') {
+            alert("이메일을 입력해 주세요")
+            return;
+        }
+        if(password == '') {
+            alert("패스워드를 입력해 주세요")
+            return;
+        }
+        if(userName == ''){
+            alert("닉네입을 입력해 주세요")
+            return;
+        }
+        if(univ == '') {
+            alert("학교를 입력해 주세요")
+            return;
+        }
 
         let params = {
             'userId' : $("#id").val()
@@ -111,7 +166,6 @@
             ,'userName' : $("#nick").val()
             ,'univ' : $("#univ").val()
         }
-        console.log(params)
 
         $.ajax({
             type: "POST",

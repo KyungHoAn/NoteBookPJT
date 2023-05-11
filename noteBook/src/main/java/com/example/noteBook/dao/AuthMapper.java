@@ -8,4 +8,5 @@ import java.util.Map;
 public interface AuthMapper {
 
     int getAdminList(Map<String, Object> params);
+    int getNickNameCheck(Map<String, Object> params);
 }

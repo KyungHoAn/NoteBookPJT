@@ -1,5 +1,8 @@
 package com.example.NoteBook.service;
 
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
@@ -20,4 +23,5 @@ public interface BookService {
     void deleteChat(Map<String, Object> params) throws Exception;
     Map<String, Object> insertBasketBook(Map<String, Object> params) throws Exception;
     Map<String, Object> basketBookList(Map<String, Object> params) throws Exception;
+    Map<String, Object> imgWrite(MultipartFile file, Map<String, Object> params) throws Exception;
 }

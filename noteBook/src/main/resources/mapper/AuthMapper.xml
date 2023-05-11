@@ -7,4 +7,10 @@
     <select id="getAdminList" resultType="int">
         SELECT COUNT(*) FROM USER u
     </select>
+
+    <select id="getNickNameCheck" resultType="int">
+        SELECT count(*)
+        from TB_USER
+        where USER_NAME = #{nick}
+    </select>
 </mapper>

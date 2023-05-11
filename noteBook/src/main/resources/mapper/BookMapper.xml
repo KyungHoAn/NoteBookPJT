@@ -165,4 +165,13 @@
         WHERE USER_ID = #{userId}
     </select>
 
+    <update id="bookImgUpdate" parameterType="map">
+        UPDATE
+            TB_BOOKDETAIL
+        SET
+            FILE_NAME = #{fileName}
+            ,FILE_PATH = #{filePath}
+        WHERE book_idx = #{bookIdx} and user_id = #{userId}
+    </update>
+
 </mapper>

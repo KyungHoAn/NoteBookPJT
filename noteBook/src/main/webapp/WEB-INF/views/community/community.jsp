@@ -69,14 +69,6 @@
                             </div><!-- End post list item -->
                         </c:forEach>
                     </div><!-- End blog posts list -->
-
-<%--                    <div class="text-center">--%>
-<%--                        <c:if test="${pageSize != 0}">--%>
-<%--                            <ul class="pagination">--%>
-<%--                                <paginator:print goPageScript="goPage" curPage="1" totPages="${pageSize}"/>--%>
-<%--                            </ul>--%>
-<%--                        </c:if>--%>
-<%--                    </div>--%>
                     <div class="blog-pagination" id="pageList">
 
                     </div>
@@ -88,11 +80,11 @@
                     <div class="sidebar">
 
                         <div class="sidebar-item search-form">
-                            <h3 class="sidebar-title">검색</h3>
-                            <form action="" class="mt-3">
-                                <input type="text">
-                                <button type="submit"><i class="bi bi-search"></i></button>
-                            </form>
+<%--                            <h3 class="sidebar-title">검색</h3>--%>
+<%--                            <form class="mt-3">--%>
+<%--                                <input type="text">--%>
+<%--                                <button type="submit"><i class="bi bi-search"></i></button>--%>
+<%--                            </form>--%>
                             <div style="margin-top: 20px;">
                                 <button class="btn btn-outline-secondary" onclick="location.href='/addCommunity'">게시글 작성</button>
                             </div>

@@ -28,10 +28,15 @@
 
   </div>
 </header><!-- End Header -->
-
 <section id="hero-static" class="hero-static d-flex align-items-center">
   <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
-    <h2><span>공책</span>에 오신것을 환영합니다.</h2>
+    <h2>
+      <c:choose>
+        <c:when test="${not empty sessUserInfo.userId}">
+          ${sessUserInfo.userId} 님
+        </c:when>
+      </c:choose>
+        <span>공책</span>에 오신것을 환영합니다.</h2>
     <p>공책은 전공책 거래 커뮤니티 플랫폼 입니다.</p>
     <div class="d-flex">
     </div>

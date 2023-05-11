@@ -40,4 +40,5 @@ public interface BookMapper {
     void updateBasketBook(Map<String, Object> params);
     List<Map<String, Object>> basketBookList(Map<String, Object> params);
     int getBookListCnt();
+    void bookImgUpdate(Map<String, Object> params) throws Exception;
 }

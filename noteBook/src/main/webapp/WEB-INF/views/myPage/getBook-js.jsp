@@ -163,24 +163,13 @@
     }
 
     $('#imgUpload').click(function () {
-        // let fileInput = document.querySelector("input[name=files]")
-        // let fileObj = fileInput.files[0];
-        // let formData = new FormData();
-
-        console.log("-------")
-        // let form = $('#imgUploadForm')[0];
-        // let data = new FormData(form);
-        let bookIdx = "${list.BOOK_IDX}";
-        let bookImg = $('#files').val();
-        console.log(bookIdx)
-        console.log(bookImg)
-        let data = {"bookIdx": bookIdx, "bookImg":bookImg};
-        console.log(data)
+        let form = $('#imgUploadForm')[0];
+        let data = new FormData(form);
 
         $.ajax({
             type:"POST",
             enctype: "multipart/form-data",
-            url: "/imgUpload",
+            url: "/imgUpload?bookIdx="+"${list.BOOK_IDX}",
             data: data,
             processData: false,
             contentType: false,

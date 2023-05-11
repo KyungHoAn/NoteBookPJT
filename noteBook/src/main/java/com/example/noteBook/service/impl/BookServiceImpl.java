@@ -9,17 +9,14 @@ import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 @Slf4j
@@ -207,4 +204,39 @@ public class BookServiceImpl implements BookService {
 
         return result;
     }
+
+    @Override
+    public Map<String, Object> imgWrite(MultipartFile file, Map<String, Object> params) throws Exception {
+        Map<String, Object> result = new HashMap<>();
+        System.out.println("====imgWirte ===");
+        System.out.println(file);
+        System.out.println(params);
+
+        // wjwkd rudfh
+        String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\img";
+
+        /* 식별자 랜던으로 이름 생성 */
+        UUID uuid = UUID.randomUUID();
+
+        //저장될 파일이름 지정
+        String fileName = uuid + "_" +file.getOriginalFilename();
+        System.out.println("fileName ::: ");
+        System.out.println(fileName);
+
+        params.put("fileName", fileName);
+        params.put("filePath", "/files/"+fileName);
+
+        /*빈 껍데기 생성*/
+        /*File을 생성할건데, 이름은 "name" 으로할거고, projectPath 라는 경로에 담긴다는 뜻*/
+        File saveFile = new File(projectPath, fileName);
+        file.transferTo(saveFile);
+
+        bookMapper.bookImgUpdate(params);
+
+        System.out.println("------");
+        System.out.println("is it come here? ");
+        return result;
+    }
+
+
 }

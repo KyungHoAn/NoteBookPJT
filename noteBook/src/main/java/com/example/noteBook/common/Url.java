@@ -13,10 +13,10 @@ public final class Url {
         public static final String LOGIN            = "/auth/login";
         public static final String LOGIN_PROC       = "/auth/login-proc";
         public static final String LOGOUT_PROC      = "/auth/logout-proc";
-        public static final String USER_UNIV        = "/userUniv";
-        public static final String USER_EMAIL       = "/userEmail";
-        public static final String USER_EMAIL_CODE  = "/userEmailCode";
-        public static final String USER_NICK        = "/userNick";
+        public static final String USER_UNIV        = "/univ/userUniv";
+        public static final String USER_EMAIL       = "/univ/userEmail";
+        public static final String USER_EMAIL_CODE  = "/univ/userEmailCode";
+        public static final String USER_NICK        = "/univ/userNick";
     }
 
     public static final class LIST {

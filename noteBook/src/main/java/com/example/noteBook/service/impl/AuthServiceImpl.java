@@ -26,7 +26,12 @@ public class AuthServiceImpl implements AuthService {
 
     public Map<String, Object> userNickCheck(Map<String, Object> params) throws Exception {
         Map<String, Object> result = new HashMap<>();
-
+        int nickCnt = authMapper.getNickNameCheck(params);
+        if(nickCnt>0) {
+            result.put("success",false);
+        } else {
+            result.put("success",true);
+        }
         return result;
     }
 
