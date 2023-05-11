@@ -163,7 +163,6 @@ public class CommunityController {
     @ResponseBody
     @GetMapping(value = Url.COMMUNITY.TAGCOMMUNITY)
     public Map<String, Object> getTagCommunity(@RequestParam Map<String, Object> params) throws Exception {
-        System.out.println(params);
         Map<String, Object> result = new HashMap<>();
         try {
             result = communityService.getTagCommunity(params);

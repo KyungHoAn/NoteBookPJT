@@ -124,7 +124,7 @@
                 </div>
             </div>
 
-            <div>
+            <div style="margin-top: 100px">
                 <!-- 게시글 작성-->
                 <article class="media" style="margin-bottom:30px">
                     <figure class="media-left">

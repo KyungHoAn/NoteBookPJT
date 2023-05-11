@@ -21,4 +21,5 @@ public interface CommunityMapper {
     Map<String, Object> getTagCount();
     List<Map<String, Object>> getSubCommunity();
     int getCommunityCnt();
+    List<Map<String, Object>> getUserCommunityList(Map<String, Object> params);
 }

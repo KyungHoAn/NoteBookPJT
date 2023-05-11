@@ -22,6 +22,7 @@ public final class Url {
     public static final class LIST {
         public static final String MYPAGE           = "/myPageView";
         public static final String USERINFO_JSP     = TILES_ROOT+"/myPage/myPage";
+        public static final String BOOKPAGE         = "/bookPage";
     }
 
     public static final class BOOK {

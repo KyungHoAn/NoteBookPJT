@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -27,9 +28,23 @@ public class MainController {
     @RequestMapping("/")
     public String main(Model model) throws Exception {
         Map<String, Object> result = new HashMap<>();
+        result.put("offset",9);
         model.addAttribute("list", bookMapper.getBookList(result));
         model.addAttribute("bookCnt", bookMapper.getBookListCnt());
         return Url.AUTH.MAIN_JSP;
+    }
+
+    @ResponseBody
+    @GetMapping(value = Url.LIST.BOOKPAGE)
+    public Map<String, Object> bookPageChange(@RequestParam Map<String, Object> params) {
+        Map<String, Object> result = new HashMap<>();
+        int start = Integer.parseInt((String) params.get("start"));
+        int offset = Integer.parseInt((String) params.get("offset"));
+        params.put("start", start);
+        params.put("offset", offset);
+        List<Map<String, Object>> bookPageList = bookMapper.getBookList(params);
+        result.put("bookList", bookPageList);
+        return result;
     }
 
     @GetMapping("/loginView")

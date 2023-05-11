@@ -43,10 +43,14 @@
   <!-- ======= Services Section ======= -->
   <section id="services" class="services">
     <div class="container" data-aos="fade-up">
-
-      <div class="section-header">
-        <h2>책 찾아보기</h2>
-      </div>
+      <c:choose>
+        <c:when test="${empty sessUserInfo.userId}">
+          <div class="section-header"><h2>최근 올라온 책</h2></div>
+        </c:when>
+        <c:otherwise>
+          <div class="section-header"><h2>책 찾아보기</h2></div>
+        </c:otherwise>
+      </c:choose>
 
       <c:choose>
         <c:when test="${not empty sessUserInfo.userId}">
@@ -78,16 +82,16 @@
       </div>
     </div>
   </section><!-- End Services Section -->
-  <section id="blog" class="blog">
-    <div class="container" data-aos="fade-up">
-      <div class="row g-5">
-        <div class="col-lg-8">
-          <div class="blog-pagination" id="pageList">
-          </div>
+  <c:choose>
+    <c:when test="${empty sessUserInfo.userId}">
+    </c:when>
+    <c:otherwise>
+      <section id="blog" class="blog">
+        <div class="blog-pagination" id="pageList">
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
+    </c:otherwise>
+  </c:choose>
 </main><!-- End #main -->
 
 <!-- ======= Footer ======= -->

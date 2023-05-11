@@ -1,6 +1,7 @@
 package com.example.NoteBook.controller;
 
 import com.example.NoteBook.common.Url;
+import com.example.NoteBook.dao.CommunityMapper;
 import com.example.NoteBook.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,14 +19,18 @@ public class UserInfoController {
     @Autowired
     BookService bookService;
 
+    @Autowired
+    CommunityMapper communityMapper;
+
     @GetMapping(value = Url.LIST.MYPAGE)
     public String userInfoView(Model model, HttpServletRequest request) throws Exception {
         Map<String, Object> params = new HashMap<>();
         HttpSession session = request.getSession();
         String id = (String) session.getAttribute("userId");
         params.put("userId", id);
-        model.addAttribute("list",bookService.userListBook(params));
-        model.addAttribute("basket",bookService.basketBookList(params));
+        model.addAttribute("list", bookService.userListBook(params));
+        model.addAttribute("basket", bookService.basketBookList(params));
+        model.addAttribute("communityList", communityMapper.getUserCommunityList(params));
 
         return Url.LIST.USERINFO_JSP;
     }

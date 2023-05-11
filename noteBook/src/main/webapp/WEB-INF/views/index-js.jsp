@@ -7,34 +7,35 @@
         let bookCnt = "${bookCnt}";
         let pageHtml = '';
 
+        pageHtml += '<ul class="justify-content-center">';
         if(bookCnt<10) {
             // pageHtml += '<li class="active"><a href="#">1</a></li>';
             pageHtml += '<li><input id="first">1</input></li>';
         } else if(bookCnt<18){
             pageHtml += '<li><a href="#" onclick="pageClick(0)">1</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(8)">2</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(9)">2</a></li>';
         } else if(bookCnt<26){
             pageHtml += '<li><a href="#" onclick="pageClick(0)">1</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(8)">2</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(16)>3</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(9)">2</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(18)>3</a></li>';
         } else if(bookCnt<34){
             pageHtml += '<li><a href="#" onclick="pageClick(0)>1</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(8)>2</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(16)>3</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(24)>4</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(9)>2</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(18)>3</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(27)>4</a></li>';
         } else if(bookCnt<42){
             pageHtml += '<li><a href="#" onclick="pageClick(0)>1</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(8)>2</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(16)>3</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(24)>4</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(32)>5</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(9)>2</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(18)>3</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(27)>4</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(36)>5</a></li>';
         } else if(bookCnt<50){
             pageHtml += '<li><a href="#" onclick="pageClick(0)>1</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(8)>2</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(16)>3</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(24)>4</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(32)>5</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(40)>6</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(9)>2</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(18)>3</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(27)>4</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(36)>5</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(45)>6</a></li>';
         }
         pageHtml += '</ul>';
         $("#pageList").append(pageHtml);
@@ -73,4 +74,35 @@
             }
         });
     })
+
+    const pageClick = (params) => {
+        let data = {"start":params, "offset":9};
+
+        $.ajax({
+            type:"GET",
+            url:"/bookPage",
+            data: data,
+            cache: false,
+            success: function (result) {
+                console.log("====>> ")
+                console.log(result)
+                let bookHtml = '';
+                $("#bookList").empty();
+                for(let row of result.bookList) {
+                    bookHtml += '<div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200"><div class="service-item">';
+                    bookHtml += '<div class="img" style="margin-left: 70px;">';
+                    bookHtml += '<img src="'+row.BOOK_IMG+'" class="img-fluid" alt="" style="width: 280px;"></div>';
+                    bookHtml += '<div class="details position-relative">';
+                    bookHtml += '<div class="icon"><i class="bi bi-activity"></i></div>';
+                    bookHtml += '<a onclick="location.href=\'/book/getBook?bookIdx='+row.BOOK_IDX+'\'" class="stretched-link"><h3>'+row.BOOK_TITLE+'</h3></a>';
+                    bookHtml += '</div>';
+                    bookHtml += '</div></div>';
+                }
+                $("#bookList").append(bookHtml);
+            },
+            error: function (e) {
+                console.log("ERROR: "+e);
+            }
+        })
+    }
 </script>

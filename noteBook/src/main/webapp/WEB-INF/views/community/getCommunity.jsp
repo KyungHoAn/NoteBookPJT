@@ -50,7 +50,7 @@
               <ul>
                 <li class="d-flex align-items-center"><i class="bi bi-person"></i>${list.USER_NAME}</li>
                 <li class="d-flex align-items-center"><i class="bi bi-clock"></i><time datetime="2020-01-01">${list.commu_date}</time></li>
-                <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>12 Comments</li>
+                <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>${list.comentNum} 게시글</li>
               </ul>
             </div><!-- End meta top -->
 

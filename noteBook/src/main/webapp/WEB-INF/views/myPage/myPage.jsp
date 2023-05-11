@@ -142,37 +142,30 @@
             </div>
 
             <div class="row g-5">
-                <div class="col-lg-8">
+                <div class="">
 
                     <div class="row gy-4 posts-list">
-
-                        <div class="col-lg-6">
-                            <article class="d-flex flex-column">
-
-                                <!-- <div class="post-img">
-                                  <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                                </div> -->
-
-                                <h2 class="title">
-                                    <a href="">공대 네트워크 전공책 구합니다.</a>
-                                </h2>
-
-                                <div class="meta-top">
-                                    <ul>
-                                        <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">닉네임</a></li>
-                                        <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">May 01, 2023</time></a></li>
-                                        <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="content">
-                                    <p>
-                                        공대 네트워크 전공책 구합니다!! 댓글 달아주세요
-                                    </p>
-                                </div>
-
-                            </article>
-                        </div><!-- End post list item -->
+                        <c:forEach var="var" items="${communityList}" varStatus="status">
+                            <div class="col-lg-6">
+                                <article class="d-flex flex-column">
+                                    <h2 class="title">
+                                        <a onclick="location.href='/getCommunity?communityIdx='+${var.COMMU_IDX}">${var.COMMU_TITLE}</a>
+                                    </h2>
+                                    <div class="meta-top">
+                                        <ul>
+                                            <li class="d-flex align-items-center"><i class="bi bi-person"></i>${var.USER_NAME}</li><br>
+                                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i><time datetime="2023-05-01">${var.commu_date}</time></li><br>
+                                            <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>${var.comentNum} 게시글</li>
+                                        </ul>
+                                    </div>
+                                    <div class="content">
+                                        <p>
+                                                ${var.COMMU_CONTENT}
+                                        </p>
+                                    </div>
+                                </article>
+                            </div><!-- End post list item -->
+                        </c:forEach>
                     </div><!-- End blog posts list -->
 
                 </div>

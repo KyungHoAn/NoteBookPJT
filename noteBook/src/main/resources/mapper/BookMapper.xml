@@ -117,6 +117,12 @@
             WHERE BOOK_TITLE LIKE '%${searchBook}%'
         </if>
         ORDER BY BOOK_UPLOAD_DATE DESC
+        <if test="start == null and offset !=null">
+            LIMIT 0, #{offset}
+        </if>
+        <if test="start != null and offset !=null">
+            LIMIT #{start}, #{offset}
+        </if>
     </select>
 
     <!-- 전체 책 갯수 -->
