@@ -101,12 +101,12 @@
                         <div class="sidebar-item categories">
                             <h3 class="sidebar-title">Categories</h3>
                             <ul class="mt-3">
-                                <li><a href="#">책 중고거래 <span>(${tag.bookNum})</span></a></li>
-                                <li><a href="#">스터디 <span>(${tag.studyNum})</span></a></li>
-                                <li><a href="#">칭찬양파 <span>(${tag.goodNum})</span></a></li>
-                                <li><a href="#">비난양파 <span>(${tag.badNum})</span></a></li>
-                                <li><a href="#">캠퍼스 맵 <span>(${tag.mapNum})</span></a></li>
-                                <li><a href="#">공구<span>(${tag.mapNum})</span></a></li>
+                                <li><a href="#" onclick="tagBtn('bookTag', 1)">책 중고거래 <span>(${tag.bookNum})</span></a></li>
+                                <li><a href="#" onclick="tagBtn('studyTag', 2)">스터디 <span>(${tag.studyNum})</span></a></li>
+                                <li><a href="#" onclick="tagBtn('goodTag',3)">칭찬양파 <span>(${tag.goodNum})</span></a></li>
+                                <li><a href="#" onclick="tagBtn('badTag',4)">비난양파 <span>(${tag.badNum})</span></a></li>
+                                <li><a href="#" onclick="tagBtn('mapTag',5)">캠퍼스 맵 <span>(${tag.mapNum})</span></a></li>
+                                <li><a href="#" onclick="tagBtn('compareTag', 6)">공구<span>(${tag.mapNum})</span></a></li>
                             </ul>
                         </div><!-- End sidebar categories-->
 
