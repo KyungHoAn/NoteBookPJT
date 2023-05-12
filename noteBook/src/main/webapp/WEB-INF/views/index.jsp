@@ -5,7 +5,7 @@
   <div class="container-fluid d-flex align-items-center justify-content-between">
 
     <a onclick="location.href='/'" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
-      <img src="" style="">
+      <img src="../img/logo/logo1.jpeg" style="width: 70px; height: 70px;">
       <h1>공책<span>.</span></h1>
     </a>
 
@@ -120,7 +120,7 @@
       </div>
 
       <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-        <a href="https://github.com/KyungHoAn/NoteBookPJT" class="github">github</a>
+        <a href="https://github.com/KyungHoAn/NoteBookPJT" class="github">GIT</a>
       </div>
 
     </div>

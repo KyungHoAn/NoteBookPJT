@@ -73,7 +73,7 @@
                 </div>
             </div>
             <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-                <a href="https://github.com/KyungHoAn/NoteBookPJT" class="github">github</a>
+                <a href="https://github.com/KyungHoAn/NoteBookPJT" class="github">GIT</a>
             </div>
 
         </div>

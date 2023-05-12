@@ -9,7 +9,7 @@
         <tiles:insertAttribute name="styles"/>
         <tiles:insertAttribute name="scripts"/>
 
-    <link href="https://github.com/KyungHoAn/NoteBookPJT/blob/master/Image/logo2.png" rel="icon">
+    <link href="../img/logo/logo2.jpeg" rel="icon" style="height: 10px; width: 10px;">
     </head>
     <body>
         <tiles:insertAttribute name="contents" ignore="true"/>
