@@ -47,7 +47,7 @@
 
                 <div class="col-lg-4">
                     <div class="">
-                        <img src="" class="img-fluid" alt="" style="width:200px; height:250px;">
+                        <img src="../../img/logo/logo2.jpeg" class="img-fluid" alt="" style="width:200px; height:250px;">
                     </div>
                 </div>
 

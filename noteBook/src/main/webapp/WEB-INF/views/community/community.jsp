@@ -148,7 +148,7 @@
                     &copy; Copyright <strong><span>공책</span></strong>. All Rights Reserved
                 </div>
                 <div class="credits">
-                    Designed by <a href="https://bootstrapmade.com/">Team. Spring</a>
+                    Designed by <a href="https://github.com/KyungHoAn/NoteBookPJT">Team. Spring</a>
                 </div>
             </div>
             <div class="social-links order-first order-lg-last mb-3 mb-lg-0">

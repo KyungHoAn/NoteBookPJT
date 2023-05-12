@@ -96,7 +96,7 @@
             <article class="media" style="margin-bottom:30px">
               <figure class="media-left">
                 <p class="image is-64x64">
-                  <img src="https://bulma.io/images/placeholders/128x128.png">
+                  <img src="../../img/logo/logo1.jpeg">
                 </p>
               </figure>
               <div class="media-content">
@@ -120,7 +120,7 @@
                 <div class="media" id="${var.COMMUNITY_CHAT_IDX}">
                   <figure class="media-left">
                     <p class="image is-64x64">
-                      <img src="https://bulma.io/images/placeholders/128x128.png">
+                      <img src="../../img/logo/logo2.jpeg">
                     </p>
                   </figure>
 
@@ -221,19 +221,14 @@
 
       <div class="d-flex flex-column align-items-center align-items-lg-start">
         <div class="copyright">
-          &copy; Copyright <strong><span>HeroBiz</span></strong>. All Rights Reserved
+          &copy; Copyright <strong><span>공책</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          Designed by <a href="https://github.com/KyungHoAn/NoteBookPJT">Team. Spring</a>
         </div>
       </div>
-
       <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/KyungHoAn/NoteBookPJT" class="github">github</a>
       </div>
 
     </div>

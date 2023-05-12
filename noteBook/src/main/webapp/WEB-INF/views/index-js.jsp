@@ -9,33 +9,32 @@
 
         pageHtml += '<ul class="justify-content-center">';
         if(bookCnt<10) {
-            // pageHtml += '<li class="active"><a href="#">1</a></li>';
-            pageHtml += '<li><input id="first">1</input></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(0)">1</input></li>';
         } else if(bookCnt<18){
             pageHtml += '<li><a href="#" onclick="pageClick(0)">1</a></li>';
             pageHtml += '<li><a href="#" onclick="pageClick(9)">2</a></li>';
         } else if(bookCnt<26){
             pageHtml += '<li><a href="#" onclick="pageClick(0)">1</a></li>';
             pageHtml += '<li><a href="#" onclick="pageClick(9)">2</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(18)>3</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(18")>3</a></li>';
         } else if(bookCnt<34){
-            pageHtml += '<li><a href="#" onclick="pageClick(0)>1</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(9)>2</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(18)>3</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(27)>4</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(0)">1</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(9)">2</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(18)">3</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(27)">4</a></li>';
         } else if(bookCnt<42){
-            pageHtml += '<li><a href="#" onclick="pageClick(0)>1</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(9)>2</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(18)>3</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(27)>4</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(36)>5</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(0)">1</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(9)">2</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(18)">3</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(27)">4</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(36)">5</a></li>';
         } else if(bookCnt<50){
-            pageHtml += '<li><a href="#" onclick="pageClick(0)>1</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(9)>2</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(18)>3</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(27)>4</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(36)>5</a></li>';
-            pageHtml += '<li><a href="#" onclick="pageClick(45)>6</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(0)">1</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(9)">2</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(18)">3</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(27)">4</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(36)">5</a></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(45)">6</a></li>';
         }
         pageHtml += '</ul>';
         $("#pageList").append(pageHtml);

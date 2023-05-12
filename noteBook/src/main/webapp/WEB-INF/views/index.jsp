@@ -114,7 +114,7 @@
           <strong><span>공책</span></strong>.
         </div>
         <div class="credits">
-          Designed by <a href="#">Team. Spring</a>
+          Designed by <a href="https://github.com/KyungHoAn/NoteBookPJT">Team. Spring</a>
         </div>
       </div>
 

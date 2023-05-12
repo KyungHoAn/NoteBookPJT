@@ -16,7 +16,7 @@
 
         if(pageSize<9) {
             // pageHtml += '<li class="active"><a href="#">1</a></li>';
-            pageHtml += '<li><input id="first">1</input></li>';
+            pageHtml += '<li><a href="#" onclick="pageClick(0)">1</input></li>';
         } else if(pageSize<17){
             pageHtml += '<li><a href="#" onclick="pageClick(0)">1</a></li>';
             pageHtml += '<li><a href="#" onclick="pageClick(8)">2</a></li>';

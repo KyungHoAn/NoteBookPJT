@@ -64,20 +64,24 @@
                                     <br>
                                 </div>
                             </c:if>
-
+                            <div>
                             <c:if test="${userId ne list.USER_ID}">
                                 <c:if test="${basket eq null}">
                                     <button type="button" id="basketBtn" class="btn btn-outline-secondary" style="float: right;" onclick="basketBtn(1)">찜하기</button>
+                                    <br>
                                 </c:if>
                                 <c:if test="${basket ne null}">
                                     <c:if test="${basket.BASKET_FLAG == 1}">
                                         <button type="button" id="basketBtn" class="btn btn-outline-secondary" style="float: right;" onclick="basketBtn(2)">찜 취소</button>
+                                        <br>
                                     </c:if>
                                     <c:if test="${basket.BASKET_FLAG == 0}">
                                         <button type="button" id="basketBtn" class="btn btn-outline-secondary" style="float: right;" onclick="basketBtn(4)">찜 하기</button>
+                                        <br>
                                     </c:if>
                                 </c:if>
                             </c:if>
+                            </div>
                         </h3>
                         <ul>
                             <li><strong>Category</strong>: BOOK</li>
@@ -96,15 +100,16 @@
                             </li>
                             <li>
                                 <form id="imgUploadForm">
-                                    <strong>책 사진 올리기 :</strong>
+<%--                                    <strong>책 사진 올리기 :</strong>--%>
     <%--                                <div class="filebox bs3-primary">--%>
     <%--                                    <input class="upload-name" value="파일선택" disabled="disabled">--%>
     <%--                                    <label for="ex_filename">업로드</label>--%>
     <%--                                    <input type="file" id="ex_filename" class="upload-hidden">--%>
     <%--                                </div>--%>
-                                    <input type="hidden" name="bookIdx" value="${list.BOOK_IDX}">
-                                    <input type="file" name="files" id="files">
-                                    <button type="button" id="imgUpload" class="btn btn-outline-secondary">업로드</button>
+                                    <!-- Upload-->
+<%--                                    <input type="hidden" name="bookIdx" value="${list.BOOK_IDX}">--%>
+<%--                                    <input type="file" name="files" id="files">--%>
+<%--                                    <button type="button" id="imgUpload" class="btn btn-outline-secondary">업로드</button>--%>
                                 </form>
                             </li>
                         </ul>
@@ -132,7 +137,7 @@
                 <article class="media" style="margin-bottom:30px">
                     <figure class="media-left">
                         <p class="image is-64x64">
-                            <img src="https://bulma.io/images/placeholders/128x128.png">
+                            <img src="../../img/logo/logo2.jpeg">
                         </p>
                     </figure>
                     <div class="media-content">
@@ -157,7 +162,7 @@
                         <div class="media" id="${var.BOOK_CHAT_IDX}">
                             <figure class="media-left">
                                 <p class="image is-64x64">
-                                    <img src="https://bulma.io/images/placeholders/128x128.png">
+                                    <img src="../../img/logo/logo1.jpeg">
                                 </p>
                             </figure>
 

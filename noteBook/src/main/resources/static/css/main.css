@@ -545,7 +545,7 @@ section {
 .hero-animated {
     width: 100%;
     min-height: 50vh;
-    /*background: url("../img/hero-bg.png") center center;*/
+    background: url("../img/background/hero-bg.png") center center;
     background-size: cover;
     position: relative;
     padding: 120px 0 60px;
@@ -667,7 +667,7 @@ section {
     width: 100%;
     padding: 0;
     background: var(--color-black);
-    /*background: url("../img/hero-bg.png") center center;*/
+    background: url("../img/background/hero-bg.png") center center;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -961,7 +961,7 @@ section {
 .hero-static {
     width: 100%;
     min-height: 50vh;
-    /*background: url("../img/hero-bg.png") center center;*/
+    background: url("../img/background/hero-bg.png") center center;
     background-size: cover;
     position: relative;
     padding: 120px 0 60px;
@@ -1102,7 +1102,7 @@ section {
     inset: -60px 0 0 -60px;
     z-index: -1;
     content: "";
-    background: url("../img/about-bg.png") top left;
+    background: url("../img/background/hero-bg.png") top left;
     background-repeat: no-repeat;
 }
 
