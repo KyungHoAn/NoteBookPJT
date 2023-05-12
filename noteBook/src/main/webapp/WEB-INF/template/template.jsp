@@ -10,7 +10,7 @@
         <tiles:insertAttribute name="scripts"/>
 <%--        <tiles:insertAttribute name="contents-js" flush="true"/>--%>
 <%--    <link rel="shortcut icon" type="image/x-icon" href="../../WEB-INF/img/logo/logo1.jpeg">--%>
-    <link href="../../WEB-INF/img/logo/logo1.jpeg" rel="icon">
+    <link href="../../WEB-INF/img/logo/logo1.png" rel="icon">
     </head>
     <body>
         <tiles:insertAttribute name="contents" ignore="true"/>
