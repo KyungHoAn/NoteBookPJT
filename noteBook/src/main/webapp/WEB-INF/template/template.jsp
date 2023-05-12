@@ -8,9 +8,7 @@
         <tiles:insertAttribute name="meta"/>
         <tiles:insertAttribute name="styles"/>
         <tiles:insertAttribute name="scripts"/>
-<%--    <link rel="shortcut icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png">--%>
-<%--    <link rel="shortcut icon" type="image/x-icon" href="https://github.com/KyungHoAn/NoteBookPJT/blob/master/Image/logo2.png">--%>
-<%--        <tiles:insertAttribute name="contents-js" flush="true"/>--%>
+
     <link href="https://github.com/KyungHoAn/NoteBookPJT/blob/master/Image/logo2.png" rel="icon">
     </head>
     <body>
