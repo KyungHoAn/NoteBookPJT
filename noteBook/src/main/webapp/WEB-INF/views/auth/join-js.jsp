@@ -40,6 +40,8 @@
         let id = $("#id").val();
         let code = document.getElementById('codeBox');
 
+        let passEmail = document.getElementById('pass');
+
         let data = {"email":id, "univName":univName};
 
         $.ajax({
@@ -49,14 +51,17 @@
             data: data,
             success: function (result) {
                 if(result.success == true) {
+                    console.log(result)
                     Swal.fire("이메일로 인증번호가 발송되었습니다.")
                     code.style.display = 'block';
+                    passEmail.style.display = 'none';
                 } else {
                     Swal.fire(
                         result.message,
                         'ex) wku.ac.kr -> wonkwang.ac.kr',
                         'question'
                     )
+                    passEmail.style.display = 'block';
                 }
             },
             error: function (e) {
@@ -64,6 +69,10 @@
             }
         })
     });
+    $("#passCheck").click(function () {
+        let pwd = document.getElementById('pwdBox');
+        pwd.style.display = 'block';
+    })
 
     $("#codeCheck").click(function () {
         let univName = $("#univ").val();
@@ -79,16 +88,8 @@
             url: "/univ/userEmailCode",
             data: data,
             success: function (result) {
-                if(result.code == true) {
-                    Swal.fire("코드 인증완료")
-                    pwd.style.display = 'block';
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: result.message,
-                    })
-                }
+                Swal.fire("코드 인증완료")
+                pwd.style.display = 'block';
             },
             error: function (e) {
                 alert("ERROR 관리자에게 문의하십시오 :" + e)
@@ -99,7 +100,6 @@
     $("#nickBtn").click(function () {
         let nick = $("#nick").val();
         let data = {"nick": nick};
-        console.log(data)
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',

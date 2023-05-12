@@ -76,6 +76,12 @@
                             <button type="button" class="button is-primary is-light" id="emailCheck">이메일 인증</button>
                         </p>
                     </div>
+                    <div class="field" id="pass" style="display:none">
+                        <p class="control has-icons-left has-icons-right">
+                            <button type="button" class="button is-primary is-light" id="passCheck">이메일 인증 건너뛰기</button>
+                        </p>
+                    </div>
+
 
                     <div class="field" id="codeBox" style="display:none">
                         <p class="control has-icons-left has-icons-right">
@@ -118,34 +124,6 @@
     </form>
     <!-- 회원가입 Section -->
 </main><!-- End #main -->
-
-<!-- ======= Footer ======= -->
-<%--<footer id="footer" class="footer" style="padding: 0rem 0rem 0rem; position: absolute; bottom: 0; left:0; right: 0;">--%>
-
-<%--    <div class="footer-legal text-center">--%>
-<%--        <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">--%>
-
-<%--            <div class="d-flex flex-column align-items-center align-items-lg-start">--%>
-<%--                <div class="copyright">--%>
-<%--                    &copy; Copyright <strong><span>HeroBiz</span></strong>. All Rights Reserved--%>
-<%--                </div>--%>
-<%--                <div class="credits">--%>
-<%--                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-
-<%--            <div class="social-links order-first order-lg-last mb-3 mb-lg-0">--%>
-<%--                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>--%>
-<%--                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>--%>
-<%--                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>--%>
-<%--                <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>--%>
-<%--                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>--%>
-<%--            </div>--%>
-
-<%--        </div>--%>
-<%--    </div>--%>
-
-<%--</footer><!-- End Footer -->--%>
 
 <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
