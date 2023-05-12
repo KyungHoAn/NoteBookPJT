@@ -14,10 +14,10 @@
         let map = new kakao.maps.Map(container, options);
 
         // 마커가 표시될 위치입니다
-        var markerPosition  = new kakao.maps.LatLng(35.96859679309435, 126.95819263729814);
+        let markerPosition  = new kakao.maps.LatLng(35.96859679309435, 126.95819263729814);
 
         // 마커를 생성합니다
-        var marker = new kakao.maps.Marker({
+        let marker = new kakao.maps.Marker({
             position: markerPosition
         });
 
