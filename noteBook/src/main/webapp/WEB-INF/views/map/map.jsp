@@ -49,7 +49,7 @@
 <%--        <input type="text" style="float: right;">--%>
 
         <div style="margin: 0 auto;justify-content: center;align-items : center;">
-            <div style="margin-left: 15cm; margin-bottom : 20px;">
+            <div style="margin-left: 12cm; margin-bottom : 20px;">
                 <div id="clickLatlng"></div>
             </div>
         </div>
