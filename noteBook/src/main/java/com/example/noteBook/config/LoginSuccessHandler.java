@@ -41,7 +41,7 @@ public class LoginSuccessHandler extends CoTopComponent implements Authenticatio
         //Response 결과 값을 넣어줌
         JsonObject loginResult = new JsonObject();
         loginResult.addProperty("resultCode", resultCode);
-        loginResult.addProperty("targetUrl", request.getContextPath()+"/");
+        loginResult.addProperty("targetUrl", request.getContextPath()+"/home");
 
         //응답 전송
         writeResponse(response, loginResult);

@@ -95,10 +95,10 @@
 
             <div class="d-flex flex-column align-items-center align-items-lg-start">
                 <div class="copyright">
-                    &copy; Copyright <strong><span>HeroBiz</span></strong>. All Rights Reserved
+                    &copy; Copyright <strong><span>공책</span></strong>.
                 </div>
                 <div class="credits">
-                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                    Designed by <a href="">Team.Spring</a>
                 </div>
             </div>
             <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
