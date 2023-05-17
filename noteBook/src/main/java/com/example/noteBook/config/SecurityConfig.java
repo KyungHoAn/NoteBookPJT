@@ -41,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .formLogin().disable()
                 .authorizeRequests()
-                .antMatchers("/auth/**","/univ/**").permitAll()					//로그인, 회원가입 접속허용
+                .antMatchers("/home","/auth/**","/univ/**").permitAll()					//로그인, 회원가입 접속허용
                 .antMatchers("/resource/**/images/**").permitAll()		//이미지
 //                .antMatchers("/note/**").authenticated()
                 .anyRequest().authenticated()
