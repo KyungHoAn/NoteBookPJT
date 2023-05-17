@@ -2,8 +2,6 @@
 <%@ include file="/WEB-INF/template/constants.jsp"%>
 <script type="text/javascript">
     $(document).ready(function () {
-        console.log("-----")
-        console.log("${bookCnt}")
         let bookCnt = "${bookCnt}";
         let pageHtml = '';
 

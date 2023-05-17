@@ -4,14 +4,18 @@
 <header id="header" class="header fixed-top" data-scrollto-offset="0">
   <div class="container-fluid d-flex align-items-center justify-content-between">
 
-    <a onclick="location.href='/'" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
-      <img src="../img/logo/logo1.jpeg" style="width: 70px; height: 70px;">
+    <a onclick="location.href='/home'" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+      <c:choose>
+        <c:when test="${not empty sessUserInfo.userId}">
+          <img src="../img/logo/logo1.jpeg" style="width: 70px; height: 70px;">
+        </c:when>
+      </c:choose>
       <h1>공책<span>.</span></h1>
     </a>
 
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a onclick="location.href='/'"><span>Home</span></a></li>
+        <li><a onclick="location.href='/home'"><span>Home</span></a></li>
         <li><a onclick="location.href='/community'">커뮤니티</a></li>
         <li><a onclick="location.href='/mapView'">캠퍼스 맵</a></li>
         <c:choose>

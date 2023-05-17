@@ -5,7 +5,7 @@
 <header id="header" class="header fixed-top" data-scrollto-offset="0">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-        <a href="index.html" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+        <a onclick="location.href='/home'" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <!-- <img src="assets/img/logo.png" alt=""> -->
             <h1>공책<span>.</span></h1>
@@ -13,7 +13,7 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a onclick="location.href='/'"><span>Home</span></a></li>
+                <li><a onclick="location.href='/home'"><span>Home</span></a></li>
                 <li><a onclick="location.href='/community'">커뮤니티</a></li>
                 <li><a onclick="location.href='/mapView'">캠퍼스 맵</a></li>
                 <li><a onclick="location.href='/myPageView'">myPage</a></li>

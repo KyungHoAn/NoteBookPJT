@@ -25,7 +25,7 @@ public class MainController {
     @Autowired
     BookMapper bookMapper;
 
-    @RequestMapping("/")
+    @RequestMapping(value = Url.AUTH.HOME)
     public String main(Model model) throws Exception {
         Map<String, Object> result = new HashMap<>();
         result.put("offset",9);

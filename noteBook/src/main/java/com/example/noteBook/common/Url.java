@@ -5,7 +5,8 @@ public final class Url {
     public static final String TILES_AJAX = "/tiles/ajax";
 
     public static final class AUTH {
-        public static final String MAIN_JSP         = TILES_ROOT+"/index";
+        public static final String HOME             = "/home";
+        public static final String MAIN_JSP         = TILES_ROOT+"/home";
         public static final String LOGIN_JSP        = TILES_ROOT+"/auth/login";
         public static final String JOIN_JSP         = TILES_ROOT+"/auth/join";
         public static final String JOIN             = "/auth/join";
