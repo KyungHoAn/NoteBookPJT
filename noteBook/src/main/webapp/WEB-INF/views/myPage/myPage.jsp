@@ -4,6 +4,7 @@
 <header id="header" class="header fixed-top" data-scrollto-offset="0">
     <div class="container-fluid d-flex align-items-center justify-content-between">
         <a onclick="location.href='/home'" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+            <img src="../img/logo/logo1.jpeg" style="width: 70px; height: 70px;">
             <h1>공책<span>.</span></h1>
         </a>
 

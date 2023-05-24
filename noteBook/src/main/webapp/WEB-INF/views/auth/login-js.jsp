@@ -6,7 +6,6 @@
             'un' : $.trim($("#loginId").val())
             , 'up' : $("#loginPw").val()
         }
-        console.log(params);
 
         $.ajax({
             type: 'POST',
@@ -14,9 +13,12 @@
             dataType : 'json',
             data: params,
             success: function(result) {
-                console.log(result);
                 if(result.resultCode != "00") {
-                    console.log(result.resultMessage);
+                    Swal.fire(
+                        '존재하지 않는 회원',
+                        '아이디 또는 비밀번호를 확인하여 주세요',
+                        'question'
+                    )
                 } else {
                     location.href=result.targetUrl;
                 }
