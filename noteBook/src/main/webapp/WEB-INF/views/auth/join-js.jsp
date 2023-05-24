@@ -141,7 +141,7 @@
         let univ = $("#univ").val();
 
         if(userId == '') {
-            alert("이메일을 입력해 주세요")
+            alert("이메일(아이디)을 입력해 주세요 \n 로그인시 아이디로 사용됩니다.")
             return;
         }
         if(password == '') {
