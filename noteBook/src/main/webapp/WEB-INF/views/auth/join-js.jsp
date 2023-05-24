@@ -16,7 +16,6 @@
             url: "/univ/userUniv",
             data: data,
             success: function (result) {
-                console.log(result)
                 if(result.success == false) {
                     Swal.fire({
                         icon: 'error',
@@ -51,7 +50,6 @@
             data: data,
             success: function (result) {
                 if(result.success == true) {
-                    console.log(result)
                     Swal.fire("이메일로 인증번호가 발송되었습니다.")
                     code.style.display = 'block';
                     passEmail.style.display = 'none';
@@ -106,7 +104,6 @@
             url: "/univ/userNick",
             data: data,
             success: function (result) {
-                console.log(result)
                 if(result.success == false) {
                     Swal.fire({
                         icon: 'error',

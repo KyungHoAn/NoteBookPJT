@@ -22,8 +22,6 @@ public class LoginServiceImpl implements LoginService {
 
     public Map<String, Object> checkLoginInsert(UserInfo userInfo) {
         Map<String, Object> result = new HashMap<>();
-        System.out.println("----- checkLoginInsert -----");
-        System.out.println(userInfo);
         //0이면 중복되는 아이디 없음
         int duplicateCheck = userMapper.duplicateUserCheck(userInfo.getUserId());
 

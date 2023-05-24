@@ -5,7 +5,6 @@
     $("#updateCommunityBtn").click(function () {
         let form = $('#updateCommunity')[0];
         let data = new FormData(form);
-        console.log(${list.COMMU_IDX})
 
         $.ajax({
             type: "POST",

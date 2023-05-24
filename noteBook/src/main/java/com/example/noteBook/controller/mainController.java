@@ -50,7 +50,6 @@ public class MainController {
     @GetMapping("/loginView")
     public String loginView(@RequestParam Map<String, Object> param) throws Exception {
         Map<String, Object> result = new HashMap<>();
-        System.out.println("login");
         authService.userInsert(result);
 
         return Url.AUTH.LOGIN_JSP;

@@ -66,7 +66,6 @@
 
 
     $("#deleteCommunity").click(function() {
-        console.log('delete')
         let data = {"commuIdx": "${list.COMMU_IDX}"};
         $.ajax({
             type: "POST",

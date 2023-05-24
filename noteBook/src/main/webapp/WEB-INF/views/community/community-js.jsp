@@ -91,7 +91,6 @@
                     let commuList = '';
                     $("#communityMain").empty();
                     for(let row of result.list) {
-                        console.log(row)
                         commuList += '<div class="col-lg-6">';
                         commuList += '<article class="d-flex flex-column">';
                         commuList += '<h2 class="title"><a onclick="location.href=\'/getCommunity?communityIdx='+row.COMMU_IDX+'\'">'+row.COMMU_TITLE+'</a></h2>';

@@ -64,7 +64,6 @@ public class BookServiceImpl implements BookService {
     @Override
     public Map<String, Object> getBookList(Map<String, Object> params) throws Exception {
         Map<String, Object> result = new HashMap<>();
-        System.out.println(params);
         result.put("list", bookMapper.getBookList(params));
         return result;
     }

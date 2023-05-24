@@ -81,8 +81,6 @@
             data: data,
             cache: false,
             success: function (result) {
-                console.log("====>> ")
-                console.log(result)
                 let bookHtml = '';
                 $("#bookList").empty();
                 for(let row of result.bookList) {

@@ -37,9 +37,7 @@
     });
 
     $("#deleteBookBtn").click(function() {
-
         let data = {"bookIdx": ${list.BOOK_IDX}};
-        console.log(data);
 
         Swal.fire({
             title: '해당 책을 지우시겠습니까?',
@@ -135,7 +133,6 @@
     }
 
     function basketBtn(flag) {
-        console.log(flag)
         let data = {"bookIdx":"${list.BOOK_IDX}", "flag": flag};
         $.ajax({
             type:"POST",
@@ -146,7 +143,6 @@
                 if(result.code == "00" || true) {
                     let basketHtml = '';
                     let baskIdx = "${basket.BOOK_BASKET_IDX}";
-                    console.log("baskIDx == > "+baskIdx)
                     if(result.BASKET_FLAG == 1) {
                         basketHtml += '<button type="button" id="basketBtn" class="btn btn-outline-secondary" style="float: right;" onclick="basketBtn(3)">찜 취소</button>';
                     } else {
@@ -174,9 +170,8 @@
             processData: false,
             contentType: false,
             cache: false,
-            success: function (result) {
-                console.log("=====")
-                console.log(result);
+            success: function () {
+                console.log("SUCCESS")
             },
             error: function (e) {
                 console.log("ERROR: "+e);

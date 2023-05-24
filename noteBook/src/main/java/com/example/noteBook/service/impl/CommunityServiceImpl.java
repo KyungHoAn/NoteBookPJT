@@ -77,7 +77,6 @@ public class CommunityServiceImpl implements CommunityService {
 
     @Override
     public void deleteCommunity(Map<String, Object> params) {
-        System.out.println(params);
         communityMapper.deleteCommunity(params);
         communityMapper.deleteCommunityChatAll(params);
     }
