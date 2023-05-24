@@ -106,7 +106,7 @@
                         </div>
                         <div class="field">
                             <p class="control has-icons-left">
-                                <input class="input" id="sPassword" name="sPassword" type="text" placeholder="Password Check" style="width: 10cm; margin-left: 3.4cm">
+                                <input class="input" id="sPassword" name="sPassword" type="password" placeholder="Password Check" style="width: 10cm; margin-left: 3.4cm">
                                 <button type="button" class="button is-primary is-light" id="pwdCheckBtn">패스워드 인증</Button>
                             </p>
                         </div>
