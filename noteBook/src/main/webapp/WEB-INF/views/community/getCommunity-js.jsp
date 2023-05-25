@@ -73,7 +73,7 @@
             url: "/deleteCommunity",
             success: function(result) {
                 if(result.code= "00" || true) {
-                    Swal.fire('정상적으로 게시되었습니다.').then((result) => {
+                    Swal.fire('정상적으로 삭제되었습니다..').then((result) => {
                         location.href = '/community';
                     });
                 }
