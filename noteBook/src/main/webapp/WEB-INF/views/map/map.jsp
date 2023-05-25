@@ -47,11 +47,14 @@
         <div id="map" style="width:800px;height:500px; margin-left: 30px; display: flex;line-height: 0; margin: 0 auto;"></div>
 <%--        <input type="text" style="float: right;">--%>
 
-        <div style="margin: 0 auto;justify-content: center;align-items : center;">
+        <br>
+        <div style="margin: 0 auto; justify-content: center;align-items : center;">
             <div style="margin-left: 12cm; margin-bottom : 20px;">
                 <div id="clickLatlng"></div>
             </div>
         </div>
+        <br>
+        <br><br><br>
 
     </section><!-- End Contact Section -->
 
@@ -59,7 +62,6 @@
 
 <!-- ======= Footer ======= -->
 <footer id="footer" class="footer" style="padding: 0rem 0rem 0rem; position: absolute; left:0; right: 0;">
-
     <div class="footer-legal text-center">
         <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
 
