@@ -1,50 +1,78 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/WEB-INF/template/constants.jsp"%>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=${key}">
-</script>
+<%--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=${key}"></script>--%>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=${key}&libraries=services"></script>
+
 <script type="text/javascript">
     $(document).ready(function () {
+        kakaoMap();
 
-        let container = document.getElementById('map');
-        let options = {
-            center: new kakao.maps.LatLng(35.96859679309435, 126.95819263729814),
-            level: 3
+        $("#searchMapBtn").click(function () {
+            let searchMap = $("#searchMap").val();
+            kakaoMap(searchMap);
+        })
+
+        const onSubmitSearch = (e) => {
+            if (e.key === "Enter") {
+                //키를 눌렀을 때 동작할 코드
+                let searchMap = $("#searchMap").val();
+                console.log(searchMap)
+            }
         };
 
-        let map = new kakao.maps.Map(container, options);
+        function kakaoMap(location) {
+            // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
+            let infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
-        // 마커가 표시될 위치입니다
-        let markerPosition  = new kakao.maps.LatLng(35.96859679309435, 126.95819263729814);
+            let mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                mapOption = {
+                    center: new kakao.maps.LatLng(35.96859679309435, 126.95819263729814), // 지도의 중심좌표
+                    level: 3 // 지도의 확대 레벨
+                };
 
-        // 마커를 생성합니다
-        let marker = new kakao.maps.Marker({
-            position: markerPosition
-        });
+            // 지도를 생성합니다
+            let map = new kakao.maps.Map(mapContainer, mapOption);
 
-        // 마커가 지도 위에 표시되도록 설정합니다
-        marker.setMap(map);
+            // 장소 검색 객체를 생성합니다
+            let ps = new kakao.maps.services.Places();
 
-        // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
-        // marker.setMap(null);
+            // 키워드로 장소를 검색합니다
+            ps.keywordSearch(location, placesSearchCB);
 
-        // 지도에 클릭 이벤트를 등록합니다
-        // 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
-        kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
+// 키워드 검색 완료 시 호출되는 콜백함수 입니다
+            function placesSearchCB (data, status, pagination) {
+                if (status === kakao.maps.services.Status.OK) {
 
-            // 클릭한 위도, 경도 정보를 가져옵니다
-            let latlng = mouseEvent.latLng;
+                    // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+                    // LatLngBounds 객체에 좌표를 추가합니다
+                    let bounds = new kakao.maps.LatLngBounds();
 
-            // 마커 위치를 클릭한 위치로 옮깁니다
-            marker.setPosition(latlng);
+                    for (let i=0; i<data.length; i++) {
+                        displayMarker(data[i]);
+                        bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+                    }
 
-            // 마우스로 클릭한 위치의 위도와 경도를 표시할 메세지
-            let message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
-            message += '경도는 ' + latlng.getLng() + ' 입니다';
+                    // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+                    map.setBounds(bounds);
+                }
+            }
 
-            // 'clickLatlng'라는 아이디값을 가진 <div> 태그의 innerHTML 으로 위 메세지를 설정합니다.
-            let resultDiv = document.getElementById('clickLatlng');
-            resultDiv.innerHTML = message;
-        });
+// 지도에 마커를 표시하는 함수입니다
+            function displayMarker(place) {
 
+                // 마커를 생성하고 지도에 표시합니다
+                let marker = new kakao.maps.Marker({
+                    map: map,
+                    position: new kakao.maps.LatLng(place.y, place.x)
+                });
+
+                // 마커에 클릭이벤트를 등록합니다
+                kakao.maps.event.addListener(marker, 'click', function() {
+                    // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+                    infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+                    infowindow.open(map, marker);
+                });
+            }
+        }
     });
 </script>

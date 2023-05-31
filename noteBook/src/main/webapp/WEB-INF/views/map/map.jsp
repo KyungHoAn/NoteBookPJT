@@ -36,16 +36,22 @@
             </div>
 
         </div>
+        <div>
+            <div id="mapReSearch">
+                <div id="map" style="float: left; width:800px;height:500px; margin-left: 30px; display: flex;line-height: 0; margin: 0 auto;"></div>
+            </div>
+            <%--        <input type="text" style="float: right;">--%>
 
-<%--        <div style="margin: 0 auto;justify-content: center;align-items : center;">--%>
-<%--            <div style="margin-left: 15cm; margin-bottom : 20px;">--%>
-<%--                검색할 장소 입력  :--%>
-<%--                <input type="text" id="searchMap">--%>
+            <div style="flaot: right; justify-content: center;">
+                <div style="margin-left: 15cm; margin-bottom : 20px;">
+                    검색할 장소 입력  :
+                    <input type="text" id="searchMap" onkeyup={onSubmitSearch()}>
+                    <button class="button is-primary is-light" type="button" id="searchMapBtn">검색</button>
+                </div>
+            </div>
 
-<%--            </div>--%>
-<%--        </div>--%>
-        <div id="map" style="width:800px;height:500px; margin-left: 30px; display: flex;line-height: 0; margin: 0 auto;"></div>
-<%--        <input type="text" style="float: right;">--%>
+        </div>
+
 
         <br>
         <div style="margin: 0 auto; justify-content: center;align-items : center;">
