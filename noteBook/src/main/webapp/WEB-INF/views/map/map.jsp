@@ -45,7 +45,7 @@
             <div style="flaot: right; justify-content: center;">
                 <div style="margin-left: 15cm; margin-bottom : 20px;">
                     검색할 장소 입력  :
-                    <input type="text" id="searchMap" onkeyup={onSubmitSearch()}>
+                    <input type="text" id="searchMap">
                     <button class="button is-primary is-light" type="button" id="searchMapBtn">검색</button>
                 </div>
             </div>

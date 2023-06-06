@@ -12,14 +12,6 @@
             kakaoMap(searchMap);
         })
 
-        const onSubmitSearch = (e) => {
-            if (e.key === "Enter") {
-                //키를 눌렀을 때 동작할 코드
-                let searchMap = $("#searchMap").val();
-                console.log(searchMap)
-            }
-        };
-
         function kakaoMap(location) {
             // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
             let infowindow = new kakao.maps.InfoWindow({zIndex:1});
